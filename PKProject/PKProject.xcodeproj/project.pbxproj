@@ -30,6 +30,26 @@
 		8F90A90B203C838400B74A0A /* AddEmergencyNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F90A909203C838400B74A0A /* AddEmergencyNumberViewController.swift */; };
 		8F90A90D203C840A00B74A0A /* EditEmergencyNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F90A90C203C840A00B74A0A /* EditEmergencyNumberViewController.swift */; };
 		8F90A90E203C840A00B74A0A /* EditEmergencyNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F90A90C203C840A00B74A0A /* EditEmergencyNumberViewController.swift */; };
+		8FC480472040111400B9FD29 /* MedInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480462040111400B9FD29 /* MedInfosViewController.swift */; };
+		8FC480482040111700B9FD29 /* MedInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480462040111400B9FD29 /* MedInfosViewController.swift */; };
+		8FC4804A2040121700B9FD29 /* EtatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480492040121700B9FD29 /* EtatViewController.swift */; };
+		8FC4804B2040121700B9FD29 /* EtatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480492040121700B9FD29 /* EtatViewController.swift */; };
+		8FC4804D204014C600B9FD29 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4804C204014C600B9FD29 /* EventViewController.swift */; };
+		8FC4804E204014C600B9FD29 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4804C204014C600B9FD29 /* EventViewController.swift */; };
+		8FC480502040185300B9FD29 /* PillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4804F2040185300B9FD29 /* PillsViewController.swift */; };
+		8FC480512040185300B9FD29 /* PillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4804F2040185300B9FD29 /* PillsViewController.swift */; };
+		8FC48053204019D700B9FD29 /* EditPillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC48052204019D700B9FD29 /* EditPillsViewController.swift */; };
+		8FC48054204019D700B9FD29 /* EditPillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC48052204019D700B9FD29 /* EditPillsViewController.swift */; };
+		8FC4805620401BEF00B9FD29 /* EditMedPillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4805520401BEF00B9FD29 /* EditMedPillsViewController.swift */; };
+		8FC4805720401BEF00B9FD29 /* EditMedPillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4805520401BEF00B9FD29 /* EditMedPillsViewController.swift */; };
+		8FC4805920401FD300B9FD29 /* AddPillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4805820401FD300B9FD29 /* AddPillsViewController.swift */; };
+		8FC4805A20401FD300B9FD29 /* AddPillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4805820401FD300B9FD29 /* AddPillsViewController.swift */; };
+		8FC4805F204022FC00B9FD29 /* RDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4805E204022FC00B9FD29 /* RDVMedViewController.swift */; };
+		8FC48060204022FC00B9FD29 /* RDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4805E204022FC00B9FD29 /* RDVMedViewController.swift */; };
+		8FC480622040232500B9FD29 /* AddRDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480612040232500B9FD29 /* AddRDVMedViewController.swift */; };
+		8FC480632040232500B9FD29 /* AddRDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480612040232500B9FD29 /* AddRDVMedViewController.swift */; };
+		8FC480652040253500B9FD29 /* EditRDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480642040253500B9FD29 /* EditRDVMedViewController.swift */; };
+		8FC480662040253500B9FD29 /* EditRDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480642040253500B9FD29 /* EditRDVMedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +91,16 @@
 		8F90A906203C814400B74A0A /* EmergencyNumbersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmergencyNumbersViewController.swift; path = Controler/EmergencyNumbersViewController.swift; sourceTree = "<group>"; };
 		8F90A909203C838400B74A0A /* AddEmergencyNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddEmergencyNumberViewController.swift; path = Controler/AddEmergencyNumberViewController.swift; sourceTree = "<group>"; };
 		8F90A90C203C840A00B74A0A /* EditEmergencyNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditEmergencyNumberViewController.swift; path = Controler/EditEmergencyNumberViewController.swift; sourceTree = "<group>"; };
+		8FC480462040111400B9FD29 /* MedInfosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedInfosViewController.swift; path = Controler/MedInfosViewController.swift; sourceTree = "<group>"; };
+		8FC480492040121700B9FD29 /* EtatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EtatViewController.swift; path = Controler/EtatViewController.swift; sourceTree = "<group>"; };
+		8FC4804C204014C600B9FD29 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = Controler/EventViewController.swift; sourceTree = "<group>"; };
+		8FC4804F2040185300B9FD29 /* PillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PillsViewController.swift; path = Controler/PillsViewController.swift; sourceTree = "<group>"; };
+		8FC48052204019D700B9FD29 /* EditPillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPillsViewController.swift; path = Controler/EditPillsViewController.swift; sourceTree = "<group>"; };
+		8FC4805520401BEF00B9FD29 /* EditMedPillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditMedPillsViewController.swift; path = Controler/EditMedPillsViewController.swift; sourceTree = "<group>"; };
+		8FC4805820401FD300B9FD29 /* AddPillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPillsViewController.swift; path = Controler/AddPillsViewController.swift; sourceTree = "<group>"; };
+		8FC4805E204022FC00B9FD29 /* RDVMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RDVMedViewController.swift; path = Controler/RDVMedViewController.swift; sourceTree = "<group>"; };
+		8FC480612040232500B9FD29 /* AddRDVMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRDVMedViewController.swift; path = Controler/AddRDVMedViewController.swift; sourceTree = "<group>"; };
+		8FC480642040253500B9FD29 /* EditRDVMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditRDVMedViewController.swift; path = Controler/EditRDVMedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +193,16 @@
 				8F90A8FA203C69C100B74A0A /* InformationsViewController.swift */,
 				8F90A90C203C840A00B74A0A /* EditEmergencyNumberViewController.swift */,
 				8F90A903203C754A00B74A0A /* AddMedecinViewController.swift */,
+				8FC480462040111400B9FD29 /* MedInfosViewController.swift */,
+				8FC480492040121700B9FD29 /* EtatViewController.swift */,
+				8FC4804C204014C600B9FD29 /* EventViewController.swift */,
+				8FC4804F2040185300B9FD29 /* PillsViewController.swift */,
+				8FC48052204019D700B9FD29 /* EditPillsViewController.swift */,
+				8FC4805520401BEF00B9FD29 /* EditMedPillsViewController.swift */,
+				8FC4805820401FD300B9FD29 /* AddPillsViewController.swift */,
+				8FC4805E204022FC00B9FD29 /* RDVMedViewController.swift */,
+				8FC480612040232500B9FD29 /* AddRDVMedViewController.swift */,
+				8FC480642040253500B9FD29 /* EditRDVMedViewController.swift */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -317,15 +357,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F90A904203C754A00B74A0A /* AddMedecinViewController.swift in Sources */,
+				8FC4805920401FD300B9FD29 /* AddPillsViewController.swift in Sources */,
 				8F90A90D203C840A00B74A0A /* EditEmergencyNumberViewController.swift in Sources */,
+				8FC4804D204014C600B9FD29 /* EventViewController.swift in Sources */,
 				8F90A907203C814400B74A0A /* EmergencyNumbersViewController.swift in Sources */,
+				8FC4805620401BEF00B9FD29 /* EditMedPillsViewController.swift in Sources */,
 				8F90A901203C74ED00B74A0A /* EditMedecinsViewController.swift in Sources */,
+				8FC480502040185300B9FD29 /* PillsViewController.swift in Sources */,
+				8FC480652040253500B9FD29 /* EditRDVMedViewController.swift in Sources */,
+				8FC4805F204022FC00B9FD29 /* RDVMedViewController.swift in Sources */,
 				8F90A8C5203C5C4700B74A0A /* ViewController.swift in Sources */,
+				8FC480472040111400B9FD29 /* MedInfosViewController.swift in Sources */,
 				8F90A8CB203C5C4700B74A0A /* PKProject.xcdatamodeld in Sources */,
 				8F90A8C3203C5C4700B74A0A /* AppDelegate.swift in Sources */,
+				8FC4804A2040121700B9FD29 /* EtatViewController.swift in Sources */,
 				8F90A8FE203C74C100B74A0A /* MedecinsViewController.swift in Sources */,
+				8FC480622040232500B9FD29 /* AddRDVMedViewController.swift in Sources */,
 				8F90A90A203C838400B74A0A /* AddEmergencyNumberViewController.swift in Sources */,
 				8F90A8FB203C69C100B74A0A /* InformationsViewController.swift in Sources */,
+				8FC48053204019D700B9FD29 /* EditPillsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,13 +383,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FC4805A20401FD300B9FD29 /* AddPillsViewController.swift in Sources */,
+				8FC4804B2040121700B9FD29 /* EtatViewController.swift in Sources */,
+				8FC480632040232500B9FD29 /* AddRDVMedViewController.swift in Sources */,
+				8FC4804E204014C600B9FD29 /* EventViewController.swift in Sources */,
+				8FC480482040111700B9FD29 /* MedInfosViewController.swift in Sources */,
 				8F90A902203C74ED00B74A0A /* EditMedecinsViewController.swift in Sources */,
 				8F90A908203C814400B74A0A /* EmergencyNumbersViewController.swift in Sources */,
+				8FC48060204022FC00B9FD29 /* RDVMedViewController.swift in Sources */,
 				8F90A8FC203C69C100B74A0A /* InformationsViewController.swift in Sources */,
 				8F90A8DB203C5C4700B74A0A /* PKProjectTests.swift in Sources */,
+				8FC480512040185300B9FD29 /* PillsViewController.swift in Sources */,
 				8F90A90B203C838400B74A0A /* AddEmergencyNumberViewController.swift in Sources */,
+				8FC48054204019D700B9FD29 /* EditPillsViewController.swift in Sources */,
 				8F90A8FF203C74C100B74A0A /* MedecinsViewController.swift in Sources */,
+				8FC480662040253500B9FD29 /* EditRDVMedViewController.swift in Sources */,
 				8F90A905203C754A00B74A0A /* AddMedecinViewController.swift in Sources */,
+				8FC4805720401BEF00B9FD29 /* EditMedPillsViewController.swift in Sources */,
 				8F90A90E203C840A00B74A0A /* EditEmergencyNumberViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,6 +639,7 @@
 				8F90A8EC203C5C4700B74A0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F90A8ED203C5C4700B74A0A /* Build configuration list for PBXNativeTarget "PKProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -587,6 +648,7 @@
 				8F90A8EF203C5C4700B74A0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F90A8F0203C5C4700B74A0A /* Build configuration list for PBXNativeTarget "PKProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -595,6 +657,7 @@
 				8F90A8F2203C5C4700B74A0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
