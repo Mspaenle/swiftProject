@@ -21,7 +21,7 @@ import Foundation
 //
 //*countEvent* : ListEventModel x String -> int -- occurence of an EventModel in a ListEventModel
 //
-//*getItEvent* : ListEvent -> ItListEvent -- Initialise the iterator  of the collection in the parameters, if the collection is'nt empty, the current element is the first element of the colletion and the iterator is Active otherwise the iterator is Inactive
+//*getItEvent* : ListEventModel -> ItListEvent -- Initialise the iterator  of the collection in the parameters, if the collection is'nt empty, the current element is the first element of the colletion and the iterator is Active otherwise the iterator is Inactive
 //
 
 class ListEventModel : Sequence {
@@ -35,12 +35,12 @@ class ListEventModel : Sequence {
     //
     //*addEvent* : ListEventModel x EventModel -> ListEventModel -- add an EventModel in ListEventModel
     //
-    // - Parameter event: `EventModel` to be counted
+    // - Parameter event: `EventModel` to be added
     // - Returns: `ListEventModel` with new `EventModel` added to the set
     //
     
     @discardableResult
-    func add(event: EventModel) -> ListEventModel{
+    func addEvent(event: EventModel) -> ListEventModel{
         self.levent.append(event)
         return self
     }
@@ -69,7 +69,7 @@ class ListEventModel : Sequence {
     // - Returns: ListEventModel will all `EventModel` conforming to parameter
     //
     
-    func getEvent(forEventDate date: Date) -> ListEventModel{
+    func getDateEvent(forEventDate date: Date) -> ListEventModel{
         let ret : ListEventModel = ListEventModel()
         for e in self{
             if( e.date == date ){
@@ -108,7 +108,7 @@ class ListEventModel : Sequence {
     
     
     
-    subscript(index: Int) -> Event {
+    subscript(index: Int) -> EventModel {
         get {
             guard (index>=0) && (index<self.count) else{
                 fatalError("index out of range")
