@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24D457F6204D897D00E27BC5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457F5204D897D00E27BC5 /* Event.swift */; };
+		24D457F7204D897D00E27BC5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457F5204D897D00E27BC5 /* Event.swift */; };
 		8F385E7020468C3300F29058 /* EditPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E6F20468C3300F29058 /* EditPriseViewController.swift */; };
 		8F385E7120468C3300F29058 /* EditPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E6F20468C3300F29058 /* EditPriseViewController.swift */; };
 		8F385E7320468F6A00F29058 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E7220468F6A00F29058 /* DiaryViewController.swift */; };
@@ -92,6 +94,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24D457F5204D897D00E27BC5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8F385E6F20468C3300F29058 /* EditPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPriseViewController.swift; path = Controler/EditPriseViewController.swift; sourceTree = "<group>"; };
 		8F385E7220468F6A00F29058 /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = Controler/DiaryViewController.swift; sourceTree = "<group>"; };
 		8F385E752046910100F29058 /* MedecinMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedecinMenuViewController.swift; path = Controler/MedecinMenuViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +257,7 @@
 			children = (
 				8F385E8A2046B55000F29058 /* State.swift */,
 				8F763946204D832100EFD1CF /* ListState.swift */,
+				24D457F5204D897D00E27BC5 /* Event.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -408,6 +412,7 @@
 				8F385E762046910100F29058 /* MedecinMenuViewController.swift in Sources */,
 				8F385E882046995900F29058 /* AddMedViewController.swift in Sources */,
 				8F90A907203C814400B74A0A /* EmergencyNumbersViewController.swift in Sources */,
+				24D457F6204D897D00E27BC5 /* Event.swift in Sources */,
 				8FC4805620401BEF00B9FD29 /* EditMedPillsViewController.swift in Sources */,
 				8F385E7020468C3300F29058 /* EditPriseViewController.swift in Sources */,
 				8F90A901203C74ED00B74A0A /* EditMedecinsViewController.swift in Sources */,
@@ -442,6 +447,7 @@
 				8FC4804B2040121700B9FD29 /* EtatViewController.swift in Sources */,
 				8FC480632040232500B9FD29 /* AddRDVMedViewController.swift in Sources */,
 				8F385E86204695E700F29058 /* AddSportViewController.swift in Sources */,
+				24D457F7204D897D00E27BC5 /* Event.swift in Sources */,
 				8FC4804E204014C600B9FD29 /* EventViewController.swift in Sources */,
 				8FC480482040111700B9FD29 /* MedInfosViewController.swift in Sources */,
 				8F90A902203C74ED00B74A0A /* EditMedecinsViewController.swift in Sources */,
