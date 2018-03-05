@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		24D457F6204D897D00E27BC5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457F5204D897D00E27BC5 /* Event.swift */; };
 		24D457F7204D897D00E27BC5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457F5204D897D00E27BC5 /* Event.swift */; };
+		24D457F9204D8C8200E27BC5 /* ListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457F8204D8C8200E27BC5 /* ListEvent.swift */; };
+		24D457FA204D8C8200E27BC5 /* ListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457F8204D8C8200E27BC5 /* ListEvent.swift */; };
 		8F385E7020468C3300F29058 /* EditPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E6F20468C3300F29058 /* EditPriseViewController.swift */; };
 		8F385E7120468C3300F29058 /* EditPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E6F20468C3300F29058 /* EditPriseViewController.swift */; };
 		8F385E7320468F6A00F29058 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E7220468F6A00F29058 /* DiaryViewController.swift */; };
@@ -95,6 +97,7 @@
 
 /* Begin PBXFileReference section */
 		24D457F5204D897D00E27BC5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		24D457F8204D8C8200E27BC5 /* ListEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEvent.swift; sourceTree = "<group>"; };
 		8F385E6F20468C3300F29058 /* EditPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPriseViewController.swift; path = Controler/EditPriseViewController.swift; sourceTree = "<group>"; };
 		8F385E7220468F6A00F29058 /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = Controler/DiaryViewController.swift; sourceTree = "<group>"; };
 		8F385E752046910100F29058 /* MedecinMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedecinMenuViewController.swift; path = Controler/MedecinMenuViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +261,7 @@
 				8F385E8A2046B55000F29058 /* State.swift */,
 				8F763946204D832100EFD1CF /* ListState.swift */,
 				24D457F5204D897D00E27BC5 /* Event.swift */,
+				24D457F8204D8C8200E27BC5 /* ListEvent.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -421,6 +425,7 @@
 				8F763947204D832100EFD1CF /* ListState.swift in Sources */,
 				8FC4805F204022FC00B9FD29 /* RDVMedViewController.swift in Sources */,
 				8F90A8C5203C5C4700B74A0A /* ViewController.swift in Sources */,
+				24D457F9204D8C8200E27BC5 /* ListEvent.swift in Sources */,
 				8FC480472040111400B9FD29 /* MedInfosViewController.swift in Sources */,
 				8F385E85204695E700F29058 /* AddSportViewController.swift in Sources */,
 				8F90A8CB203C5C4700B74A0A /* PKProject.xcdatamodeld in Sources */,
@@ -449,6 +454,7 @@
 				8F385E86204695E700F29058 /* AddSportViewController.swift in Sources */,
 				24D457F7204D897D00E27BC5 /* Event.swift in Sources */,
 				8FC4804E204014C600B9FD29 /* EventViewController.swift in Sources */,
+				24D457FA204D8C8200E27BC5 /* ListEvent.swift in Sources */,
 				8FC480482040111700B9FD29 /* MedInfosViewController.swift in Sources */,
 				8F90A902203C74ED00B74A0A /* EditMedecinsViewController.swift in Sources */,
 				8F385E7120468C3300F29058 /* EditPriseViewController.swift in Sources */,

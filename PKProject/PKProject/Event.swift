@@ -7,3 +7,32 @@
 //
 
 import Foundation
+
+/**
+ Event type
+ 
+ **date**: Event -> Date
+ **titleEvent : Event -> String
+ 
+ */
+
+
+class Event {
+    
+
+        let date : Date
+        let titleEvent : Int
+        
+        
+        /// Description
+        ///
+        /// - Parameters:
+        ///   - date: date of the 'Event'
+        ///   - titleEvent: title of the 'Event'
+        
+        init(date : Date, titleEvent : Int){
+                self.date=date
+                self.titleEvent=titleEvent
+        }
+
+}
