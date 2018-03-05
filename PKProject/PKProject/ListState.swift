@@ -11,6 +11,10 @@ import Foundation
 class ListState : Sequence {
     var lstate : [State] = []
     
+    /// <#Description#>
+    ///
+    /// - Parameter state: <#state description#>
+    /// - Returns: <#return value description#>
     func add(state: State) -> ListState{
         self.pset.append(State)
     }
