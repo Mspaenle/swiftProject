@@ -48,8 +48,8 @@ class ListDoctorModel : Sequence {
     //
     
     @discardableResult
-    func removeDoctor(doctor: DoctorModel) -> ListDoctorModel{
-        if let i = self.ldoctor.index(of: doctor){
+    func remove(number: DoctorModel) -> ListDoctorModel{
+        if let i = self.ldoctor.index(of: number){
             self.ldoctor.remove(at: i)
         }
         return self
