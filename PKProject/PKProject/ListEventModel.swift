@@ -40,7 +40,7 @@ class ListEventModel : Sequence {
     //
     
     @discardableResult
-    func addEvent(event: EventModel) -> ListEventModel{
+    func add(event: EventModel) -> ListEventModel{
         self.levent.append(event)
         return self
     }
@@ -86,7 +86,7 @@ class ListEventModel : Sequence {
     // - Returns: Float with the frequency of the Event
     //
     
-    func getFrequencyEvent(forFrequenceEvent titleEvent: String) -> Float{
+    func getFrequencyEvent(forFrequenceEvent titleEvent: Int) -> Int{
         return countEvent(forEventModels: titleEvent)/self.levent.count
     }
     
@@ -96,16 +96,20 @@ class ListEventModel : Sequence {
     ///
     /// - Parameter titleEvent: String to be looked for
     /// - Returns: integer corresponding to the number of occurence of the string in ListEventModel
-    func countEvent(forEventModels titleEvent: String) -> Int{
+    func countEvent(forEventModels titleEvent: Int) -> Int{
         var count : Int = 0
         for t in self{
-            if( (t.titleEvent == event) ){
-                count=+
+            if( (t.titleEvent == titleEvent) ){
+                count+=1
             }
         }
         return count
     }
     
+    /// number of elements in the set
+    var count: Int{
+        return self.levent.count
+    }
     
     
     subscript(index: Int) -> EventModel {
@@ -127,7 +131,7 @@ class ListEventModel : Sequence {
     /// `ListEventModel` -> `ItListEvent` -- make an iterator on the set
     ///
     /// - Returns: a new iterator on the set initialized on the first element
-    func getItEvent() -> ItListEvent{
+    func makeIterator() -> ItListEvent{
         return ItListEvent(self)
     }
 }

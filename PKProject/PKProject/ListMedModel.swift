@@ -20,43 +20,40 @@ import Foundation
 //
 
 class ListMedModel : Sequence {
-    fileprivate var lmed : [MedModel] = []
-    
-    /// Description
-    ///
-    /// - Parameter MedModel: <#state description#>
-    /// - Returns: <#return value description#>
+    var lmed : [MedModel] = []
     
     //
-    //*addMed* : ListMedModel x MedModel -> ListMedModel -- add a MedModel in ListMedModel
+    //*add* : ListMedModel x MedModel -> ListMedModel -- add a MedModel in ListMedModel
     //
     // - Parameter med: `MedModel` to be added
     // - Returns: `ListMedModel` with new `MedModel` added to the set
     //
-    
     @discardableResult
-    func addMed(med: MedModel) -> ListMedModel{
+    func add(med: MedModel) -> ListMedModel{
         self.lmed.append(med)
         return self
     }
     
     //
-    //*removeMed* : ListMedModel x MedModel -> ListMedModel -- remove a MedModel from the ListMedModel
+    //*remove* : ListMedModel x MedModel -> ListMedModel -- remove a MedModel from the ListMedModel
     //
     // - Parameter med: `MedModel` to be removed
     // - Returns: `ListMedModel` with `MedModel` removed if `MedModel` belonged to `ListMedModel`
     //
     
     @discardableResult
-    func removeMed(med: MedModel) -> ListMedModel{
-        if let i = self.lmed.index(of: med){
+    func remove(number: MedModel) -> ListMedModel{
+        if let i = self.lmed.index(of: number){
             self.lmed.remove(at: i)
         }
         return self
     }
     
     
-    
+    /// number of elements in the set
+    var count: Int{
+        return self.lmed.count
+    }
     
     subscript(index: Int) -> MedModel {
         get {
@@ -77,7 +74,7 @@ class ListMedModel : Sequence {
     /// `ListMedModel` -> `ItListMed` -- make an iterator on the set
     ///
     /// - Returns: a new iterator on the set initialized on the first element
-    func getItMed() -> ItListMed{
+    func makeIterator() -> ItListMed{
         return ItListMed(self)
     }
 }
@@ -90,7 +87,7 @@ struct ItListMed : IteratorProtocol{
     private var current: Int = 0
     private let set: ListMedModel
     
-    fileprivate init(_ s: ListMedModel){
+    init(_ s: ListMedModel){
         self.set = s
     }
     

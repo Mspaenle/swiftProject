@@ -21,7 +21,7 @@ import Foundation
 //
 
 class ListRDVModel : Sequence {
-    fileprivate var lrdv : [RDVModel] = []
+    var lrdv : [RDVModel] = []
     
     /// Description
     ///
@@ -36,11 +36,12 @@ class ListRDVModel : Sequence {
     //
     
     @discardableResult
-    func addRDV(rdv: RDVModel) -> ListRDVModel{
+    func add(rdv: RDVModel) -> ListRDVModel{
         self.lrdv.append(rdv)
         return self
     }
     
+
     //
     //*removeRDV* : ListRDVModel x RDVModel -> ListRDVModel -- remove a RDVModel from the ListRDVModel
     //
@@ -49,13 +50,17 @@ class ListRDVModel : Sequence {
     //
     
     @discardableResult
-    func removeRDV(rdv: RDVModel) -> ListRDVModel{
+    func remove(rdv: RDVModel) -> ListRDVModel{
         if let i = self.lrdv.index(of: rdv){
             self.lrdv.remove(at: i)
         }
         return self
     }
     
+    /// number of elements in the set
+    var count: Int{
+        return self.lrdv.count
+    }
     
     
     
@@ -78,7 +83,7 @@ class ListRDVModel : Sequence {
     /// `ListRDVModel` -> `ItListRDV` -- make an iterator on the set
     ///
     /// - Returns: a new iterator on the set initialized on the first element
-    func getItRDV() -> ItListRDV{
+    func makeIterator() -> ItListRDV{
         return ItListRDV(self)
     }
 }
@@ -91,7 +96,7 @@ struct ItListRDV : IteratorProtocol{
     private var current: Int = 0
     private let set: ListRDVModel
     
-    fileprivate init(_ s: ListRDVModel){
+    init(_ s: ListRDVModel){
         self.set = s
     }
     

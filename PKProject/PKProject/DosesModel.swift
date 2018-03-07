@@ -9,7 +9,7 @@
 import Foundation
 
 
-class DosesModel : Sequence {
+class DosesModel{
     fileprivate var doses : [String] = []
 
     /// Description

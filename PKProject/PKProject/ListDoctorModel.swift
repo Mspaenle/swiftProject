@@ -73,11 +73,16 @@ class ListDoctorModel : Sequence {
         }
     }
     
+    /// number of elements in the set
+    var count: Int{
+        return self.ldoctor.count
+    }
     
     /// `ListDoctorModel` -> `ItListDoctor` -- make an iterator on the set
     ///
     /// - Returns: a new iterator on the set initialized on the first element
-    func getItDoctor() -> ItListDoctor{
+    /// number of elements in the set
+    func makeIterator() -> ItListDoctor{
         return ItListDoctor(self)
     }
 }

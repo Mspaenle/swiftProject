@@ -36,7 +36,7 @@ class ListActivityModel : Sequence {
     //
     
     @discardableResult
-    func addActivity(activity: ActivityModel) -> ListActivityModel{
+    func add(activity: ActivityModel) -> ListActivityModel{
         self.lactivity.append(activity)
         return self
     }
@@ -49,7 +49,7 @@ class ListActivityModel : Sequence {
     //
     
     @discardableResult
-    func removeActivity(activity: ActivityModel) -> ListActivityModel{
+    func remove(activity: ActivityModel) -> ListActivityModel{
         if let i = self.lactivity.index(of: activity){
             self.lactivity.remove(at: i)
         }
@@ -57,7 +57,10 @@ class ListActivityModel : Sequence {
     }
     
     
-    
+    /// number of elements in the set
+    var count: Int{
+        return self.lactivity.count
+    }
     
     subscript(index: Int) -> ActivityModel {
         get {
@@ -78,7 +81,7 @@ class ListActivityModel : Sequence {
     /// `ListActivityModel` -> `ItListActivity` -- make an iterator on the set
     ///
     /// - Returns: a new iterator on the set initialized on the first element
-    func getItActivity() -> ItListActivity{
+    func makeIterator() -> ItListActivity{
         return ItListActivity(self)
     }
 }

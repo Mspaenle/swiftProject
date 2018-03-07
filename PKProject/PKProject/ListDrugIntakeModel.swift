@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class ListDrugIntakeModel{
+class ListDrugIntakeModel : Sequence{
     var lIntake : [DrugIntake] = []
     
     /// 'ListDrugIntakeModel' x 'StateModel' -> 'ListDrugIntakeModel' -- add a State to the collection, return the collection
@@ -60,7 +60,6 @@ class ListDrugIntakeModel{
     func makeIterator() -> ItListDrugIntake{
         return ItListDrugIntake(self)
     }
-    
 }
 
 // MARK: -
