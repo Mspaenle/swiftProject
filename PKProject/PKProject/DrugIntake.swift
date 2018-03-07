@@ -1,5 +1,5 @@
 //
-//  State.swift
+//  DrugIntake.swift
 //  PKProject
 //
 //  Created by Mahe SPAENLE on 07/03/2018.
@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-extension State{
+extension DrugIntake{
     
 }
-

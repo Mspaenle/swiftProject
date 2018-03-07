@@ -47,6 +47,18 @@
 		8F385E86204695E700F29058 /* AddSportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E84204695E700F29058 /* AddSportViewController.swift */; };
 		8F385E882046995900F29058 /* AddMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E872046995900F29058 /* AddMedViewController.swift */; };
 		8F385E892046995900F29058 /* AddMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E872046995900F29058 /* AddMedViewController.swift */; };
+		8F7DB1572050556B007B62FA /* ListStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB1562050556B007B62FA /* ListStateModel.swift */; };
+		8F7DB1582050556B007B62FA /* ListStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB1562050556B007B62FA /* ListStateModel.swift */; };
+		8F7DB15A20505769007B62FA /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB15920505769007B62FA /* State.swift */; };
+		8F7DB15B20505769007B62FA /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB15920505769007B62FA /* State.swift */; };
+		8F7DB15D205057E1007B62FA /* EmergencyNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB15C205057E1007B62FA /* EmergencyNumber.swift */; };
+		8F7DB15E205057E1007B62FA /* EmergencyNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB15C205057E1007B62FA /* EmergencyNumber.swift */; };
+		8F7DB1602050580D007B62FA /* ListEmergencyNumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB15F2050580D007B62FA /* ListEmergencyNumberModel.swift */; };
+		8F7DB1612050580D007B62FA /* ListEmergencyNumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB15F2050580D007B62FA /* ListEmergencyNumberModel.swift */; };
+		8F7DB16320505841007B62FA /* DrugIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB16220505841007B62FA /* DrugIntake.swift */; };
+		8F7DB16420505841007B62FA /* DrugIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB16220505841007B62FA /* DrugIntake.swift */; };
+		8F7DB16620505870007B62FA /* ListDrugIntakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB16520505870007B62FA /* ListDrugIntakeModel.swift */; };
+		8F7DB16720505870007B62FA /* ListDrugIntakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB16520505870007B62FA /* ListDrugIntakeModel.swift */; };
 		8F90A8C3203C5C4700B74A0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F90A8C2203C5C4700B74A0A /* AppDelegate.swift */; };
 		8F90A8C5203C5C4700B74A0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F90A8C4203C5C4700B74A0A /* ViewController.swift */; };
 		8F90A8C8203C5C4700B74A0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F90A8C6203C5C4700B74A0A /* Main.storyboard */; };
@@ -130,6 +142,12 @@
 		8F385E81204695DB00F29058 /* EditSportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditSportViewController.swift; path = Controler/EditSportViewController.swift; sourceTree = "<group>"; };
 		8F385E84204695E700F29058 /* AddSportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSportViewController.swift; path = Controler/AddSportViewController.swift; sourceTree = "<group>"; };
 		8F385E872046995900F29058 /* AddMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMedViewController.swift; path = Controler/AddMedViewController.swift; sourceTree = "<group>"; };
+		8F7DB1562050556B007B62FA /* ListStateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListStateModel.swift; sourceTree = "<group>"; };
+		8F7DB15920505769007B62FA /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		8F7DB15C205057E1007B62FA /* EmergencyNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyNumber.swift; sourceTree = "<group>"; };
+		8F7DB15F2050580D007B62FA /* ListEmergencyNumberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEmergencyNumberModel.swift; sourceTree = "<group>"; };
+		8F7DB16220505841007B62FA /* DrugIntake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugIntake.swift; sourceTree = "<group>"; };
+		8F7DB16520505870007B62FA /* ListDrugIntakeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDrugIntakeModel.swift; sourceTree = "<group>"; };
 		8F90A8BF203C5C4700B74A0A /* PKProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PKProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F90A8C2203C5C4700B74A0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F90A8C4203C5C4700B74A0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -290,6 +308,12 @@
 				24D45816204DB4DE00E27BC5 /* ListRDVModel.swift */,
 				24D45819204DB6C900E27BC5 /* ActivityModel.swift */,
 				24D4581C204DB9C400E27BC5 /* ListActivityModel.swift */,
+				8F7DB1562050556B007B62FA /* ListStateModel.swift */,
+				8F7DB15920505769007B62FA /* State.swift */,
+				8F7DB15C205057E1007B62FA /* EmergencyNumber.swift */,
+				8F7DB15F2050580D007B62FA /* ListEmergencyNumberModel.swift */,
+				8F7DB16220505841007B62FA /* DrugIntake.swift */,
+				8F7DB16520505870007B62FA /* ListDrugIntakeModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -441,10 +465,14 @@
 				24D45817204DB4DE00E27BC5 /* ListRDVModel.swift in Sources */,
 				8F90A90D203C840A00B74A0A /* EditEmergencyNumberViewController.swift in Sources */,
 				8F385E82204695DB00F29058 /* EditSportViewController.swift in Sources */,
+				8F7DB15D205057E1007B62FA /* EmergencyNumber.swift in Sources */,
+				8F7DB15A20505769007B62FA /* State.swift in Sources */,
 				8FC4804D204014C600B9FD29 /* EventViewController.swift in Sources */,
 				8F385E762046910100F29058 /* MedecinMenuViewController.swift in Sources */,
 				8F385E882046995900F29058 /* AddMedViewController.swift in Sources */,
+				8F7DB1602050580D007B62FA /* ListEmergencyNumberModel.swift in Sources */,
 				8F90A907203C814400B74A0A /* EmergencyNumbersViewController.swift in Sources */,
+				8F7DB16320505841007B62FA /* DrugIntake.swift in Sources */,
 				24D45802204DA42600E27BC5 /* DoctorModel.swift in Sources */,
 				8FC4805620401BEF00B9FD29 /* EditMedPillsViewController.swift in Sources */,
 				24D4581A204DB6C900E27BC5 /* ActivityModel.swift in Sources */,
@@ -453,6 +481,7 @@
 				8FC480502040185300B9FD29 /* PillsViewController.swift in Sources */,
 				8FC480652040253500B9FD29 /* EditRDVMedViewController.swift in Sources */,
 				24D45814204DB2CA00E27BC5 /* RDVModel.swift in Sources */,
+				8F7DB16620505870007B62FA /* ListDrugIntakeModel.swift in Sources */,
 				8FC4805F204022FC00B9FD29 /* RDVMedViewController.swift in Sources */,
 				8F90A8C5203C5C4700B74A0A /* ViewController.swift in Sources */,
 				24D457FF204D959900E27BC5 /* ListEventModel.swift in Sources */,
@@ -473,6 +502,7 @@
 				8F90A90A203C838400B74A0A /* AddEmergencyNumberViewController.swift in Sources */,
 				8F90A8FB203C69C100B74A0A /* InformationsViewController.swift in Sources */,
 				24D4581D204DB9C400E27BC5 /* ListActivityModel.swift in Sources */,
+				8F7DB1572050556B007B62FA /* ListStateModel.swift in Sources */,
 				8FC48053204019D700B9FD29 /* EditPillsViewController.swift in Sources */,
 				8F385E7F2046956B00F29058 /* SportViewController.swift in Sources */,
 				24D45805204DA7A700E27BC5 /* ListDoctorModel.swift in Sources */,
@@ -486,6 +516,7 @@
 				24D4580F204DB02200E27BC5 /* ListMedModel.swift in Sources */,
 				8FC4805A20401FD300B9FD29 /* AddPillsViewController.swift in Sources */,
 				8FC4804B2040121700B9FD29 /* EtatViewController.swift in Sources */,
+				8F7DB16720505870007B62FA /* ListDrugIntakeModel.swift in Sources */,
 				8FC480632040232500B9FD29 /* AddRDVMedViewController.swift in Sources */,
 				24D4580C204DAE1100E27BC5 /* MedModel.swift in Sources */,
 				8F385E86204695E700F29058 /* AddSportViewController.swift in Sources */,
@@ -502,17 +533,22 @@
 				8F385E802046956B00F29058 /* SportViewController.swift in Sources */,
 				24D45800204D959900E27BC5 /* ListEventModel.swift in Sources */,
 				8F90A8DB203C5C4700B74A0A /* PKProjectTests.swift in Sources */,
+				8F7DB16420505841007B62FA /* DrugIntake.swift in Sources */,
 				8FC480512040185300B9FD29 /* PillsViewController.swift in Sources */,
 				8F90A90B203C838400B74A0A /* AddEmergencyNumberViewController.swift in Sources */,
 				24D45815204DB2CA00E27BC5 /* RDVModel.swift in Sources */,
 				24D4581E204DB9C400E27BC5 /* ListActivityModel.swift in Sources */,
+				8F7DB15B20505769007B62FA /* State.swift in Sources */,
 				8FC48054204019D700B9FD29 /* EditPillsViewController.swift in Sources */,
 				24D4581B204DB6C900E27BC5 /* ActivityModel.swift in Sources */,
+				8F7DB15E205057E1007B62FA /* EmergencyNumber.swift in Sources */,
 				8F90A8FF203C74C100B74A0A /* MedecinsViewController.swift in Sources */,
+				8F7DB1612050580D007B62FA /* ListEmergencyNumberModel.swift in Sources */,
 				24D45806204DA7A700E27BC5 /* ListDoctorModel.swift in Sources */,
 				8FC480662040253500B9FD29 /* EditRDVMedViewController.swift in Sources */,
 				8F385E83204695DB00F29058 /* EditSportViewController.swift in Sources */,
 				8F385E772046910100F29058 /* MedecinMenuViewController.swift in Sources */,
+				8F7DB1582050556B007B62FA /* ListStateModel.swift in Sources */,
 				8F385E7420468F6A00F29058 /* DiaryViewController.swift in Sources */,
 				8F385E7A2046926100F29058 /* RecapPatientViewController.swift in Sources */,
 				24D45809204DAA9D00E27BC5 /* DosesModel.swift in Sources */,

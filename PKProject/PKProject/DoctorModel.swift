@@ -20,7 +20,7 @@ import Foundation
  */
 
 
-class EventModel {
+class DoctorModel {
     
     
     private var mname : String
