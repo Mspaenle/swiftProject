@@ -35,7 +35,7 @@ class ListDoctorModel : Sequence {
     //
     
     @discardableResult
-    func addDoctor(doctor: DoctorModel) -> ListDoctorModel{
+    func add(doctor: DoctorModel) -> ListDoctorModel{
         self.ldoctor.append(doctor)
         return self
     }
