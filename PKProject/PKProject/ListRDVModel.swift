@@ -21,7 +21,7 @@ import Foundation
 //
 
 class ListRDVModel : Sequence {
-    var lrdv : [RDVModel] = []
+    var lrdv : [RDV] = []
     
     /// Description
     ///
@@ -36,7 +36,7 @@ class ListRDVModel : Sequence {
     //
     
     @discardableResult
-    func add(rdv: RDVModel) -> ListRDVModel{
+    func add(rdv: RDV) -> ListRDVModel{
         self.lrdv.append(rdv)
         return self
     }
@@ -50,7 +50,7 @@ class ListRDVModel : Sequence {
     //
     
     @discardableResult
-    func remove(rdv: RDVModel) -> ListRDVModel{
+    func remove(rdv: RDV) -> ListRDVModel{
         if let i = self.lrdv.index(of: rdv){
             self.lrdv.remove(at: i)
         }
@@ -64,7 +64,7 @@ class ListRDVModel : Sequence {
     
     
     
-    subscript(index: Int) -> RDVModel {
+    subscript(index: Int) -> RDV {
         get {
             guard (index>=0) && (index<self.count) else{
                 fatalError("index out of range")
@@ -110,7 +110,7 @@ struct ItListRDV : IteratorProtocol{
     }
     
     @discardableResult
-    mutating func next() -> RDVModel? {
+    mutating func next() -> RDV? {
         guard self.current < self.set.count else{
             return nil
         }

@@ -21,7 +21,7 @@ import Foundation
 //
 
 class ListActivityModel : Sequence {
-    fileprivate var lactivity : [ActivityModel] = []
+    fileprivate var lactivity : [Activity] = []
     
     /// Description
     ///
@@ -36,7 +36,7 @@ class ListActivityModel : Sequence {
     //
     
     @discardableResult
-    func add(activity: ActivityModel) -> ListActivityModel{
+    func add(activity: Activity) -> ListActivityModel{
         self.lactivity.append(activity)
         return self
     }
@@ -49,7 +49,7 @@ class ListActivityModel : Sequence {
     //
     
     @discardableResult
-    func remove(activity: ActivityModel) -> ListActivityModel{
+    func remove(activity: Activity) -> ListActivityModel{
         if let i = self.lactivity.index(of: activity){
             self.lactivity.remove(at: i)
         }
@@ -62,7 +62,7 @@ class ListActivityModel : Sequence {
         return self.lactivity.count
     }
     
-    subscript(index: Int) -> ActivityModel {
+    subscript(index: Int) -> Activity {
         get {
             guard (index>=0) && (index<self.count) else{
                 fatalError("index out of range")
@@ -108,7 +108,7 @@ struct ItListActivity : IteratorProtocol{
     }
     
     @discardableResult
-    mutating func next() -> ActivityModel? {
+    mutating func next() -> Activity? {
         guard self.current < self.set.count else{
             return nil
         }

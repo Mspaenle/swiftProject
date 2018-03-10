@@ -20,7 +20,7 @@ import Foundation
 //
 
 class ListDoctorModel : Sequence {
-    fileprivate var ldoctor : [DoctorModel] = []
+    fileprivate var ldoctor : [Doctor] = []
     
     /// Description
     ///
@@ -35,7 +35,7 @@ class ListDoctorModel : Sequence {
     //
     
     @discardableResult
-    func add(doctor: DoctorModel) -> ListDoctorModel{
+    func add(doctor: Doctor) -> ListDoctorModel{
         self.ldoctor.append(doctor)
         return self
     }
@@ -47,7 +47,7 @@ class ListDoctorModel : Sequence {
     // - Returns: `ListDoctorModel` with `DoctorModel` removed if `DoctorModel` belonged to `ListDoctorModel`
     //
     @discardableResult
-    func remove(number: DoctorModel) -> ListDoctorModel{
+    func remove(number: Doctor) -> ListDoctorModel{
         if let i = self.ldoctor.index(of: number){
             self.ldoctor.remove(at: i)
         }
@@ -57,7 +57,7 @@ class ListDoctorModel : Sequence {
 
     
     
-    subscript(index: Int) -> DoctorModel {
+    subscript(index: Int) -> Doctor {
         get {
             guard (index>=0) && (index<self.count) else{
                 fatalError("index out of range")
@@ -108,7 +108,7 @@ struct ItListDoctor : IteratorProtocol{
     }
     
     @discardableResult
-    mutating func next() -> DoctorModel? {
+    mutating func next() -> Doctor? {
         guard self.current < self.set.count else{
             return nil
         }

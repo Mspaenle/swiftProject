@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
-class RecapPatientViewController: UIViewController {
+class RecapPatientViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
+    var states : [State] = []
+    
+    @IBOutlet weak var StateTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +25,11 @@ class RecapPatientViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    }
     /*
     // MARK: - Navigation
 

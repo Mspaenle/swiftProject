@@ -1,5 +1,5 @@
 //
-//  RDV.swift
+//  Med.swift
 //  PKProject
 //
 //  Created by Mahe SPAENLE on 10/03/2018.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-extension RDV{
+extension Med{
     
 }
 

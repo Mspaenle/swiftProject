@@ -22,7 +22,7 @@ class RDVModel {
     
     
     private var rtitle : String
-    let doctor : DoctorModel
+    let doctor : Doctor
     private var rdate : Date
     
     
@@ -57,7 +57,7 @@ class RDVModel {
     
     
     
-    init(title : String, doctor : DoctorModel, date : Date){
+    init(title : String, doctor : Doctor, date : Date){
         self.rtitle = title
         self.doctor = doctor
         self.rdate = date

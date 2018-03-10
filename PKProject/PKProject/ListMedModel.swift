@@ -20,7 +20,7 @@ import Foundation
 //
 
 class ListMedModel : Sequence {
-    var lmed : [MedModel] = []
+    var lmed : [Med] = []
     
     //
     //*add* : ListMedModel x MedModel -> ListMedModel -- add a MedModel in ListMedModel
@@ -29,7 +29,7 @@ class ListMedModel : Sequence {
     // - Returns: `ListMedModel` with new `MedModel` added to the set
     //
     @discardableResult
-    func add(med: MedModel) -> ListMedModel{
+    func add(med: Med) -> ListMedModel{
         self.lmed.append(med)
         return self
     }
@@ -42,7 +42,7 @@ class ListMedModel : Sequence {
     //
     
     @discardableResult
-    func remove(number: MedModel) -> ListMedModel{
+    func remove(number: Med) -> ListMedModel{
         if let i = self.lmed.index(of: number){
             self.lmed.remove(at: i)
         }
@@ -55,7 +55,7 @@ class ListMedModel : Sequence {
         return self.lmed.count
     }
     
-    subscript(index: Int) -> MedModel {
+    subscript(index: Int) -> Med {
         get {
             guard (index>=0) && (index<self.count) else{
                 fatalError("index out of range")
@@ -101,7 +101,7 @@ struct ItListMed : IteratorProtocol{
     }
     
     @discardableResult
-    mutating func next() -> MedModel? {
+    mutating func next() -> Med? {
         guard self.current < self.set.count else{
             return nil
         }
