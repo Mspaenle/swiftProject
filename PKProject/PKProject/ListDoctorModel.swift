@@ -46,7 +46,6 @@ class ListDoctorModel : Sequence {
     // - Parameter doctor: `DoctorModel` to be removed
     // - Returns: `ListDoctorModel` with `DoctorModel` removed if `DoctorModel` belonged to `ListDoctorModel`
     //
-    
     @discardableResult
     func remove(number: DoctorModel) -> ListDoctorModel{
         if let i = self.ldoctor.index(of: number){
