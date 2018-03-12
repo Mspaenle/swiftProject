@@ -9,9 +9,8 @@
 import UIKit
 import CoreData
 
-class RecapPatientViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-
-    var states : [State] = []
+class RecapPatientViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
+    var states : [String] = []
     
     @IBOutlet weak var StateTable: UITableView!
     override func viewDidLoad() {
@@ -26,10 +25,15 @@ class RecapPatientViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = self.StateTable.dequeueReusableCell(withIdentifier: "StateCell", for: indexPath) as! StateTableViewCell
+        cell.StateDateLabel.text = self.states[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return self.states.count
     }
+    
     /*
     // MARK: - Navigation
 
