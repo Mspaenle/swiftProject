@@ -21,8 +21,8 @@
 		24D45818204DB4DE00E27BC5 /* ListRDVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D45816204DB4DE00E27BC5 /* ListRDVModel.swift */; };
 		24D4581D204DB9C400E27BC5 /* ListActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D4581C204DB9C400E27BC5 /* ListActivityModel.swift */; };
 		24D4581E204DB9C400E27BC5 /* ListActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D4581C204DB9C400E27BC5 /* ListActivityModel.swift */; };
-		8F16E4CC2056CDD8003A3497 /* StateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16E4CB2056CDD8003A3497 /* StateTableViewCell.swift */; };
-		8F16E4CD2056CDD8003A3497 /* StateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16E4CB2056CDD8003A3497 /* StateTableViewCell.swift */; };
+		8F16E4CF2056CE76003A3497 /* StateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16E4CE2056CE76003A3497 /* StateTableViewCell.swift */; };
+		8F16E4D02056CE76003A3497 /* StateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16E4CE2056CE76003A3497 /* StateTableViewCell.swift */; };
 		8F385E7020468C3300F29058 /* EditPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E6F20468C3300F29058 /* EditPriseViewController.swift */; };
 		8F385E7120468C3300F29058 /* EditPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E6F20468C3300F29058 /* EditPriseViewController.swift */; };
 		8F385E7320468F6A00F29058 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E7220468F6A00F29058 /* DiaryViewController.swift */; };
@@ -135,7 +135,7 @@
 		24D4580D204DB02200E27BC5 /* ListMedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListMedModel.swift; sourceTree = "<group>"; };
 		24D45816204DB4DE00E27BC5 /* ListRDVModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRDVModel.swift; sourceTree = "<group>"; };
 		24D4581C204DB9C400E27BC5 /* ListActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListActivityModel.swift; sourceTree = "<group>"; };
-		8F16E4CB2056CDD8003A3497 /* StateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTableViewCell.swift; sourceTree = "<group>"; };
+		8F16E4CE2056CE76003A3497 /* StateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StateTableViewCell.swift; path = /Users/mahe.spaenle/Documents/swiftProject/PKProject/PKProject/Controler/StateTableViewCell.swift; sourceTree = "<absolute>"; };
 		8F385E6F20468C3300F29058 /* EditPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPriseViewController.swift; path = Controler/EditPriseViewController.swift; sourceTree = "<group>"; };
 		8F385E7220468F6A00F29058 /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = Controler/DiaryViewController.swift; sourceTree = "<group>"; };
 		8F385E752046910100F29058 /* MedecinMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedecinMenuViewController.swift; path = Controler/MedecinMenuViewController.swift; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 				8F385E81204695DB00F29058 /* EditSportViewController.swift */,
 				8F385E84204695E700F29058 /* AddSportViewController.swift */,
 				8F385E872046995900F29058 /* AddMedViewController.swift */,
-				8F16E4CB2056CDD8003A3497 /* StateTableViewCell.swift */,
+				8F16E4CE2056CE76003A3497 /* StateTableViewCell.swift */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -513,7 +513,7 @@
 				8F385E792046926100F29058 /* RecapPatientViewController.swift in Sources */,
 				8F90A90A203C838400B74A0A /* AddEmergencyNumberViewController.swift in Sources */,
 				8FC41A93205420E400C3CC4F /* Doctor.swift in Sources */,
-				8F16E4CC2056CDD8003A3497 /* StateTableViewCell.swift in Sources */,
+				8F16E4CF2056CE76003A3497 /* StateTableViewCell.swift in Sources */,
 				8F90A8FB203C69C100B74A0A /* InformationsViewController.swift in Sources */,
 				24D4581D204DB9C400E27BC5 /* ListActivityModel.swift in Sources */,
 				8FC41AA22054306800C3CC4F /* Activity.swift in Sources */,
@@ -558,7 +558,7 @@
 				8FC41A9A205421DC00C3CC4F /* ListDosesModel.swift in Sources */,
 				8FC48054204019D700B9FD29 /* EditPillsViewController.swift in Sources */,
 				8F7DB15E205057E1007B62FA /* EmergencyNumber.swift in Sources */,
-				8F16E4CD2056CDD8003A3497 /* StateTableViewCell.swift in Sources */,
+				8F16E4D02056CE76003A3497 /* StateTableViewCell.swift in Sources */,
 				8F90A8FF203C74C100B74A0A /* MedecinsViewController.swift in Sources */,
 				8F7DB1612050580D007B62FA /* ListEmergencyNumberModel.swift in Sources */,
 				24D45806204DA7A700E27BC5 /* ListDoctorModel.swift in Sources */,
