@@ -146,7 +146,7 @@
 		8F385E84204695E700F29058 /* AddSportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSportViewController.swift; path = Controler/AddSportViewController.swift; sourceTree = "<group>"; };
 		8F385E872046995900F29058 /* AddMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMedViewController.swift; path = Controler/AddMedViewController.swift; sourceTree = "<group>"; };
 		8F7DB1562050556B007B62FA /* ListStateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListStateModel.swift; sourceTree = "<group>"; };
-		8F7DB15920505769007B62FA /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		8F7DB15920505769007B62FA /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = State.swift; path = /Users/mahe.spaenle/Documents/swiftProject/PKProject/PKProject/State.swift; sourceTree = "<absolute>"; };
 		8F7DB15C205057E1007B62FA /* EmergencyNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyNumber.swift; sourceTree = "<group>"; };
 		8F7DB15F2050580D007B62FA /* ListEmergencyNumberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEmergencyNumberModel.swift; sourceTree = "<group>"; };
 		8F7DB16220505841007B62FA /* DrugIntake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugIntake.swift; sourceTree = "<group>"; };
