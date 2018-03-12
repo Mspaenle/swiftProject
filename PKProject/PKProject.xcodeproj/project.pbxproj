@@ -215,6 +215,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F54C7592056D294007F17AE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		8F90A8B6203C5C4700B74A0A = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +245,7 @@
 		8F90A8C1203C5C4700B74A0A /* PKProject */ = {
 			isa = PBXGroup;
 			children = (
+				8F54C7592056D294007F17AE /* Helpers */,
 				8F90A8F5203C5E0F00B74A0A /* Views */,
 				8F90A8F4203C5E0900B74A0A /* Models */,
 				8F90A8F3203C5DF900B74A0A /* Controlers */,
@@ -246,7 +254,6 @@
 				8F90A8CC203C5C4700B74A0A /* Assets.xcassets */,
 				8F90A8CE203C5C4700B74A0A /* LaunchScreen.storyboard */,
 				8F90A8D1203C5C4700B74A0A /* Info.plist */,
-				8F90A8C9203C5C4700B74A0A /* PKProject.xcdatamodeld */,
 			);
 			path = PKProject;
 			sourceTree = "<group>";
@@ -326,6 +333,7 @@
 				8FC41A9B20542DE100C3CC4F /* Med.swift */,
 				8FC41A9E20542F6700C3CC4F /* RDV.swift */,
 				8FC41AA12054306800C3CC4F /* Activity.swift */,
+				8F90A8C9203C5C4700B74A0A /* PKProject.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";

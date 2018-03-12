@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class RecapPatientViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
-    var states : [State] = []
+    var states : [String] = []
     
     @IBOutlet weak var StateTable: UITableView!
     override func viewDidLoad() {
