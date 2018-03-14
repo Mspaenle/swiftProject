@@ -1,17 +1,17 @@
 //
-//  DosesModel.swift
+//  PeriodicityModel.swift
 //  PKProject
 //
-//  Created by Chloe DALGER on 05/03/2018.
+//  Created by Mahe SPAENLE on 14/03/2018.
 //  Copyright © 2018 Mahe SPAENLE Chloé DALGER. All rights reserved.
 //
 
 import Foundation
-import UIKit
 import CoreData
+import UIKit
 
-class DosesModel{
-    private var dao : Dose
+class PeriodicityModel {
+    internal var dao : Periodicity
     
     var title: String {
         get{
@@ -23,9 +23,8 @@ class DosesModel{
     }
     
     init(title : String){
-        let entity = CoreDataManager.entity(forName: "Dose")
-        self.dao = Dose(entity: entity, insertInto: CoreDataManager.context)
+        let entity = CoreDataManager.entity(forName: "Periodicity")
+        self.dao = Periodicity(entity: entity, insertInto: CoreDataManager.context)
         self.dao.title=title
     }
-    
 }

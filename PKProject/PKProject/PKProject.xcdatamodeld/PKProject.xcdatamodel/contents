@@ -30,11 +30,7 @@
     </entity>
     <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="eventValue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventConvertion" syncable="YES"/>
-    </entity>
-    <entity name="EventConvertion" representedClassName="EventConvertion" syncable="YES" codeGenerationType="class">
-        <attribute name="eventValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Med" representedClassName="Med" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -59,8 +55,7 @@
         <element name="Dose" positionX="250" positionY="-387" width="128" height="58"/>
         <element name="DrugIntake" positionX="-110" positionY="-405" width="128" height="103"/>
         <element name="EmergencyNumber" positionX="-200" positionY="-255" width="128" height="75"/>
-        <element name="Event" positionX="-198" positionY="-153" width="128" height="73"/>
-        <element name="EventConvertion" positionX="-396" positionY="-156" width="128" height="73"/>
+        <element name="Event" positionX="-198" positionY="-153" width="128" height="75"/>
         <element name="Med" positionX="-236" positionY="-603" width="128" height="90"/>
         <element name="Periodicity" positionX="180" positionY="-175" width="128" height="58"/>
         <element name="RDV" positionX="-396" positionY="27" width="128" height="88"/>

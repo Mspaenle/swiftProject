@@ -10,6 +10,31 @@ import Foundation
 import CoreData
 import UIKit
 
-extension Event {
+class EventModel {
+    private var dao : Event
     
+    var date: NSDate {
+        get{
+            return self.dao.date!
+        }
+        set{
+            self.dao.date = newValue
+        }
+    }
+    
+    var value: String {
+        get{
+            return self.dao.value!
+        }
+        set{
+            self.dao.value = newValue
+        }
+    }
+    
+    init(date : NSDate, stateValue : String){
+        let entity = CoreDataManager.entity(forName: "Event")
+        self.dao = Event(entity: entity, insertInto: CoreDataManager.context)
+        self.dao.date=date
+        self.dao.value=stateValue
+    }
 }

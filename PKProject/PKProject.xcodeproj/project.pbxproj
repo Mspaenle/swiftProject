@@ -65,6 +65,11 @@
 		8FC480652040253500B9FD29 /* EditRDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480642040253500B9FD29 /* EditRDVMedViewController.swift */; };
 		8FDA57A52059338400A29B77 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57A42059338400A29B77 /* CoreDataManager.swift */; };
 		8FDA57A7205933BF00A29B77 /* StateDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57A6205933BF00A29B77 /* StateDAO.swift */; };
+		8FDA57A9205937B800A29B77 /* EventDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57A8205937B800A29B77 /* EventDAO.swift */; };
+		8FDA57AB2059387200A29B77 /* DosesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57AA2059387200A29B77 /* DosesDAO.swift */; };
+		8FDA57AD20593AC900A29B77 /* PeriodicityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57AC20593AC900A29B77 /* PeriodicityModel.swift */; };
+		8FDA57AF20593B2400A29B77 /* PeriodicityDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57AE20593B2400A29B77 /* PeriodicityDAO.swift */; };
+		8FDA57B120593BAD00A29B77 /* ActivityDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57B020593BAD00A29B77 /* ActivityDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +153,11 @@
 		8FC480642040253500B9FD29 /* EditRDVMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditRDVMedViewController.swift; path = Controler/EditRDVMedViewController.swift; sourceTree = "<group>"; };
 		8FDA57A42059338400A29B77 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8FDA57A6205933BF00A29B77 /* StateDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDAO.swift; sourceTree = "<group>"; };
+		8FDA57A8205937B800A29B77 /* EventDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDAO.swift; sourceTree = "<group>"; };
+		8FDA57AA2059387200A29B77 /* DosesDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DosesDAO.swift; sourceTree = "<group>"; };
+		8FDA57AC20593AC900A29B77 /* PeriodicityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodicityModel.swift; sourceTree = "<group>"; };
+		8FDA57AE20593B2400A29B77 /* PeriodicityDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodicityDAO.swift; sourceTree = "<group>"; };
+		8FDA57B020593BAD00A29B77 /* ActivityDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +294,7 @@
 				24D4580D204DB02200E27BC5 /* ListMedModel.swift */,
 				8F52A54A2059119E00FDF76D /* RDVModel.swift */,
 				24D45816204DB4DE00E27BC5 /* ListRDVModel.swift */,
+				8FDA57B020593BAD00A29B77 /* ActivityDAO.swift */,
 				8F52A54D205911C300FDF76D /* ActivityModel.swift */,
 				24D4581C204DB9C400E27BC5 /* ListActivityModel.swift */,
 				8F7DB1562050556B007B62FA /* ListStateModel.swift */,
@@ -292,11 +303,15 @@
 				8F7DB15F2050580D007B62FA /* ListEmergencyNumberModel.swift */,
 				8F52A5532059120F00FDF76D /* DrugIntakeModel.swift */,
 				8F7DB16520505870007B62FA /* ListDrugIntakeModel.swift */,
-				8F90A8C9203C5C4700B74A0A /* PKProject.xcdatamodeld */,
 				8F52A54120590C6800FDF76D /* StateModel.swift */,
 				8FDA57A42059338400A29B77 /* CoreDataManager.swift */,
 				8FDA57A6205933BF00A29B77 /* StateDAO.swift */,
 				247BD352205938BD00D94876 /* DoctorDAO.swift */,
+				8F90A8C9203C5C4700B74A0A /* PKProject.xcdatamodeld */,
+				8FDA57A8205937B800A29B77 /* EventDAO.swift */,
+				8FDA57AA2059387200A29B77 /* DosesDAO.swift */,
+				8FDA57AC20593AC900A29B77 /* PeriodicityModel.swift */,
+				8FDA57AE20593B2400A29B77 /* PeriodicityDAO.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -464,6 +479,7 @@
 				8F7DB16620505870007B62FA /* ListDrugIntakeModel.swift in Sources */,
 				8FC4805F204022FC00B9FD29 /* RDVMedViewController.swift in Sources */,
 				8FDA57A52059338400A29B77 /* CoreDataManager.swift in Sources */,
+				8FDA57B120593BAD00A29B77 /* ActivityDAO.swift in Sources */,
 				8F90A8C5203C5C4700B74A0A /* ViewController.swift in Sources */,
 				24D457FF204D959900E27BC5 /* ListEventModel.swift in Sources */,
 				8FC480472040111400B9FD29 /* MedInfosViewController.swift in Sources */,
@@ -473,6 +489,8 @@
 				8F90A8CB203C5C4700B74A0A /* PKProject.xcdatamodeld in Sources */,
 				8F385E7C2046932500F29058 /* ParameterMedecinViewController.swift in Sources */,
 				24D457FC204D958300E27BC5 /* EventModel.swift in Sources */,
+				8FDA57A9205937B800A29B77 /* EventDAO.swift in Sources */,
+				8FDA57AD20593AC900A29B77 /* PeriodicityModel.swift in Sources */,
 				8F385E7320468F6A00F29058 /* DiaryViewController.swift in Sources */,
 				8F90A8C3203C5C4700B74A0A /* AppDelegate.swift in Sources */,
 				8FC4804A2040121700B9FD29 /* EtatViewController.swift in Sources */,
@@ -480,6 +498,7 @@
 				24D45808204DAA9D00E27BC5 /* DosesModel.swift in Sources */,
 				24D4580E204DB02200E27BC5 /* ListMedModel.swift in Sources */,
 				8FC480622040232500B9FD29 /* AddRDVMedViewController.swift in Sources */,
+				8FDA57AF20593B2400A29B77 /* PeriodicityDAO.swift in Sources */,
 				8FDA57A7205933BF00A29B77 /* StateDAO.swift in Sources */,
 				8F385E792046926100F29058 /* RecapPatientViewController.swift in Sources */,
 				8F52A54220590C6800FDF76D /* StateModel.swift in Sources */,
@@ -487,6 +506,7 @@
 				247BD353205938BD00D94876 /* DoctorDAO.swift in Sources */,
 				8F52A5542059120F00FDF76D /* DrugIntakeModel.swift in Sources */,
 				8F54C75B2056D4DC007F17AE /* StateTableViewCell.swift in Sources */,
+				8FDA57AB2059387200A29B77 /* DosesDAO.swift in Sources */,
 				8F52A54E205911C300FDF76D /* ActivityModel.swift in Sources */,
 				8F90A8FB203C69C100B74A0A /* InformationsViewController.swift in Sources */,
 				24D4581D204DB9C400E27BC5 /* ListActivityModel.swift in Sources */,

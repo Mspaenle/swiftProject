@@ -13,18 +13,18 @@ import CoreData
 class StateModel{
     private var dao : State
     
-    var date: NSDate? {
+    var date: NSDate {
         get{
-            return self.dao.date
+            return self.dao.date!
         }
         set{
             self.dao.date = newValue
         }
     }
     
-    var value: String? {
+    var value: String {
         get{
-            return self.dao.value
+            return self.dao.value!
         }
         set{
             self.dao.value = newValue
