@@ -57,9 +57,9 @@ class ListEvent : Sequence {
     func getEvent(forEventDate date: NSDate) -> ListEvent{
         let ret : ListEvent = ListEvent()
         for e in self{
-            if( e.date <= date ){
-                ret.add(event: e)
-            }
+            //if( e.date <= date ){
+            //    ret.add(event: e)
+            //}
         }
         return ret
     }
@@ -101,9 +101,9 @@ class ListEvent : Sequence {
     func countEvent(forEvents titleEvent: Int) -> Int{
         var count : Int = 0
         for t in self{
-            if( (t.titleEvent == titleEvent) ){
-                count+=1
-            }
+            //if( (t.titleEvent == titleEvent) ){
+            //    count+=1
+            //}
         }
         return count
     }
