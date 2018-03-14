@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		247BD353205938BD00D94876 /* DoctorDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247BD352205938BD00D94876 /* DoctorDAO.swift */; };
+		247BD35520593C4600D94876 /* EmergencyNumberDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247BD35420593C4600D94876 /* EmergencyNumberDAO.swift */; };
 		24D457FC204D958300E27BC5 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457FB204D958300E27BC5 /* EventModel.swift */; };
 		24D457FF204D959900E27BC5 /* ListEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457FE204D959900E27BC5 /* ListEventModel.swift */; };
 		24D45805204DA7A700E27BC5 /* ListDoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D45804204DA7A700E27BC5 /* ListDoctorModel.swift */; };
@@ -88,6 +90,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		247BD352205938BD00D94876 /* DoctorDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorDAO.swift; sourceTree = "<group>"; };
+		247BD35420593C4600D94876 /* EmergencyNumberDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyNumberDAO.swift; sourceTree = "<group>"; };
 		24D457FB204D958300E27BC5 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		24D457FE204D959900E27BC5 /* ListEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEventModel.swift; sourceTree = "<group>"; };
 		24D45804204DA7A700E27BC5 /* ListDoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDoctorModel.swift; sourceTree = "<group>"; };
@@ -295,12 +299,14 @@
 				24D4581C204DB9C400E27BC5 /* ListActivityModel.swift */,
 				8F7DB1562050556B007B62FA /* ListStateModel.swift */,
 				8F52A550205911E600FDF76D /* EmergencyNumberModel.swift */,
+				247BD35420593C4600D94876 /* EmergencyNumberDAO.swift */,
 				8F7DB15F2050580D007B62FA /* ListEmergencyNumberModel.swift */,
 				8F52A5532059120F00FDF76D /* DrugIntakeModel.swift */,
 				8F7DB16520505870007B62FA /* ListDrugIntakeModel.swift */,
 				8F52A54120590C6800FDF76D /* StateModel.swift */,
 				8FDA57A42059338400A29B77 /* CoreDataManager.swift */,
 				8FDA57A6205933BF00A29B77 /* StateDAO.swift */,
+				247BD352205938BD00D94876 /* DoctorDAO.swift */,
 				8F90A8C9203C5C4700B74A0A /* PKProject.xcdatamodeld */,
 				8FDA57A8205937B800A29B77 /* EventDAO.swift */,
 				8FDA57AA2059387200A29B77 /* DosesDAO.swift */,
@@ -467,6 +473,7 @@
 				8FC4805620401BEF00B9FD29 /* EditMedPillsViewController.swift in Sources */,
 				8F385E7020468C3300F29058 /* EditPriseViewController.swift in Sources */,
 				8F90A901203C74ED00B74A0A /* EditMedecinsViewController.swift in Sources */,
+				247BD35520593C4600D94876 /* EmergencyNumberDAO.swift in Sources */,
 				8FC480502040185300B9FD29 /* PillsViewController.swift in Sources */,
 				8FC480652040253500B9FD29 /* EditRDVMedViewController.swift in Sources */,
 				8F7DB16620505870007B62FA /* ListDrugIntakeModel.swift in Sources */,
@@ -496,6 +503,7 @@
 				8F385E792046926100F29058 /* RecapPatientViewController.swift in Sources */,
 				8F52A54220590C6800FDF76D /* StateModel.swift in Sources */,
 				8F90A90A203C838400B74A0A /* AddEmergencyNumberViewController.swift in Sources */,
+				247BD353205938BD00D94876 /* DoctorDAO.swift in Sources */,
 				8F52A5542059120F00FDF76D /* DrugIntakeModel.swift in Sources */,
 				8F54C75B2056D4DC007F17AE /* StateTableViewCell.swift in Sources */,
 				8FDA57AB2059387200A29B77 /* DosesDAO.swift in Sources */,
