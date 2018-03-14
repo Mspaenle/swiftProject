@@ -51,11 +51,7 @@
     </entity>
     <entity name="State" representedClassName="State" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="stateValue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StateConvertion" syncable="YES"/>
-    </entity>
-    <entity name="StateConvertion" representedClassName="StateConvertion" syncable="YES" codeGenerationType="class">
-        <attribute name="stateValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Activity" positionX="-18" positionY="-145" width="128" height="120"/>
@@ -69,6 +65,5 @@
         <element name="Periodicity" positionX="180" positionY="-175" width="128" height="58"/>
         <element name="RDV" positionX="-396" positionY="27" width="128" height="88"/>
         <element name="State" positionX="-198" positionY="-72" width="128" height="75"/>
-        <element name="StateConvertion" positionX="-396" positionY="-72" width="128" height="73"/>
     </elements>
 </model>

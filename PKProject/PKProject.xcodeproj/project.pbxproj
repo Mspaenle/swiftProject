@@ -61,6 +61,8 @@
 		8FC4805F204022FC00B9FD29 /* RDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4805E204022FC00B9FD29 /* RDVMedViewController.swift */; };
 		8FC480622040232500B9FD29 /* AddRDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480612040232500B9FD29 /* AddRDVMedViewController.swift */; };
 		8FC480652040253500B9FD29 /* EditRDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480642040253500B9FD29 /* EditRDVMedViewController.swift */; };
+		8FDA57A52059338400A29B77 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57A42059338400A29B77 /* CoreDataManager.swift */; };
+		8FDA57A7205933BF00A29B77 /* StateDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57A6205933BF00A29B77 /* StateDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,8 @@
 		8FC4805E204022FC00B9FD29 /* RDVMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RDVMedViewController.swift; path = Controler/RDVMedViewController.swift; sourceTree = "<group>"; };
 		8FC480612040232500B9FD29 /* AddRDVMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRDVMedViewController.swift; path = Controler/AddRDVMedViewController.swift; sourceTree = "<group>"; };
 		8FC480642040253500B9FD29 /* EditRDVMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditRDVMedViewController.swift; path = Controler/EditRDVMedViewController.swift; sourceTree = "<group>"; };
+		8FDA57A42059338400A29B77 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		8FDA57A6205933BF00A29B77 /* StateDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,13 +282,15 @@
 				24D45816204DB4DE00E27BC5 /* ListRDVModel.swift */,
 				8F52A54D205911C300FDF76D /* ActivityModel.swift */,
 				24D4581C204DB9C400E27BC5 /* ListActivityModel.swift */,
-				8F52A54120590C6800FDF76D /* StateModel.swift */,
 				8F7DB1562050556B007B62FA /* ListStateModel.swift */,
 				8F52A550205911E600FDF76D /* EmergencyNumberModel.swift */,
 				8F7DB15F2050580D007B62FA /* ListEmergencyNumberModel.swift */,
 				8F52A5532059120F00FDF76D /* DrugIntakeModel.swift */,
 				8F7DB16520505870007B62FA /* ListDrugIntakeModel.swift */,
 				8F90A8C9203C5C4700B74A0A /* PKProject.xcdatamodeld */,
+				8F52A54120590C6800FDF76D /* StateModel.swift */,
+				8FDA57A42059338400A29B77 /* CoreDataManager.swift */,
+				8FDA57A6205933BF00A29B77 /* StateDAO.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				8FC480652040253500B9FD29 /* EditRDVMedViewController.swift in Sources */,
 				8F7DB16620505870007B62FA /* ListDrugIntakeModel.swift in Sources */,
 				8FC4805F204022FC00B9FD29 /* RDVMedViewController.swift in Sources */,
+				8FDA57A52059338400A29B77 /* CoreDataManager.swift in Sources */,
 				8F90A8C5203C5C4700B74A0A /* ViewController.swift in Sources */,
 				24D457FF204D959900E27BC5 /* ListEventModel.swift in Sources */,
 				8FC480472040111400B9FD29 /* MedInfosViewController.swift in Sources */,
@@ -466,6 +473,7 @@
 				24D45808204DAA9D00E27BC5 /* DosesModel.swift in Sources */,
 				24D4580E204DB02200E27BC5 /* ListMedModel.swift in Sources */,
 				8FC480622040232500B9FD29 /* AddRDVMedViewController.swift in Sources */,
+				8FDA57A7205933BF00A29B77 /* StateDAO.swift in Sources */,
 				8F385E792046926100F29058 /* RecapPatientViewController.swift in Sources */,
 				8F52A54220590C6800FDF76D /* StateModel.swift in Sources */,
 				8F90A90A203C838400B74A0A /* AddEmergencyNumberViewController.swift in Sources */,
