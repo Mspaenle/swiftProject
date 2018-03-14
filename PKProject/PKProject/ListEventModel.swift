@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 //
 //Set of 'EventModel's
@@ -24,8 +26,8 @@ import Foundation
 //*getItEvent* : ListEventModel -> ItListEvent -- Initialise the iterator  of the collection in the parameters, if the collection is'nt empty, the current element is the first element of the colletion and the iterator is Active otherwise the iterator is Inactive
 //
 
-class ListEventModel : Sequence {
-    fileprivate var levent : [EventModel] = []
+class ListEvent : Sequence {
+    fileprivate var levent : [Event] = []
     
     /// Description
     ///
@@ -33,27 +35,27 @@ class ListEventModel : Sequence {
     /// - Returns: <#return value description#>
     
     //
-    //*addEvent* : ListEventModel x EventModel -> ListEventModel -- add an EventModel in ListEventModel
+    //*addEvent* : ListEvent x Event -> ListEvent -- add an Event in ListEvent
     //
-    // - Parameter event: `EventModel` to be added
-    // - Returns: `ListEventModel` with new `EventModel` added to the set
+    // - Parameter event: `Event` to be added
+    // - Returns: `ListEvent` with new `Event` added to the set
     //
     
     @discardableResult
-    func add(event: EventModel) -> ListEventModel{
+    func add(event: Event) -> ListEvent{
         self.levent.append(event)
         return self
     }
     
     //
-    //*getEvent* : ListEventModel x Date -> ListEventModel -- get EventModel since a date
+    //*getEvent* : ListEvent x Date -> ListEvent -- get Event since a date
     //
     // - Parameter date: Date to be looked for
-    // - Returns: ListEventModel will all `EventModel` conforming to parameter
+    // - Returns: ListEvent will all `Event` conforming to parameter
     //
     
-    func getEvent(forEventDate date: Date) -> ListEventModel{
-        let ret : ListEventModel = ListEventModel()
+    func getEvent(forEventDate date: NSDate) -> ListEvent{
+        let ret : ListEvent = ListEvent()
         for e in self{
             if( e.date <= date ){
                 ret.add(event: e)
@@ -63,14 +65,14 @@ class ListEventModel : Sequence {
     }
     
     //
-    //*getDateEvent* : ListEventModel x Date -> ListEventModel -- get a ListEventModel according to a date
+    //*getDateEvent* : ListEvent x Date -> ListEvent -- get a ListEvent according to a date
     //
     // - Parameter date: Date to be looked for
-    // - Returns: ListEventModel will all `EventModel` conforming to parameter
+    // - Returns: ListEvent will all `Event` conforming to parameter
     //
     
-    func getDateEvent(forEventDate date: Date) -> ListEventModel{
-        let ret : ListEventModel = ListEventModel()
+    func getDateEvent(forEventDate date: NSDate) -> ListEvent{
+        let ret : ListEvent = ListEvent()
         for e in self{
             if( e.date == date ){
                 ret.add(event: e)
@@ -80,14 +82,14 @@ class ListEventModel : Sequence {
     }
     
     //
-    //*getFrequencyEvent* : ListEventModel x String -> int -- get the frequency of an EventModel
+    //*getFrequencyEvent* : ListEvent x String -> int -- get the frequency of an Event
     //
     // - Parameter titleEvent: String to be looked for
     // - Returns: Float with the frequency of the Event
     //
     
     func getFrequencyEvent(forFrequenceEvent titleEvent: Int) -> Int{
-        return countEvent(forEventModels: titleEvent)/self.levent.count
+        return countEvent(forEvents: titleEvent)/self.levent.count
     }
     
     
@@ -96,7 +98,7 @@ class ListEventModel : Sequence {
     ///
     /// - Parameter titleEvent: String to be looked for
     /// - Returns: integer corresponding to the number of occurence of the string in ListEventModel
-    func countEvent(forEventModels titleEvent: Int) -> Int{
+    func countEvent(forEvents titleEvent: Int) -> Int{
         var count : Int = 0
         for t in self{
             if( (t.titleEvent == titleEvent) ){
@@ -112,7 +114,8 @@ class ListEventModel : Sequence {
     }
     
     
-    subscript(index: Int) -> EventModel {
+    subscript(index: Int) -> Event
+ {
         get {
             guard (index>=0) && (index<self.count) else{
                 fatalError("index out of range")
@@ -128,7 +131,7 @@ class ListEventModel : Sequence {
     }
     
     
-    /// `ListEventModel` -> `ItListEvent` -- make an iterator on the set
+    /// `ListEvent` -> `ItListEvent` -- make an iterator on the set
     ///
     /// - Returns: a new iterator on the set initialized on the first element
     func makeIterator() -> ItListEvent{
@@ -139,12 +142,12 @@ class ListEventModel : Sequence {
 
 // MARK: -
 
-/// Iterator on ListEventModel
+/// Iterator on ListEvent
 struct ItListEvent : IteratorProtocol{
     private var current: Int = 0
-    private let set: ListEventModel
+    private let set: ListEvent
     
-    fileprivate init(_ s: ListEventModel){
+    fileprivate init(_ s: ListEvent){
         self.set = s
     }
     
@@ -158,7 +161,7 @@ struct ItListEvent : IteratorProtocol{
     }
     
     @discardableResult
-    mutating func next() -> EventModel? {
+    mutating func next() -> Event? {
         guard self.current < self.set.count else{
             return nil
         }

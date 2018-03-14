@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+import UIKit
+import CoreData
 
 //
 //Set of 'DoctorModel's
@@ -19,7 +20,7 @@ import Foundation
 //*getItDoctor* : ListDoctorModel -> ItListDoctor -- Initialise the iterator  of the collection in the parameters, if the collection is'nt empty, the current element is the first element of the colletion and the iterator is Active otherwise the iterator is Inactive
 //
 
-class ListDoctorModel : Sequence {
+class ListDoctor : Sequence {
     fileprivate var ldoctor : [Doctor] = []
     
     /// Description
@@ -35,7 +36,7 @@ class ListDoctorModel : Sequence {
     //
     
     @discardableResult
-    func add(doctor: Doctor) -> ListDoctorModel{
+    func add(doctor: Doctor) -> ListDoctor{
         self.ldoctor.append(doctor)
         return self
     }
@@ -47,7 +48,7 @@ class ListDoctorModel : Sequence {
     // - Returns: `ListDoctorModel` with `DoctorModel` removed if `DoctorModel` belonged to `ListDoctorModel`
     //
     @discardableResult
-    func remove(number: Doctor) -> ListDoctorModel{
+    func remove(number: Doctor) -> ListDoctor{
         if let i = self.ldoctor.index(of: number){
             self.ldoctor.remove(at: i)
         }
@@ -89,12 +90,12 @@ class ListDoctorModel : Sequence {
 
 // MARK: -
 
-/// Iterator on ListDoctorModel
+/// Iterator on ListDoctor
 struct ItListDoctor : IteratorProtocol{
     private var current: Int = 0
-    private let set: ListDoctorModel
+    private let set: ListDoctor
     
-    fileprivate init(_ s: ListDoctorModel){
+    fileprivate init(_ s: ListDoctor){
         self.set = s
     }
     

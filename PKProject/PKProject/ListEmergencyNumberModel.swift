@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class ListEmergencyNumberModel{
+class ListEmergencyNumber{
     var lNumber : [EmergencyNumber] = []
     
     /// 'ListEmergencyNumberModel' x 'StateModel' -> 'ListEmergencyNumberModel' -- add a State to the collection, return the collection
@@ -17,7 +17,7 @@ class ListEmergencyNumberModel{
     /// - Parameter state: 'StateModel' to be added to the set
     /// - Returns: 'ListEmergencyNumberModel' with new 'State' added to the set
     @discardableResult
-    func add(number: EmergencyNumber) -> ListEmergencyNumberModel{
+    func add(number: EmergencyNumber) -> ListEmergencyNumber{
         self.lNumber.append(number)
         return self
     }
@@ -27,7 +27,7 @@ class ListEmergencyNumberModel{
     /// - Parameter number: `EmergencyNumber` to be removed
     /// - Returns: `ListEmergencyNumberModel` with `EmergencyNumber` removed if `EmergencyNumber` belonged to `ListEmergencyNumberModel`
     @discardableResult
-    func remove(number: EmergencyNumber) -> ListEmergencyNumberModel{
+    func remove(number: EmergencyNumber) -> ListEmergencyNumber{
         if let i = self.lNumber.index(of: number){
             self.lNumber.remove(at: i)
         }
@@ -68,9 +68,9 @@ class ListEmergencyNumberModel{
 /// Iterator on ListEmergencyNumber
 struct ItListEmergencyNumber : IteratorProtocol{
     private var current: Int = 0
-    private let set: ListEmergencyNumberModel
+    private let set: ListEmergencyNumber
     
-    init(_ s: ListEmergencyNumberModel){
+    init(_ s: ListEmergencyNumber){
         self.set = s
     }
     

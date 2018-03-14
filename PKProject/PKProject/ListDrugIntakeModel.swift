@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class ListDrugIntakeModel : Sequence{
+class ListDrugIntake : Sequence{
     var lIntake : [DrugIntake] = []
     
     /// 'ListDrugIntakeModel' x 'StateModel' -> 'ListDrugIntakeModel' -- add a State to the collection, return the collection
@@ -17,7 +17,7 @@ class ListDrugIntakeModel : Sequence{
     /// - Parameter state: 'StateModel' to be added to the set
     /// - Returns: 'ListDrugIntakeModel' with new 'State' added to the set
     @discardableResult
-    func add(number: DrugIntake) -> ListDrugIntakeModel{
+    func add(number: DrugIntake) -> ListDrugIntake{
         self.lIntake.append(number)
         return self
     }
@@ -27,7 +27,7 @@ class ListDrugIntakeModel : Sequence{
     /// - Parameter number: `EmergencyNumber` to be removed
     /// - Returns: `ListDrugIntakeModel` with `EmergencyNumber` removed if `EmergencyNumber` belonged to `ListDrugIntakeModel`
     @discardableResult
-    func remove(number: DrugIntake) -> ListDrugIntakeModel{
+    func remove(number: DrugIntake) -> ListDrugIntake{
         if let i = self.lIntake.index(of: number){
             self.lIntake.remove(at: i)
         }
@@ -67,9 +67,9 @@ class ListDrugIntakeModel : Sequence{
 /// Iterator on ListDrugIntake
 struct ItListDrugIntake : IteratorProtocol{
     private var current: Int = 0
-    private let set: ListDrugIntakeModel
+    private let set: ListDrugIntake
     
-    init(_ s: ListDrugIntakeModel){
+    init(_ s: ListDrugIntake){
         self.set = s
     }
     

@@ -20,7 +20,7 @@ import Foundation
 //*getItRDV* : ListRDVModel -> ItListRDV -- Initialise the iterator  of the collection in the parameters, if the collection is'nt empty, the current element is the first element of the colletion and the iterator is Active otherwise the iterator is Inactive
 //
 
-class ListRDVModel : Sequence {
+class ListRDV : Sequence {
     var lrdv : [RDV] = []
     
     /// Description
@@ -36,7 +36,7 @@ class ListRDVModel : Sequence {
     //
     
     @discardableResult
-    func add(rdv: RDV) -> ListRDVModel{
+    func add(rdv: RDV) -> ListRDV{
         self.lrdv.append(rdv)
         return self
     }
@@ -50,7 +50,7 @@ class ListRDVModel : Sequence {
     //
     
     @discardableResult
-    func remove(rdv: RDV) -> ListRDVModel{
+    func remove(rdv: RDV) -> ListRDV{
         if let i = self.lrdv.index(of: rdv){
             self.lrdv.remove(at: i)
         }
@@ -94,9 +94,9 @@ class ListRDVModel : Sequence {
 /// Iterator on ListRDVModel
 struct ItListRDV : IteratorProtocol{
     private var current: Int = 0
-    private let set: ListRDVModel
+    private let set: ListRDV
     
-    init(_ s: ListRDVModel){
+    init(_ s: ListRDV){
         self.set = s
     }
     

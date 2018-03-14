@@ -19,7 +19,7 @@ import Foundation
 //*getItMed* : ListMedModel -> ItListMed -- Initialise the iterator  of the collection in the parameters, if the collection is'nt empty, the current element is the first element of the colletion and the iterator is Active otherwise the iterator is Inactive
 //
 
-class ListMedModel : Sequence {
+class ListMed : Sequence {
     var lmed : [Med] = []
     
     //
@@ -29,7 +29,7 @@ class ListMedModel : Sequence {
     // - Returns: `ListMedModel` with new `MedModel` added to the set
     //
     @discardableResult
-    func add(med: Med) -> ListMedModel{
+    func add(med: Med) -> ListMed{
         self.lmed.append(med)
         return self
     }
@@ -42,7 +42,7 @@ class ListMedModel : Sequence {
     //
     
     @discardableResult
-    func remove(number: Med) -> ListMedModel{
+    func remove(number: Med) -> ListMed{
         if let i = self.lmed.index(of: number){
             self.lmed.remove(at: i)
         }
@@ -82,12 +82,12 @@ class ListMedModel : Sequence {
 
 // MARK: -
 
-/// Iterator on ListMedModel
+/// Iterator on ListMed
 struct ItListMed : IteratorProtocol{
     private var current: Int = 0
-    private let set: ListMedModel
+    private let set: ListMed
     
-    init(_ s: ListMedModel){
+    init(_ s: ListMed){
         self.set = s
     }
     

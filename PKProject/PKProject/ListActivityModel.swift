@@ -20,7 +20,7 @@ import Foundation
 //*getItActivity* : ListActivityModel -> ItListActivity -- Initialise the iterator  of the collection in the parameters, if the collection is'nt empty, the current element is the first element of the colletion and the iterator is Active otherwise the iterator is Inactive
 //
 
-class ListActivityModel : Sequence {
+class ListActivity : Sequence {
     fileprivate var lactivity : [Activity] = []
     
     /// Description
@@ -36,7 +36,7 @@ class ListActivityModel : Sequence {
     //
     
     @discardableResult
-    func add(activity: Activity) -> ListActivityModel{
+    func add(activity: Activity) -> ListActivity{
         self.lactivity.append(activity)
         return self
     }
@@ -49,7 +49,7 @@ class ListActivityModel : Sequence {
     //
     
     @discardableResult
-    func remove(activity: Activity) -> ListActivityModel{
+    func remove(activity: Activity) -> ListActivity{
         if let i = self.lactivity.index(of: activity){
             self.lactivity.remove(at: i)
         }
@@ -92,9 +92,9 @@ class ListActivityModel : Sequence {
 /// Iterator on ListActivityModel
 struct ItListActivity : IteratorProtocol{
     private var current: Int = 0
-    private let set: ListActivityModel
+    private let set: ListActivity
     
-    fileprivate init(_ s: ListActivityModel){
+    fileprivate init(_ s: ListActivity){
         self.set = s
     }
     

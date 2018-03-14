@@ -16,7 +16,7 @@ import CoreData
  *add*: 'ListStateModel' x 'StateModel' -> 'ListStateModel' -- add a StateModel to the collection
  
  */
-class ListStateModel : Sequence {
+class ListState : Sequence {
     var lstate : [State] = []
     
     /// 'ListStateModel' x 'StateModel' -> 'ListStateModel' -- add a State to the collection, return the collection
@@ -24,7 +24,7 @@ class ListStateModel : Sequence {
     /// - Parameter state: 'StateModel' to be added to the set
     /// - Returns: 'ListStateModel' with new 'State' added to the set
     @discardableResult
-    func add(state: State) -> ListStateModel{
+    func add(state: State) -> ListState{
         self.lstate.append(state)
         return self
     }
@@ -63,9 +63,9 @@ class ListStateModel : Sequence {
 /// Iterator on ListState
 struct ItListState : IteratorProtocol{
     private var current: Int = 0
-    private let set: ListStateModel
+    private let set: ListState
     
-    init(_ s: ListStateModel){
+    init(_ s: ListState){
         self.set = s
     }
     

@@ -7,32 +7,9 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
-/**
- EventModel type
- 
- **date**: EventModel -> Date
- **titleEvent : EventModel -> String
- 
- */
-
-
-class EventModel {
-    
-    
-    let date : Date
-    let titleEvent : Int
-    
-    
-    /// Description
-    ///
-    /// - Parameters:
-    ///   - date: date of the 'EventModel'
-    ///   - titleEvent: title of the 'EventModel'
-    
-    init(date : Date, titleEvent : Int){
-        self.date=date
-        self.titleEvent=titleEvent
-    }
+extension Event {
     
 }
