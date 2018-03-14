@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 class PeriodicityModel {
-    private var dao : Periodicity
+    internal var dao : Periodicity
     
     var title: String {
         get{

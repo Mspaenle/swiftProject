@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 class ActivityModel{
-    private var dao : Activity
+    internal var dao : Activity
     
     var date: NSDate {
         get{
@@ -49,22 +49,27 @@ class ActivityModel{
         }
     }
     
-    var periodicity: Periodicity{
+    private var periodicityModel : PeriodicityModel
+    
+    var periodicity: PeriodicityModel{
         get{
-            return self.dao.periodicity!
+            return self.periodicityModel
         }
         set{
-            self.dao.periodicity = newValue
+            self.periodicityModel = newValue
+            self.dao.periodicity = periodicityModel.dao
         }
     }
     
     
-    init(date : NSDate, title : String, specification : String, duration : Int16, periodicity: Periodicity){
+    init(date : NSDate, title : String, specification : String, duration : Int16, periodicity: PeriodicityModel){
         let entity = CoreDataManager.entity(forName: "Activity")
         self.dao = Activity(entity: entity, insertInto: CoreDataManager.context)
         self.dao.date=date
         self.dao.title=title
         self.dao.specification=specification
+        self.periodicityModel = periodicity
+        self.dao.periodicity = periodicity.dao
         
     }
 }

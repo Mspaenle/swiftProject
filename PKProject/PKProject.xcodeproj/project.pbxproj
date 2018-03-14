@@ -290,6 +290,7 @@
 				24D4580D204DB02200E27BC5 /* ListMedModel.swift */,
 				8F52A54A2059119E00FDF76D /* RDVModel.swift */,
 				24D45816204DB4DE00E27BC5 /* ListRDVModel.swift */,
+				8FDA57B020593BAD00A29B77 /* ActivityDAO.swift */,
 				8F52A54D205911C300FDF76D /* ActivityModel.swift */,
 				24D4581C204DB9C400E27BC5 /* ListActivityModel.swift */,
 				8F7DB1562050556B007B62FA /* ListStateModel.swift */,
@@ -305,7 +306,6 @@
 				8FDA57AA2059387200A29B77 /* DosesDAO.swift */,
 				8FDA57AC20593AC900A29B77 /* PeriodicityModel.swift */,
 				8FDA57AE20593B2400A29B77 /* PeriodicityDAO.swift */,
-				8FDA57B020593BAD00A29B77 /* ActivityDAO.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
