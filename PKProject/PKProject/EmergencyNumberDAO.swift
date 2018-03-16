@@ -13,7 +13,7 @@ import CoreData
 import UIKit
 
 extension EmergencyNumber{
-    static func getNewStateDAO() -> State?{
+    static func getNewStateDAO() -> EmergencyNumber?{
         guard let entity = NSEntityDescription.entity(forEntityName: "EmergencyNumber", in: CoreDataManager.context) else {
             return nil
         }

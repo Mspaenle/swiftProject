@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 class DosesModel{
-    private var dao : Dose
+    internal var dao : Dose
     
     var title: String {
         get{

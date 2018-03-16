@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 class DoctorModel{
-    private var dao : Doctor
+    internal var dao : Doctor
     
     var adress: String {
         get{
@@ -58,8 +58,20 @@ class DoctorModel{
         }
     }
     
+    private var rdvModel : RDVModel
     
-    init(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16){
+    var rdv: RDVModel{
+        get{
+            return self.rdvModel
+        }
+        set{
+            self.rdvModel = newValue
+            self.dao.rdv = rdvModel.dao
+        }
+    }
+    
+    
+    init(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16, rdv: RDVModel){
         let entity = CoreDataManager.entity(forName: "Doctor")
         self.dao = Doctor(entity: entity, insertInto: CoreDataManager.context)
         self.dao.adress = adress
@@ -67,6 +79,8 @@ class DoctorModel{
         self.dao.phoneNumber = phoneNumber
         self.dao.speciality = speciality
         self.dao.travelTime = travelTime
+        self.rdvModel = rdv
+        self.dao.rdv = rdv.dao
         
     }
 
