@@ -57,9 +57,9 @@ class ListEvent : Sequence {
     func getEvent(forEventDate date: NSDate) -> ListEvent{
         let ret : ListEvent = ListEvent()
         for e in self{
-            //if( e.date <= date ){
-            //    ret.add(event: e)
-            //}
+            if((e.date)!.isLessThanDate(dateToCompare: date)){
+                ret.add(event: e)
+            }
         }
         return ret
     }

@@ -10,6 +10,7 @@
 		12E111A2205FE8AD00124F7D /* MedDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E111A1205FE8AD00124F7D /* MedDAO.swift */; };
 		12E111A4205FEA5200124F7D /* RDVDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E111A3205FEA5200124F7D /* RDVDAO.swift */; };
 		12E111A6205FEBEE00124F7D /* DrugIntakeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E111A5205FEBEE00124F7D /* DrugIntakeDAO.swift */; };
+		12E111A82060070500124F7D /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E111A72060070500124F7D /* NSDateExtension.swift */; };
 		247BD353205938BD00D94876 /* DoctorDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247BD352205938BD00D94876 /* DoctorDAO.swift */; };
 		247BD35520593C4600D94876 /* EmergencyNumberDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247BD35420593C4600D94876 /* EmergencyNumberDAO.swift */; };
 		24D457FC204D958300E27BC5 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457FB204D958300E27BC5 /* EventModel.swift */; };
@@ -96,6 +97,7 @@
 		12E111A1205FE8AD00124F7D /* MedDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedDAO.swift; sourceTree = "<group>"; };
 		12E111A3205FEA5200124F7D /* RDVDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDVDAO.swift; sourceTree = "<group>"; };
 		12E111A5205FEBEE00124F7D /* DrugIntakeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugIntakeDAO.swift; sourceTree = "<group>"; };
+		12E111A72060070500124F7D /* NSDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		247BD352205938BD00D94876 /* DoctorDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorDAO.swift; sourceTree = "<group>"; };
 		247BD35420593C4600D94876 /* EmergencyNumberDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyNumberDAO.swift; sourceTree = "<group>"; };
 		24D457FB204D958300E27BC5 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				8FDA57AE20593B2400A29B77 /* PeriodicityDAO.swift */,
 				8FDA57A42059338400A29B77 /* CoreDataManager.swift */,
 				8F90A8C9203C5C4700B74A0A /* PKProject.xcdatamodeld */,
+				12E111A72060070500124F7D /* NSDateExtension.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				8F90A90D203C840A00B74A0A /* EditEmergencyNumberViewController.swift in Sources */,
 				8F385E82204695DB00F29058 /* EditSportViewController.swift in Sources */,
 				8F52A5482059117100FDF76D /* MedModel.swift in Sources */,
+				12E111A82060070500124F7D /* NSDateExtension.swift in Sources */,
 				8F52A551205911E600FDF76D /* EmergencyNumberModel.swift in Sources */,
 				8FC4804D204014C600B9FD29 /* EventViewController.swift in Sources */,
 				8F385E762046910100F29058 /* MedecinMenuViewController.swift in Sources */,

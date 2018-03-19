@@ -10,13 +10,26 @@ import UIKit
 import CoreData
 
 class RecapPatientViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
-    var states : [String] = []
+    var states : [State] = []
     
     @IBOutlet weak var StateTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
+            return
+        }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        let request : NSFetchRequest<State> = State.fetchRequest()
+        do{
+            try self.states = context.fetch(request)
+        }
+        catch let error as NSError{
+            //self.alertError(errorMsg: "\(error)", userInfo:"\(error.userInfo)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +39,7 @@ class RecapPatientViewController: UIViewController , UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.StateTable.dequeueReusableCell(withIdentifier: "StateCell", for: indexPath) as! StateTableViewCell
-        cell.StateDateLabel.text = self.states[indexPath.row]
+        cell.StateDateLabel.text = self.states[indexPath.row].value
         return cell
     }
     
