@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 extension Activity{
-    static func getNewStateDAO() -> Activity?{
+    static func getNewActivityDAO() -> Activity?{
         guard let entity = NSEntityDescription.entity(forEntityName: "Activity", in: CoreDataManager.context) else {
             return nil
         }

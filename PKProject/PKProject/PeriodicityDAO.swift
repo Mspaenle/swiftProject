@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 extension Periodicity{
-    static func getNewStateDAO() -> Periodicity?{
+    static func getNewPeriodicityDAO() -> Periodicity?{
         guard let entity = NSEntityDescription.entity(forEntityName: "Periodicity", in: CoreDataManager.context) else {
             return nil
         }

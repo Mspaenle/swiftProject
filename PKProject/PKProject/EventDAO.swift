@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 extension Event{
-    static func getNewStateDAO() -> Event?{
+    static func getNewEventDAO() -> Event?{
         guard let entity = NSEntityDescription.entity(forEntityName: "Event", in: CoreDataManager.context) else {
             return nil
         }

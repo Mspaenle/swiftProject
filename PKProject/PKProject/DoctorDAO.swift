@@ -14,7 +14,7 @@ import CoreData
 import UIKit
 
 extension Doctor{
-    static func getNewStateDAO() -> Doctor?{
+    static func getNewDoctorDAO() -> Doctor?{
         guard let entity = NSEntityDescription.entity(forEntityName: "Doctor", in: CoreDataManager.context) else {
             return nil
         }

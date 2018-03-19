@@ -69,8 +69,8 @@ class DrugIntakeModel{
         self.dao.med = med.dao
         self.periodicityModel = periodicity
         self.dao.periodicity = periodicity.dao
-        self.dosesModel = dose
-        self.dao.dose = dose.dao
+        self.dosesModel = doses
+        self.dao.dose = doses.dao
         
     }
 }

@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 extension Dose{
-    static func getNewStateDAO() -> Dose?{
+    static func getNewDoseDAO() -> Dose?{
         guard let entity = NSEntityDescription.entity(forEntityName: "Dose", in: CoreDataManager.context) else {
             return nil
         }
