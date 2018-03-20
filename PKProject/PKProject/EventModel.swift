@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 class EventModel {
-    private var dao : Event
+    internal var dao : Event
     
     var date: NSDate {
         get{

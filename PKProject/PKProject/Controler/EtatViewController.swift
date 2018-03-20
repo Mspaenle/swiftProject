@@ -10,6 +10,21 @@ import UIKit
 
 class EtatViewController: UIViewController {
 
+    @IBOutlet weak var DatePicker: UIDatePicker!
+    @IBAction func OnButton(_ sender: UIButton, forEvent event: UIEvent) {
+    }
+
+    @IBAction func OffButton(_ sender: UIButton, forEvent event: UIEvent) {
+    }
+    
+    @IBAction func DyskinesieButton(_ sender: UIButton, forEvent event: UIEvent) {
+    }
+    
+    func validateDate(_ date:[UIDatePicker]!) -> Bool {
+        //return (date <= today)
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

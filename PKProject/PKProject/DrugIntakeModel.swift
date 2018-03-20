@@ -12,7 +12,7 @@ import UIKit
 
 
 class DrugIntakeModel{
-    private var dao : DrugIntake
+    internal var dao : DrugIntake
     
     var date: NSDate {
         get{

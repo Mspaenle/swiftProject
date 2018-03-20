@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 class StateModel{
-    private var dao : State
+    internal var dao : State
     
     var date: NSDate {
         get{

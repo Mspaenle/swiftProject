@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 class EmergencyNumberModel{
-    private var dao : EmergencyNumber
+    internal var dao : EmergencyNumber
     
     var phoneNumber: String {
         get{

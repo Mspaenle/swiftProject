@@ -23,11 +23,6 @@ import CoreData
 class ListDoctor : Sequence {
     fileprivate var ldoctor : [Doctor] = []
     
-    /// Description
-    ///
-    /// - Parameter DoctorModel: <#state description#>
-    /// - Returns: <#return value description#>
-    
     //
     //*addDoctor* : ListDoctorModel x DoctorModel -> ListDoctorModel -- add a DoctorModel in ListDoctorModel
     //

@@ -49,6 +49,11 @@ class ListState : Sequence {
         }
     }
     
+    //get States since Date
+    // TODO
+    
+    
+    
     /// `ListState` -> `ItListState` -- make an iterator on the set
     ///
     /// - Returns: a new iterator on the set initialized on the first element
