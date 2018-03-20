@@ -17,17 +17,11 @@ class StateModel{
         get{
             return self.dao.date! as Date
         }
-        set{
-            self.dao.date = newValue as NSDate
-        }
     }
     
     var value: String {
         get{
             return self.dao.value!
-        }
-        set{
-            self.dao.value = newValue
         }
     }
     

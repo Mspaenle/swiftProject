@@ -17,9 +17,6 @@ class DosesModel{
         get{
             return self.dao.title!
         }
-        set{
-            self.dao.title = newValue
-        }
     }
     
     init(title : String){
