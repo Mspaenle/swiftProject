@@ -10,6 +10,14 @@ import Foundation
 import CoreData
 import UIKit
 
+enum EventValue : String{
+    case somnolence  = "Somnolence"
+    case chute = "Chute"
+    case hallucination = "Hallucination"
+    case prise = "Prise de dispersible"
+    case clic = "Clic / bolus d'Apokinon"
+}
+
 class EventModel {
     private var dao : Event
     
@@ -19,16 +27,26 @@ class EventModel {
         }
     }
     
-    var value: String {
+    var value: EventValue {
         get{
-            return self.dao.value!
+            let val = self.dao.value!
+            if val == "Somnolence" {
+                return .somnolence
+            } else if val == "Chute" {
+                return .chute
+            } else if val == "Hallucination" {
+                return .hallucination
+            } else if val == "Prise de dispersible" {
+                return .prise
+            } else {
+                return .clic
+            }
         }
     }
     
-    init(date : NSDate, stateValue : String){
-        let entity = CoreDataManager.entity(forName: "Event")
-        self.dao = Event(entity: entity, insertInto: CoreDataManager.context)
-        self.dao.date=date
-        self.dao.value=stateValue
+    init(date : NSDate, eventValue : EventValue){
+        self.dao = Event.create()
+        self.dao.date=date as NSDate
+        self.dao.value=eventValue.rawValue
     }
 }

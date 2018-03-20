@@ -17,4 +17,16 @@ extension Event{
         }
         return Event(entity: entity, insertInto : CoreDataManager.context)
     }
+    
+    static func create() -> Event{
+        return Event(context: CoreDataManager.context)
+    }
+    
+    static func save() {
+        do{
+            try CoreDataManager.save()
+        }catch let error as NSError{
+            fatalError("cannot save data: "+error.description)
+        }
+    }
 }

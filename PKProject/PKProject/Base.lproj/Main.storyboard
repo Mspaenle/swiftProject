@@ -339,30 +339,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Récapitulatif Patient" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikV-J4-Lvo">
-                                <rect key="frame" x="16" y="28" width="343" height="42"/>
+                                <rect key="frame" x="16" y="72" width="343" height="42"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="28"/>
                                 <color key="textColor" red="0.69803921570000005" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ME6-UM-T1u">
-                                <rect key="frame" x="16" y="70" width="343" height="577"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ME6-UM-T1u">
+                                <rect key="frame" x="16" y="114" width="343" height="533"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StateCell" id="0nk-rZ-VpI" customClass="StateTableViewCell" customModule="PKProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StateCell" rowHeight="50" id="0nk-rZ-VpI" customClass="StateTableViewCell" customModule="PKProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0nk-rZ-VpI" id="PYu-2U-ZG6">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEt-md-Brf">
-                                                    <rect key="frame" x="8" y="11" width="36" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SE3-Gz-qNW">
+                                                    <rect key="frame" x="294" y="12" width="41" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SE3-Gz-qNW">
-                                                    <rect key="frame" x="294" y="12" width="41" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEt-md-Brf">
+                                                    <rect key="frame" x="8" y="14" width="156" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="156" id="j4O-1i-QI0"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -370,11 +373,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SE3-Gz-qNW" firstAttribute="trailing" secondItem="PYu-2U-ZG6" secondAttribute="trailingMargin" id="0Ig-Il-l9D"/>
+                                                <constraint firstItem="uEt-md-Brf" firstAttribute="leading" secondItem="PYu-2U-ZG6" secondAttribute="leadingMargin" id="1bQ-p3-r85"/>
                                                 <constraint firstItem="uEt-md-Brf" firstAttribute="leading" secondItem="PYu-2U-ZG6" secondAttribute="leadingMargin" id="AbM-Xs-o50"/>
-                                                <constraint firstItem="uEt-md-Brf" firstAttribute="top" secondItem="PYu-2U-ZG6" secondAttribute="topMargin" constant="3" id="AdA-Cd-rYN"/>
-                                                <constraint firstItem="SE3-Gz-qNW" firstAttribute="top" secondItem="PYu-2U-ZG6" secondAttribute="topMargin" constant="4" id="Ueg-BQ-OYc"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="SE3-Gz-qNW" secondAttribute="bottom" constant="3" id="fgc-Gy-GVK"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="uEt-md-Brf" secondAttribute="bottom" constant="4" id="yoz-wE-vhY"/>
+                                                <constraint firstItem="uEt-md-Brf" firstAttribute="centerY" secondItem="SE3-Gz-qNW" secondAttribute="centerY" id="HQu-gk-sfD"/>
+                                                <constraint firstItem="SE3-Gz-qNW" firstAttribute="centerY" secondItem="PYu-2U-ZG6" secondAttribute="centerY" id="HX8-1k-uml"/>
+                                                <constraint firstItem="SE3-Gz-qNW" firstAttribute="top" secondItem="PYu-2U-ZG6" secondAttribute="topMargin" constant="4" id="hBN-98-WBS"/>
+                                                <constraint firstItem="SE3-Gz-qNW" firstAttribute="trailing" secondItem="PYu-2U-ZG6" secondAttribute="trailingMargin" id="uWr-Iz-pRL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
