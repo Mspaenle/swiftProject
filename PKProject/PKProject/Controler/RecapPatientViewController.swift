@@ -24,6 +24,7 @@ class RecapPatientViewController: UIViewController , UITableViewDataSource, UITa
         }
         
         let context = appDelegate.persistentContainer.viewContext
+        
         let request : NSFetchRequest<State> = State.fetchRequest()
         do{
             try self.states = context.fetch(request)
@@ -40,7 +41,9 @@ class RecapPatientViewController: UIViewController , UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.StateTable.dequeueReusableCell(withIdentifier: "StateCell", for: indexPath) as! StateTableViewCell
-        cell.StateDateLabel.text = self.states[indexPath.row].value
+        let date = self.states[indexPath.row].date as! Date
+        cell.StateDateLabel.text = date.format()
+        cell.StateTitleLabel.text = self.states[indexPath.row].value
         return cell
     }
     

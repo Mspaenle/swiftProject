@@ -21,5 +21,13 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func unwindToMenu(sender: UIStoryboardSegue){
+        if let controller = sender.source as? EtatViewController{
+            if let _ = controller.state{
+                State.save()
+            }
+        }
+    
+    }
 }
 

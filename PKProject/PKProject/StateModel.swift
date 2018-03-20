@@ -10,8 +10,15 @@ import Foundation
 import UIKit
 import CoreData
 
+enum StateValue : String{
+    case on  = "On"
+    case off = "Off"
+    case dys = "Dyskinésie"
+}
+
 class StateModel{
     internal var dao : State
+    
     
     var date: Date {
         get{
@@ -19,17 +26,22 @@ class StateModel{
         }
     }
     
-    var value: String {
+    var value: StateValue {
         get{
-            return self.dao.value!
+            let val = self.dao.value!
+            if val == "On" {
+                return .on
+            } else if val == "Off" {
+                return .off
+            } else {
+                return .dys
+            }
         }
     }
     
-    init(date : NSDate, stateValue : String){
-        let entity = CoreDataManager.entity(forName: "State")
-        self.dao = State(entity: entity, insertInto: CoreDataManager.context)
-        self.dao.date=date
-        self.dao.value=stateValue
+    init(date : Date, stateValue : StateValue){
+        self.dao = State.create()
+        self.dao.date=date as NSDate
+        self.dao.value=stateValue.rawValue
     }
-    
 }
