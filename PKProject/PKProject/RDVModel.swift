@@ -38,10 +38,6 @@ class RDVModel{
         get{
             return self.doctorModel
         }
-        set{
-            self.doctorModel = newValue
-            self.dao.doctor = doctorModel.dao
-        }
     }
     
     

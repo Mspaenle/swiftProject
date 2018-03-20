@@ -26,9 +26,6 @@ class ActivityModel{
         get{
             return self.dao.title!
         }
-        set{
-            self.dao.title = newValue
-        }
     }
     
     var specification: String {

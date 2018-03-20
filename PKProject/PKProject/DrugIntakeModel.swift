@@ -30,10 +30,6 @@ class DrugIntakeModel{
         get{
             return self.medModel
         }
-        set{
-            self.medModel = newValue
-            self.dao.med = medModel.dao
-        }
     }
     
     private var periodicityModel : PeriodicityModel
