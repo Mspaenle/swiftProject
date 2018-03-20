@@ -14,12 +14,12 @@ import UIKit
 class DrugIntakeModel{
     internal var dao : DrugIntake
     
-    var date: NSDate {
+    var date: Date {
         get{
-            return self.dao.date!
+            return self.dao.date! as Date
         }
         set{
-            self.dao.date = newValue
+            self.dao.date = newValue as NSDate
         }
     }
     

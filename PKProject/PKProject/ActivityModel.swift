@@ -13,12 +13,12 @@ import UIKit
 class ActivityModel{
     internal var dao : Activity
     
-    var date: NSDate {
+    var date: Date {
         get{
-            return self.dao.date!
+            return self.dao.date! as Date
         }
         set{
-            self.dao.date = newValue
+            self.dao.date = newValue as NSDate
         }
     }
     
