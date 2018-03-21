@@ -8,8 +8,31 @@
 
 import UIKit
 
-class EventViewController: UIViewController {
+class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
 
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var eventPicker: UIPickerView!
+    @IBOutlet weak var validateBTN: UIButton!
+    @IBOutlet weak var cancelBTN: UIButton!
+    
+    
+    let events = ["Somnolence","Chute","Hallucination","Prise de dispersible","Clic / bolus d'Apokinon"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        return events[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return events.count
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +43,7 @@ class EventViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
 
     /*

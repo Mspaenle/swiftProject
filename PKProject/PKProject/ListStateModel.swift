@@ -9,6 +9,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 /**
  ListStateModel type
@@ -19,6 +20,9 @@ import CoreData
 class ListState : Sequence {
     var lstate : [State] = []
     
+    func getList() -> [State]{
+        return self.lstate
+    }
     /// 'ListStateModel' x 'StateModel' -> 'ListStateModel' -- add a State to the collection, return the collection
     ///
     /// - Parameter state: 'StateModel' to be added to the set
@@ -51,7 +55,6 @@ class ListState : Sequence {
     
     //get States since Date
     // TODO
-    
     
     
     /// `ListState` -> `ItListState` -- make an iterator on the set
