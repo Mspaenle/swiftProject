@@ -40,7 +40,6 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             self.performSegue(withIdentifier: "validEvent", sender: self)
         }
         else {
-            let ret : EventValue
             eventValue = nil
             self.performSegue(withIdentifier: "cancelEvent", sender: self)
         }

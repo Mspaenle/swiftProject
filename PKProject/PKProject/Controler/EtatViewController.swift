@@ -14,6 +14,7 @@ class EtatViewController: UIViewController {
     @IBOutlet weak var OnBtn: UIButton!
     @IBOutlet weak var OffBtn: UIButton!
     @IBOutlet weak var DyskinesieBtn: UIButton!
+    
     var dateState: Date!
     var state: StateModel?
     
