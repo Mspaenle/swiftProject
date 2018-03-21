@@ -44,9 +44,11 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             self.performSegue(withIdentifier: "cancelEvent", sender: self)
         }
     }
+    
     @IBAction func DatePickerAction(_ sender: Any) {
         dateEvent = datePicker.date
     }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
