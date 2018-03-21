@@ -12,6 +12,7 @@
 		12E111A6205FEBEE00124F7D /* DrugIntakeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E111A5205FEBEE00124F7D /* DrugIntakeDAO.swift */; };
 		247BD353205938BD00D94876 /* DoctorDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247BD352205938BD00D94876 /* DoctorDAO.swift */; };
 		247BD35520593C4600D94876 /* EmergencyNumberDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247BD35420593C4600D94876 /* EmergencyNumberDAO.swift */; };
+		249A898D206297540075548F /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249A898C206297540075548F /* DoctorTableViewCell.swift */; };
 		24D457FC204D958300E27BC5 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457FB204D958300E27BC5 /* EventModel.swift */; };
 		24D457FF204D959900E27BC5 /* ListEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457FE204D959900E27BC5 /* ListEventModel.swift */; };
 		24D45805204DA7A700E27BC5 /* ListDoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D45804204DA7A700E27BC5 /* ListDoctorModel.swift */; };
@@ -99,6 +100,7 @@
 		12E111A5205FEBEE00124F7D /* DrugIntakeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugIntakeDAO.swift; sourceTree = "<group>"; };
 		247BD352205938BD00D94876 /* DoctorDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorDAO.swift; sourceTree = "<group>"; };
 		247BD35420593C4600D94876 /* EmergencyNumberDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyNumberDAO.swift; sourceTree = "<group>"; };
+		249A898C206297540075548F /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoctorTableViewCell.swift; path = Controler/DoctorTableViewCell.swift; sourceTree = "<group>"; };
 		24D457FB204D958300E27BC5 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		24D457FE204D959900E27BC5 /* ListEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEventModel.swift; sourceTree = "<group>"; };
 		24D45804204DA7A700E27BC5 /* ListDoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDoctorModel.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				8F385E84204695E700F29058 /* AddSportViewController.swift */,
 				8F385E872046995900F29058 /* AddMedViewController.swift */,
 				8F54C75A2056D4DC007F17AE /* StateTableViewCell.swift */,
+				249A898C206297540075548F /* DoctorTableViewCell.swift */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				8F385E7C2046932500F29058 /* ParameterMedecinViewController.swift in Sources */,
 				24D457FC204D958300E27BC5 /* EventModel.swift in Sources */,
 				8FDA57A9205937B800A29B77 /* EventDAO.swift in Sources */,
+				249A898D206297540075548F /* DoctorTableViewCell.swift in Sources */,
 				8FE1D9A920611513001BD850 /* DateExtension.swift in Sources */,
 				8FDA57AD20593AC900A29B77 /* PeriodicityModel.swift in Sources */,
 				8F385E7320468F6A00F29058 /* DiaryViewController.swift in Sources */,
