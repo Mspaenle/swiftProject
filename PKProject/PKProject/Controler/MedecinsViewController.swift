@@ -11,6 +11,9 @@ import CoreData
 
 class MedecinsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    var medecin: MedecinModel?
+    
     @IBOutlet weak var medecinTable: UITableView!
     
     var medecins : [Doctor] = []

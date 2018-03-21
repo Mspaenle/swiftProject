@@ -21,7 +21,14 @@ class EditMedecinsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func unwindToEditMedecin(sender: UIStoryboardSegue){
+        if let controller = sender.source as? MedecinsViewController{
+            if let _ = controller.medecin{
+                Doctor.save()
+            }
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

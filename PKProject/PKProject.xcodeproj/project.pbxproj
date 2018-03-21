@@ -261,9 +261,9 @@
 			children = (
 				8F90A8C4203C5C4700B74A0A /* ViewController.swift */,
 				8F90A909203C838400B74A0A /* AddEmergencyNumberViewController.swift */,
+				8F90A900203C74ED00B74A0A /* EditMedecinsViewController.swift */,
 				8F90A906203C814400B74A0A /* EmergencyNumbersViewController.swift */,
 				8F90A8FD203C74C100B74A0A /* MedecinsViewController.swift */,
-				8F90A900203C74ED00B74A0A /* EditMedecinsViewController.swift */,
 				8F90A8FA203C69C100B74A0A /* InformationsViewController.swift */,
 				8F90A90C203C840A00B74A0A /* EditEmergencyNumberViewController.swift */,
 				8F90A903203C754A00B74A0A /* AddMedecinViewController.swift */,

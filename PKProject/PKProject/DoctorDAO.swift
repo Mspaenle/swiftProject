@@ -20,4 +20,17 @@ extension Doctor{
         }
         return Doctor(entity: entity, insertInto : CoreDataManager.context)
     }
+    
+    static func create() -> Doctor{
+        return Doctor(context: CoreDataManager.context)
+    }
+    
+    static func save() {
+        do{
+            try CoreDataManager.save()
+        }catch let error as NSError{
+            fatalError("cannot save data: "+error.description)
+        }
+    }
+
 }
