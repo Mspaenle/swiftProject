@@ -677,7 +677,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="i8f-ot-4d5" kind="unwind" unwindAction="unwindToMenuWithSender:" id="sk4-Qa-ffq"/>
+                                    <action selector="buttonAction:" destination="rhT-62-590" eventType="touchUpInside" id="q4V-a3-1c7"/>
+                                    <segue destination="i8f-ot-4d5" kind="unwind" identifier="cancelEvent" unwindAction="unwindToMenuWithSender:" id="sf2-PI-6Qs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpT-xo-1hc">
@@ -690,7 +691,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="i8f-ot-4d5" kind="unwind" unwindAction="unwindToMenuWithSender:" id="Zu6-h0-D0c"/>
+                                    <action selector="buttonAction:" destination="rhT-62-590" eventType="touchUpInside" id="Ult-q9-EBf"/>
+                                    <segue destination="i8f-ot-4d5" kind="unwind" identifier="validEvent" unwindAction="unwindToMenuWithSender:" id="054-Uj-BRw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Évènement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHh-e1-kvM">

@@ -26,6 +26,10 @@ class ViewController: UIViewController {
             if let _ = controller.state{
                 State.save()
             }
+        } else if let controller = sender.source as? EventViewController{
+            if controller.eventValue != nil{
+                Event.save()
+            }
         }
     
     }
