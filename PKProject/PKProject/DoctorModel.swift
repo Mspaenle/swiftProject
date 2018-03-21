@@ -60,18 +60,18 @@ class DoctorModel{
     
     private var rdvModel : RDVModel
     
-    var rdv: RDVModel{
+    var rdv: RDVModel?{
         get{
             return self.rdvModel
         }
         set{
-            self.rdvModel = newValue
+            self.rdvModel = newValue as! RDVModel
             self.dao.rdv = rdvModel.dao
         }
     }
     
     
-    init(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16, rdv: RDVModel){
+    init(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16, rdv: RDVModel?){
         let entity = CoreDataManager.entity(forName: "Doctor")
         self.dao = Doctor(entity: entity, insertInto: CoreDataManager.context)
         self.dao.adress = adress
@@ -79,9 +79,10 @@ class DoctorModel{
         self.dao.phoneNumber = phoneNumber
         self.dao.speciality = speciality
         self.dao.travelTime = travelTime
-        self.rdvModel = rdv
-        self.dao.rdv = rdv.dao
+        self.rdvModel = rdv!
+        self.dao.rdv = rdv?.dao
         
     }
+    
 
 }

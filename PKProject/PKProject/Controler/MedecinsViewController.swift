@@ -12,7 +12,7 @@ import CoreData
 class MedecinsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    var medecin: MedecinModel?
+    var medecin: DoctorModel?
     
     @IBOutlet weak var medecinTable: UITableView!
     
@@ -55,6 +55,15 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return self.medecins.count
+    }
+    
+    @IBAction func unwindToViewMedecin(sender: UIStoryboardSegue){
+        if let controller = sender.source as? AddMedecinViewController{
+            if let _ = controller.medecin{
+                Doctor.save()
+            }
+        }
+        
     }
 
 

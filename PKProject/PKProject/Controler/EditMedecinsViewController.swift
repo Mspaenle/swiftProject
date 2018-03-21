@@ -10,6 +10,17 @@ import UIKit
 
 class EditMedecinsViewController: UIViewController {
 
+    @IBOutlet weak var EditNameMedecin: UITextField!
+    @IBOutlet weak var EditPhoneMedecin: UITextField!
+    @IBOutlet weak var EditAdressMedecin: UITextField!
+    @IBOutlet weak var EditSpecialityMedecin: UIPickerView!
+    @IBOutlet weak var EditTravelMedecin: UITextField!
+    
+    
+    @IBAction func DeleteMedecin(_ sender: UIButton) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +35,11 @@ class EditMedecinsViewController: UIViewController {
     @IBAction func unwindToEditMedecin(sender: UIStoryboardSegue){
         if let controller = sender.source as? MedecinsViewController{
             if let _ = controller.medecin{
-                Doctor.save()
+                self.EditNameMedecin.text = controller.medecin?.name
+                self.EditAdressMedecin.text = controller.medecin?.adress
+                self.EditPhoneMedecin.text = controller.medecin?.phoneNumber
+                // TODO picker self.EditSpecialityMedecin. = controller.medecin?.speciality
+                self.EditTravelMedecin.text = String(describing: controller.medecin?.travelTime)
             }
         }
         

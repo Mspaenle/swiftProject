@@ -22,6 +22,14 @@ class InformationsViewController: UIViewController {
     }
     
 
+    @IBAction func unwindToViewMedecin(sender: UIStoryboardSegue){
+        if let controller = sender.source as? AddMedecinViewController{
+            if let _ = controller.medecin{
+                Doctor.save()
+            }
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

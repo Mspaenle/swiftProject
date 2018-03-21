@@ -2489,6 +2489,9 @@
                                 <state key="normal" title="Supprimer">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="DeleteMedecin:" destination="mn2-mh-Nnc" eventType="touchUpInside" id="p11-U3-mcP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Éditer Médecin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hln-NJ-J9a">
                                 <rect key="frame" x="16" y="20" width="343" height="42"/>
@@ -2573,6 +2576,13 @@
                             <constraint firstItem="QWf-n6-J3w" firstAttribute="top" secondItem="nse-oY-rzx" secondAttribute="top" id="ynm-KL-MPy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="EditAdressMedecin" destination="48c-iz-ZW6" id="3In-ta-Tf3"/>
+                        <outlet property="EditNameMedecin" destination="nEa-qM-5PJ" id="tKX-9s-PEK"/>
+                        <outlet property="EditPhoneMedecin" destination="rYq-u6-QJe" id="Uy4-GA-F9g"/>
+                        <outlet property="EditSpecialityMedecin" destination="nIn-sr-8rv" id="Qrk-ft-odn"/>
+                        <outlet property="EditTravelMedecin" destination="qPb-K3-xdY" id="jGU-Ai-IQ7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8O-Y4-kjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2606,7 +2616,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QZq-j1-TZz" kind="show" id="j6S-cL-5k4"/>
+                                    <action selector="buttonMedecin:" destination="RJr-Qj-thf" eventType="touchUpInside" id="vCi-CU-3h6"/>
+                                    <segue destination="tfu-Ya-aE5" kind="unwind" unwindAction="unwindToViewMedecinWithSender:" id="Hsx-Xe-X3I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NC5-XV-h8K">
@@ -2619,7 +2630,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QZq-j1-TZz" kind="show" id="4kE-WY-vBi"/>
+                                    <action selector="createMedecin:" destination="RJr-Qj-thf" eventType="touchUpInside" id="q6Z-XF-IEm"/>
+                                    <segue destination="tfu-Ya-aE5" kind="unwind" unwindAction="unwindToViewMedecinWithSender:" id="Yzc-pZ-klb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q11-oM-jEq">
@@ -2738,8 +2750,18 @@
                             <constraint firstItem="mQw-Kg-fod" firstAttribute="height" secondItem="Q11-oM-jEq" secondAttribute="height" id="y2X-Xy-LAZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="AddMedecin" destination="NC5-XV-h8K" id="gwi-Sp-loH"/>
+                        <outlet property="AdressMedecin" destination="tNq-yU-xg1" id="jmv-Yp-bXI"/>
+                        <outlet property="CancelMedecin" destination="RVK-xd-s7B" id="pEA-rN-SDF"/>
+                        <outlet property="NameMedecin" destination="Q11-oM-jEq" id="dNb-pz-iLd"/>
+                        <outlet property="PhoneMedecin" destination="pHV-2S-YIf" id="Ld6-qu-ZKX"/>
+                        <outlet property="SpecialtyMedein" destination="60D-ZK-jBO" id="4l0-h1-WhJ"/>
+                        <outlet property="TravelMedecin" destination="tF5-No-DwK" id="hvc-7w-Ig1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjm-ph-jqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tfu-Ya-aE5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-887.20000000000005" y="725.48725637181417"/>
         </scene>
@@ -2776,7 +2798,7 @@
                                                     <rect key="frame" x="58" y="55" width="277" height="30"/>
                                                     <state key="normal" title="Modifier"/>
                                                     <connections>
-                                                        <segue destination="mn2-mh-Nnc" kind="presentation" id="wDe-Lq-ooz"/>
+                                                        <segue destination="9Zp-hq-1Ez" kind="unwind" unwindAction="unwindToEditMedecinWithSender:" id="HMW-fJ-Qns"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCM-i6-GcI">
@@ -2863,7 +2885,7 @@
                                     <color key="titleColor" red="1" green="0.66274509800000003" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RJr-Qj-thf" kind="presentation" id="Io3-Ss-rD2"/>
+                                    <segue destination="RJr-Qj-thf" kind="presentation" id="gSy-4U-8gw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2883,11 +2905,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gfd" destination="9QH-lH-9N6" id="SgW-tl-zwb"/>
                         <outlet property="medecinTable" destination="bME-66-HKh" id="iFr-YF-ZZ5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTq-uy-FQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9Zp-hq-1Ez" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-82.400000000000006" y="726.38680659670172"/>
         </scene>
@@ -2911,8 +2933,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0zg-wo-xvp"/>
-        <segue reference="cGR-h9-0b0"/>
         <segue reference="ajL-Nn-vY7"/>
+        <segue reference="cGR-h9-0b0"/>
     </inferredMetricsTieBreakers>
 </document>
