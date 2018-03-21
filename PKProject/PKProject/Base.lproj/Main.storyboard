@@ -202,7 +202,7 @@
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzB-bV-ZXM">
-                                <rect key="frame" x="0.0" y="312" width="375" height="177"/>
+                                <rect key="frame" x="0.0" y="311.5" width="375" height="178"/>
                                 <color key="backgroundColor" red="1" green="0.71764705880000002" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Ajouter Médicament">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -212,7 +212,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOZ-lt-gAp">
-                                <rect key="frame" x="0.0" y="489" width="375" height="178"/>
+                                <rect key="frame" x="0.0" y="489.5" width="375" height="177.5"/>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Ajouter Activités Sportives">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -222,7 +222,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyR-uh-KK4">
-                                <rect key="frame" x="0.0" y="134" width="375" height="178"/>
+                                <rect key="frame" x="0.0" y="134" width="375" height="177.5"/>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Ajouter rendez-vous">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2765,10 +2765,10 @@
                                 <rect key="frame" x="16" y="106" width="343" height="491"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="141" id="gd3-4U-s8w">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedecinCell" rowHeight="141" id="gd3-4U-s8w" customClass="MedecinTableViewCell" customModule="PKProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gd3-4U-s8w" id="rOF-9Q-Faw" customClass="DoctorTableViewCell" customModule="PKProject" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gd3-4U-s8w" id="rOF-9Q-Faw" customClass="MedecinTableViewCell" customModule="PKProject" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -2785,25 +2785,25 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7t-RZ-Qjl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7t-RZ-Qjl" userLabel="MedecinSpeciality">
                                                     <rect key="frame" x="16" y="37" width="319" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNU-CN-oab">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNU-CN-oab" userLabel="MedecinAdress">
                                                     <rect key="frame" x="16" y="95" width="319" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QH-lH-9N6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QH-lH-9N6" userLabel="MedecinName">
                                                     <rect key="frame" x="53" y="8" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="904-B5-tyE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="904-B5-tyE" userLabel="MdecinPhoneNumber">
                                                     <rect key="frame" x="16" y="66" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -2839,8 +2839,19 @@
                                                 <constraint firstItem="A7t-RZ-Qjl" firstAttribute="top" secondItem="9QH-lH-9N6" secondAttribute="bottom" constant="8" id="ypA-tJ-TUb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="MedecinAdress" destination="cNU-CN-oab" id="awN-Rq-SfE"/>
+                                            <outlet property="MedecinModif" destination="Vsx-7o-0Va" id="XqV-MH-Gc1"/>
+                                            <outlet property="MedecinName" destination="9QH-lH-9N6" id="z7p-1r-pO4"/>
+                                            <outlet property="MedecinPhone" destination="904-B5-tyE" id="JWL-JA-JnD"/>
+                                            <outlet property="MedecinSpeciality" destination="A7t-RZ-Qjl" id="pCg-Cv-f90"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M9t-g2-ogg" id="rmP-nN-L30"/>
+                                    <outlet property="delegate" destination="M9t-g2-ogg" id="nUQ-sz-smY"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzU-ny-TQZ">
                                 <rect key="frame" x="16" y="597" width="343" height="50"/>
@@ -2871,6 +2882,10 @@
                             <constraint firstItem="bME-66-HKh" firstAttribute="top" secondItem="hNP-NR-5yI" secondAttribute="bottom" id="xzl-ma-nxe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gfd" destination="9QH-lH-9N6" id="SgW-tl-zwb"/>
+                        <outlet property="medecinTable" destination="bME-66-HKh" id="iFr-YF-ZZ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTq-uy-FQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
