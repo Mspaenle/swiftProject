@@ -659,6 +659,9 @@
                                     <!--2018-02-23 09:27:12 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
+                                <connections>
+                                    <action selector="DatePickerAction:" destination="rhT-62-590" eventType="valueChanged" id="Na6-Ti-OoD"/>
+                                </connections>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jA-D2-x4M">
                                 <rect key="frame" x="0.0" y="318" width="375" height="216"/>

@@ -15,9 +15,13 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var validateBTN: UIButton!
     @IBOutlet weak var cancelBTN: UIButton!
     
-    
+    var dateEvent: Date!
+    var event: EventModel?
     let events = ["Somnolence","Chute","Hallucination","Prise de dispersible","Clic / bolus d'Apokinon"]
     
+    @IBAction func DatePickerAction(_ sender: Any) {
+        dateEvent = datePicker.date
+    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
@@ -35,7 +39,8 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.dateEvent = datePicker.date
+        
         // Do any additional setup after loading the view.
     }
 
