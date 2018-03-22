@@ -19,7 +19,7 @@ extension Med{
     }
     
     static func create() -> Med{
-        return State(context: CoreDataManager.context)
+        return Med(context: CoreDataManager.context)
     }
     
     static func save() {
