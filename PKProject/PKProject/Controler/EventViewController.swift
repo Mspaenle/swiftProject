@@ -16,12 +16,38 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var cancelBTN: UIButton!
     
     var dateEvent: Date!
+    var eventValue: String?
     var event: EventModel?
     let events = ["Somnolence","Chute","Hallucination","Prise de dispersible","Clic / bolus d'Apokinon"]
+    
+    @IBAction func buttonAction(_ sender: Any) {
+        
+        if sender as! UIButton == self.validateBTN {
+            let val = eventValue
+            let ret : EventValue
+            if val == "Somnolence" {
+                ret = .somnolence
+            } else if val == "Chute" {
+                ret = .chute
+            } else if val == "Hallucination" {
+                ret = .hallucination
+            } else if val == "Prise de dispersible" {
+                ret = .prise
+            } else {
+                ret = .clic
+            }
+            event = EventModel(date: dateEvent,eventValue: ret)
+        }
+        else {
+            eventValue = nil
+        }
+        self.performSegue(withIdentifier: "validEvent", sender: self)
+    }
     
     @IBAction func DatePickerAction(_ sender: Any) {
         dateEvent = datePicker.date
     }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
@@ -35,6 +61,11 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
         return events.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        eventValue = events[row]
     }
     
     override func viewDidLoad() {
@@ -51,7 +82,7 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
 
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -59,6 +90,6 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 }

@@ -71,6 +71,9 @@
                                 <state key="normal" title="Annuler">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="KJ0-1A-Upe" eventType="touchUpInside" id="uVY-o3-mYP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEc-oL-nJw">
                                 <rect key="frame" x="187.5" y="617" width="187.5" height="50"/>
@@ -81,6 +84,9 @@
                                 <state key="normal" title="Valider">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="KJ0-1A-Upe" eventType="touchUpInside" id="0iX-bv-VVG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intitulé :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4V2-8R-yRy">
                                 <rect key="frame" x="16" y="82" width="343" height="21"/>
@@ -178,8 +184,16 @@
                             <constraint firstItem="wng-ds-HVm" firstAttribute="trailing" secondItem="VHN-7X-rvs" secondAttribute="trailingMargin" id="y64-S7-V7e"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelBTN" destination="oRp-LQ-Jui" id="jgf-go-nfa"/>
+                        <outlet property="medDescr" destination="wng-ds-HVm" id="hGG-ia-2m9"/>
+                        <outlet property="medTitle" destination="xwb-w3-NLW" id="ywj-cC-1Za"/>
+                        <outlet property="validateBTN" destination="fEc-oL-nJw" id="aTS-pU-B1A"/>
+                        <segue destination="St8-XB-5dz" kind="unwind" identifier="validateMed" unwindAction="unwindToParametreWithSender:" id="aj8-Ml-b5i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEl-Jk-ieh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="St8-XB-5dz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-935" y="-1642"/>
         </scene>
@@ -677,7 +691,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="i8f-ot-4d5" kind="unwind" unwindAction="unwindToMenuWithSender:" id="sk4-Qa-ffq"/>
+                                    <action selector="buttonAction:" destination="rhT-62-590" eventType="touchUpInside" id="q4V-a3-1c7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpT-xo-1hc">
@@ -690,7 +704,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="i8f-ot-4d5" kind="unwind" unwindAction="unwindToMenuWithSender:" id="Zu6-h0-D0c"/>
+                                    <action selector="buttonAction:" destination="rhT-62-590" eventType="touchUpInside" id="Ult-q9-EBf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Évènement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHh-e1-kvM">
@@ -730,6 +744,7 @@
                         <outlet property="datePicker" destination="2zZ-OC-R2p" id="1qB-4k-c9x"/>
                         <outlet property="eventPicker" destination="1jA-D2-x4M" id="1aQ-RS-d4t"/>
                         <outlet property="validateBTN" destination="mpT-xo-1hc" id="qAK-WK-84B"/>
+                        <segue destination="i8f-ot-4d5" kind="unwind" identifier="validEvent" unwindAction="unwindToMenuWithSender:" id="lIL-gq-1Oz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2jY-lg-a4n" userLabel="First Responder" sceneMemberID="firstResponder"/>

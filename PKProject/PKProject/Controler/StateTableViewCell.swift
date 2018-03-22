@@ -13,6 +13,7 @@ class StateTableViewCell: UITableViewCell {
     
     @IBOutlet weak var StateDateLabel: UILabel!
     @IBOutlet weak var StateTitleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

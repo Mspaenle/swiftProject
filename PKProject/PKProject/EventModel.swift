@@ -44,7 +44,7 @@ class EventModel {
         }
     }
     
-    init(date : NSDate, eventValue : EventValue){
+    init(date : Date, eventValue : EventValue){
         self.dao = Event.create()
         self.dao.date=date as NSDate
         self.dao.value=eventValue.rawValue

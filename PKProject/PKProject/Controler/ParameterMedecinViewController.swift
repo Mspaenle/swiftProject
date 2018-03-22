@@ -22,6 +22,14 @@ class ParameterMedecinViewController: UIViewController {
     }
     
 
+    @IBAction func unwindToParametre(sender: UIStoryboardSegue){
+        if let controller = sender.source as? AddMedViewController{
+            if let _ = controller.med{
+                //Med.save()
+            }
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
