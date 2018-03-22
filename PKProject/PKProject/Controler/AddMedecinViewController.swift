@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddMedecinViewController: UIViewController {
+class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
 
     @IBOutlet weak var AddMedecin: UIButton!
@@ -22,6 +22,7 @@ class AddMedecinViewController: UIViewController {
     var medecin: DoctorModel?
     let specialities = ["Somnolence","Chute","Hallucination","Prise de dispersible","Clic / bolus d'Apokinon"]
     var speciality: String?
+    var phoneNumber : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,30 +51,31 @@ class AddMedecinViewController: UIViewController {
         return 1
     }
     
-    func pickerView(_ SpecialtyMedein: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
         return specialities[row]
     }
     
-    func pickerView(_ SpecialtyMedein: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
         return specialities.count
     }
 
-    func pickerView(_ SpecialtyMedein: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         speciality = specialities[row]
     }
     
-    // TODO tests champs non vides + pickerview
+    // TODO tests champs non vides + rdv nil
     
     @IBAction func buttonMedecin(_ sender: Any) {
         if sender as! UIButton == self.AddMedecin {
-            medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: self.speciality!, travelTime: self.TravelMedecin.text as! Int16, rdv: nil)
-            self.performSegue(withIdentifier: "addMedecin", sender: self)
+            medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: self.speciality!, travelTime: self.TravelMedecin.text as! Int16, rdv: nil )
+            self.performSegue(withIdentifier: "validMed", sender: self)
         } else {
             //faire cas du nul
-            self.performSegue(withIdentifier: "cancelMedecin", sender: self)
+            phoneNumber=nil
+            self.performSegue(withIdentifier: "validMed", sender: self)
         }
         
     }

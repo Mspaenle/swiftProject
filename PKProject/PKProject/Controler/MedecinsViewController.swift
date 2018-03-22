@@ -60,7 +60,9 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func unwindToViewMedecin(sender: UIStoryboardSegue){
         if let controller = sender.source as? AddMedecinViewController{
             if let _ = controller.medecin{
-                Doctor.save()
+                if controller.medecin?.phoneNumber != nil{
+                    Doctor.save()
+                }
             }
         }
         

@@ -2616,8 +2616,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonMedecin:" destination="RJr-Qj-thf" eventType="touchUpInside" id="vCi-CU-3h6"/>
-                                    <segue destination="tfu-Ya-aE5" kind="unwind" unwindAction="unwindToViewMedecinWithSender:" id="Hsx-Xe-X3I"/>
+                                    <action selector="buttonMedecin:" destination="RJr-Qj-thf" eventType="touchUpInside" id="0po-kV-N1o"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NC5-XV-h8K">
@@ -2630,8 +2629,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="createMedecin:" destination="RJr-Qj-thf" eventType="touchUpInside" id="q6Z-XF-IEm"/>
-                                    <segue destination="tfu-Ya-aE5" kind="unwind" unwindAction="unwindToViewMedecinWithSender:" id="Yzc-pZ-klb"/>
+                                    <action selector="buttonMedecin:" destination="RJr-Qj-thf" eventType="touchUpInside" id="PMK-rM-aLR"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q11-oM-jEq">
@@ -2690,6 +2688,10 @@
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60D-ZK-jBO">
                                 <rect key="frame" x="0.0" y="133" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="RJr-Qj-thf" id="dIg-Al-FpB"/>
+                                    <outlet property="delegate" destination="RJr-Qj-thf" id="dhP-qc-Vq8"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.66274509800000003" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2758,6 +2760,8 @@
                         <outlet property="PhoneMedecin" destination="pHV-2S-YIf" id="Ld6-qu-ZKX"/>
                         <outlet property="SpecialtyMedein" destination="60D-ZK-jBO" id="4l0-h1-WhJ"/>
                         <outlet property="TravelMedecin" destination="tF5-No-DwK" id="hvc-7w-Ig1"/>
+                        <segue destination="tfu-Ya-aE5" kind="unwind" identifier="validMed" unwindAction="unwindToViewMedecinWithSender:" id="Fgf-I5-xUb"/>
+                        <segue destination="tfu-Ya-aE5" kind="unwind" unwindAction="unwindToViewMedecinWithSender:" id="Fxz-eb-kCl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjm-ph-jqL" userLabel="First Responder" sceneMemberID="firstResponder"/>

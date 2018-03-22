@@ -58,15 +58,15 @@ class DoctorModel{
         }
     }
     
-    private var rdvModel : RDVModel
+    private var rdvModel : RDVModel?
     
     var rdv: RDVModel?{
         get{
             return self.rdvModel
         }
         set{
-            self.rdvModel = newValue as! RDVModel
-            self.dao.rdv = rdvModel.dao
+            self.rdvModel = newValue
+            self.dao.rdv = rdvModel?.dao
         }
     }
     
@@ -79,7 +79,7 @@ class DoctorModel{
         self.dao.phoneNumber = phoneNumber
         self.dao.speciality = speciality
         self.dao.travelTime = travelTime
-        self.rdvModel = rdv!
+        self.rdvModel = rdv
         self.dao.rdv = rdv?.dao
         
     }
