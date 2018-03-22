@@ -44,20 +44,17 @@ class DrugIntakeModel{
         }
     }
     
-    private var dosesModel : DosesModel
-    
-    var dose: DosesModel{
+    var dose: String{
         get{
-            return self.dosesModel
+            return self.dose
         }
         set{
-            self.dosesModel = newValue
-            self.dao.dose = dosesModel.dao
+            self.dose = newValue
         }
     }
     
     
-    init(date : NSDate, med: MedModel, periodicity: PeriodicityModel, doses: DosesModel){
+    init(date : NSDate, med: MedModel, periodicity: PeriodicityModel, dose: String){
         let entity = CoreDataManager.entity(forName: "DrugIntake")
         self.dao = DrugIntake(entity: entity, insertInto: CoreDataManager.context)
         self.dao.date = date
@@ -65,8 +62,7 @@ class DrugIntakeModel{
         self.dao.med = med.dao
         self.periodicityModel = periodicity
         self.dao.periodicity = periodicity.dao
-        self.dosesModel = doses
-        self.dao.dose = doses.dao
+        self.dose = dose
         
     }
 }

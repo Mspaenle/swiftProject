@@ -32,26 +32,22 @@ class MedModel{
         }
     }
     
-    
-    private var dosesModel : DosesModel
-    
-    var doses: DosesModel{
+
+    var doses: [String]{
         get{
-            return self.dosesModel
+            return self.doses
         }
         set{
-            self.dosesModel = newValue
-            self.dao.doses = dosesModel.dao
+            self.doses = newValue
         }
     }
     
     
-    init(name : String, specification : String, doses: DosesModel){
+    init(name : String, specification : String, doses: [String]){
         self.dao = Med.create()
         self.dao.name = name
         self.dao.specification = specification
-        self.dosesModel = doses
-        self.dao.doses = doses.dao
+        self.doses = doses
         
     }
 }
