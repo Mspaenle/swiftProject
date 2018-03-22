@@ -47,8 +47,7 @@ class MedModel{
     
     
     init(name : String, specification : String, doses: DosesModel){
-        let entity = CoreDataManager.entity(forName: "Med")
-        self.dao = Med(entity: entity, insertInto: CoreDataManager.context)
+        self.dao = Med.create()
         self.dao.name = name
         self.dao.specification = specification
         self.dosesModel = doses

@@ -27,7 +27,7 @@ class AddMedViewController: UIViewController {
         else {
             self.title = nil
         }
-        self.performSegue(withIdentifier: "validEvent", sender: self)
+        self.performSegue(withIdentifier: "validMed", sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

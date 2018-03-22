@@ -11,7 +11,7 @@ import CoreData
 
 class RecapPatientViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
     
-    var states : [Event] = []
+    var states : [State] = []
     
     
     @IBOutlet weak var StateTable: UITableView!
@@ -27,7 +27,7 @@ class RecapPatientViewController: UIViewController , UITableViewDataSource, UITa
         
         let context = appDelegate.persistentContainer.viewContext
         
-        let request : NSFetchRequest<Event> = Event.fetchRequest()
+        let request : NSFetchRequest<State> = State.fetchRequest()
         let current = (Calendar.current as NSCalendar).date(byAdding: .day, value: -5, to: Date(), options: [])! as NSDate
         request.predicate = NSPredicate(format: "date > %@", current)
         request.sortDescriptors = [NSSortDescriptor(key: #keyPath(State.date), ascending: true)]

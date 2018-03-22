@@ -72,7 +72,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonAction:" destination="KJ0-1A-Upe" eventType="touchUpInside" id="uVY-o3-mYP"/>
+                                    <action selector="buttonAction:" destination="KJ0-1A-Upe" eventType="touchUpInside" id="Ayw-iR-ozM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEc-oL-nJw">
@@ -85,7 +85,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonAction:" destination="KJ0-1A-Upe" eventType="touchUpInside" id="0iX-bv-VVG"/>
+                                    <action selector="buttonAction:" destination="KJ0-1A-Upe" eventType="touchUpInside" id="ZGL-18-dBr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intitulé :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4V2-8R-yRy">
@@ -189,7 +189,7 @@
                         <outlet property="medDescr" destination="wng-ds-HVm" id="hGG-ia-2m9"/>
                         <outlet property="medTitle" destination="xwb-w3-NLW" id="ywj-cC-1Za"/>
                         <outlet property="validateBTN" destination="fEc-oL-nJw" id="aTS-pU-B1A"/>
-                        <segue destination="St8-XB-5dz" kind="unwind" identifier="validateMed" unwindAction="unwindToParametreWithSender:" id="aj8-Ml-b5i"/>
+                        <segue destination="St8-XB-5dz" kind="unwind" identifier="validMed" unwindAction="unwindToParametreWithSender:" id="MKw-Wu-y1I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEl-Jk-ieh" userLabel="First Responder" sceneMemberID="firstResponder"/>
