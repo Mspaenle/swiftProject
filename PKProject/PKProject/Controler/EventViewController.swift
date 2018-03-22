@@ -37,12 +37,11 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                 ret = .clic
             }
             event = EventModel(date: dateEvent,eventValue: ret)
-            self.performSegue(withIdentifier: "validEvent", sender: self)
         }
         else {
             eventValue = nil
-            self.performSegue(withIdentifier: "cancelEvent", sender: self)
         }
+        self.performSegue(withIdentifier: "validEvent", sender: self)
     }
     
     @IBAction func DatePickerAction(_ sender: Any) {
