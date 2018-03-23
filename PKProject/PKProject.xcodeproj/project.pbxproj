@@ -35,6 +35,7 @@
 		8F52A54E205911C300FDF76D /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A54D205911C300FDF76D /* ActivityModel.swift */; };
 		8F52A551205911E600FDF76D /* EmergencyNumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A550205911E600FDF76D /* EmergencyNumberModel.swift */; };
 		8F52A5542059120F00FDF76D /* DrugIntakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A5532059120F00FDF76D /* DrugIntakeModel.swift */; };
+		8F53E7E32064E24800764758 /* MedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F53E7E22064E24800764758 /* MedTableViewCell.swift */; };
 		8F54C75B2056D4DC007F17AE /* StateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54C75A2056D4DC007F17AE /* StateTableViewCell.swift */; };
 		8F7DB1572050556B007B62FA /* ListStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB1562050556B007B62FA /* ListStateModel.swift */; };
 		8F7DB1602050580D007B62FA /* ListEmergencyNumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB15F2050580D007B62FA /* ListEmergencyNumberModel.swift */; };
@@ -121,6 +122,7 @@
 		8F52A54D205911C300FDF76D /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		8F52A550205911E600FDF76D /* EmergencyNumberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyNumberModel.swift; sourceTree = "<group>"; };
 		8F52A5532059120F00FDF76D /* DrugIntakeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugIntakeModel.swift; sourceTree = "<group>"; };
+		8F53E7E22064E24800764758 /* MedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedTableViewCell.swift; path = Controler/MedTableViewCell.swift; sourceTree = "<group>"; };
 		8F54C75A2056D4DC007F17AE /* StateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StateTableViewCell.swift; path = Controler/StateTableViewCell.swift; sourceTree = "<group>"; };
 		8F7DB1562050556B007B62FA /* ListStateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListStateModel.swift; sourceTree = "<group>"; };
 		8F7DB15F2050580D007B62FA /* ListEmergencyNumberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEmergencyNumberModel.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				8F54C75A2056D4DC007F17AE /* StateTableViewCell.swift */,
 				24D947BC2062C865003E99B1 /* MedecinTableViewCell.swift */,
 				8F9192A2206425DF00060780 /* DoseTableViewCell.swift */,
+				8F53E7E22064E24800764758 /* MedTableViewCell.swift */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				8FC4804D204014C600B9FD29 /* EventViewController.swift in Sources */,
 				8F385E762046910100F29058 /* MedecinMenuViewController.swift in Sources */,
 				12E111A2205FE8AD00124F7D /* MedDAO.swift in Sources */,
+				8F53E7E32064E24800764758 /* MedTableViewCell.swift in Sources */,
 				8F385E882046995900F29058 /* AddMedViewController.swift in Sources */,
 				8F7DB1602050580D007B62FA /* ListEmergencyNumberModel.swift in Sources */,
 				8F90A907203C814400B74A0A /* EmergencyNumbersViewController.swift in Sources */,

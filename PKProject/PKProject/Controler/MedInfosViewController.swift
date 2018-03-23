@@ -7,13 +7,30 @@
 //
 
 import UIKit
+import CoreData
 
-class MedInfosViewController: UIViewController {
+class MedInfosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var MedTable: UITableView!
+    var med: [Med] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
+            return
+        }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request : NSFetchRequest<Med> = Med.fetchRequest()
+        do{
+            try self.med = context.fetch(request)
+        }
+        catch let error as NSError{
+            //self.alertError(errorMsg: "\(error)", userInfo:"\(error.userInfo)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +38,16 @@ class MedInfosViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = self.MedTable.dequeueReusableCell(withIdentifier: "medCell", for: indexPath) as! MedTableViewCell
+        cell.medNameLabel.text = self.med[indexPath.row].name
+        cell.medDescrLabel.text = self.med[indexPath.row].specification
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return self.med.count
+    }
 
     /*
     // MARK: - Navigation
