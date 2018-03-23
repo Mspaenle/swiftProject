@@ -47,8 +47,7 @@ class RDVModel{
         self.dao.date = date
         self.dao.title = title
         self.doctorModel = doctor
-        self.dao.doctor = doctor.dao
-        
+        self.doctorModel.addRdv(rdv: self)
     }   
 
 }

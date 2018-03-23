@@ -5,7 +5,7 @@
         <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="specification" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="periodicity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Periodicity" syncable="YES"/>
+        <relationship name="periodicity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Periodicity" inverseName="activity" inverseEntity="Periodicity" syncable="YES"/>
     </entity>
     <entity name="Doctor" representedClassName="Doctor" syncable="YES" codeGenerationType="class">
         <attribute name="adress" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,13 +13,13 @@
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speciality" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="travelTime" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="rdv" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RDV" inverseName="doctor" inverseEntity="RDV" syncable="YES"/>
+        <relationship name="rdv" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RDV" inverseName="doctor" inverseEntity="RDV" syncable="YES"/>
     </entity>
     <entity name="DrugIntake" representedClassName="DrugIntake" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="dose" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="med" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Med" syncable="YES"/>
-        <relationship name="periodicity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Periodicity" syncable="YES"/>
+        <relationship name="med" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Med" inverseName="dringintake" inverseEntity="Med" syncable="YES"/>
+        <relationship name="periodicity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Periodicity" inverseName="drug" inverseEntity="Periodicity" syncable="YES"/>
     </entity>
     <entity name="EmergencyNumber" representedClassName="EmergencyNumber" syncable="YES" codeGenerationType="class">
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
@@ -33,9 +33,12 @@
         <attribute name="doses" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="specification" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dringintake" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DrugIntake" inverseName="med" inverseEntity="DrugIntake" syncable="YES"/>
     </entity>
     <entity name="Periodicity" representedClassName="Periodicity" syncable="YES" codeGenerationType="class">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="periodicity" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="drug" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DrugIntake" inverseName="periodicity" inverseEntity="DrugIntake" syncable="YES"/>
     </entity>
     <entity name="RDV" representedClassName="RDV" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -47,13 +50,13 @@
         <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="-18" positionY="-145" width="128" height="120"/>
+        <element name="Activity" positionX="-18" positionY="-145" width="128" height="118"/>
         <element name="Doctor" positionX="-198" positionY="27" width="128" height="133"/>
         <element name="DrugIntake" positionX="-110" positionY="-405" width="128" height="103"/>
         <element name="EmergencyNumber" positionX="-200" positionY="-255" width="128" height="75"/>
         <element name="Event" positionX="-198" positionY="-153" width="128" height="75"/>
-        <element name="Med" positionX="-236" positionY="-603" width="128" height="88"/>
-        <element name="Periodicity" positionX="180" positionY="-175" width="128" height="58"/>
+        <element name="Med" positionX="-236" positionY="-603" width="128" height="103"/>
+        <element name="Periodicity" positionX="196" positionY="-225" width="128" height="88"/>
         <element name="RDV" positionX="-396" positionY="27" width="128" height="88"/>
         <element name="State" positionX="-198" positionY="-72" width="128" height="75"/>
     </elements>

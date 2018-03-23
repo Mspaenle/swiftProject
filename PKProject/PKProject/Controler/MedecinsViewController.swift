@@ -34,7 +34,7 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
             try self.medecins = context.fetch(request)
         }
         catch let error as NSError{
-            //self.alertError(errorMsg: "\(error)", userInfo:"\(error.userInfo)")
+            //
         }
     }
 
@@ -62,6 +62,7 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
             if let _ = controller.medecin{
                 if controller.medecin?.phoneNumber != nil{
                     Doctor.save()
+                    self.medecinTable.reloadData()
                 }
             }
         }

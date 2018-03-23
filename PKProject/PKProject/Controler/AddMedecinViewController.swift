@@ -70,7 +70,8 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     @IBAction func buttonMedecin(_ sender: Any) {
         if sender as! UIButton == self.AddMedecin {
-            medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: self.speciality!, travelTime: self.TravelMedecin.text as! Int16, rdv: nil )
+            let a:Int16? = Int16(self.TravelMedecin.text!)!
+            medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: self.speciality!, travelTime: a!)
             self.performSegue(withIdentifier: "validMed", sender: self)
         } else {
             //faire cas du nul

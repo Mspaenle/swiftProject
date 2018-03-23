@@ -13,14 +13,22 @@ import Foundation
 import CoreData
 import UIKit
 
+/// DAO extension
 extension Doctor{
-    static func getNewDoctorDAO() -> Doctor?{
-        guard let entity = NSEntityDescription.entity(forEntityName: "Doctor", in: CoreDataManager.context) else {
-            return nil
-        }
-        return Doctor(entity: entity, insertInto : CoreDataManager.context)
+    static private func getNewDoctorDTO() -> Doctor{
+        return Doctor(context: CoreDataManager.context)
     }
     
+    static public func createDTO(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16) -> Doctor{
+        let dto = self.getNewDoctorDTO()
+        dto.adress = adress
+        dto.name   = name
+        dto.phoneNumber = phoneNumber
+        dto.speciality = speciality
+        dto.travelTime = travelTime
+        return dto
+    }
+
     static func create() -> Doctor{
         return Doctor(context: CoreDataManager.context)
     }

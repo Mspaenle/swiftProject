@@ -11,77 +11,74 @@ import CoreData
 import UIKit
 
 class DoctorModel{
-    internal var dao : Doctor
+    internal var dto : Doctor
     
     var adress: String {
         get{
-            return self.dao.adress!
+            return self.dto.adress!
         }
         set{
-            self.dao.adress = newValue
+            self.dto.adress = newValue
         }
     }
     
     var name: String {
         get{
-            return self.dao.name!
+            return self.dto.name!
         }
         set{
-            self.dao.name = newValue
+            self.dto.name = newValue
         }
     }
     
     var phoneNumber: String {
         get{
-            return self.dao.phoneNumber!
+            return self.dto.phoneNumber!
         }
         set{
-            self.dao.phoneNumber = newValue
+            self.dto.phoneNumber = newValue
         }
     }
     
     var speciality: String {
         get{
-            return self.dao.speciality!
+            return self.dto.speciality!
         }
         set{
-            self.dao.speciality = newValue
+            self.dto.speciality = newValue
         }
     }
     
     var travelTime: Int16 {
         get{
-            return self.dao.travelTime
+            return self.dto.travelTime
         }
         set{
-            self.dao.travelTime = newValue
+            self.dto.travelTime = newValue
         }
     }
     
-    private var rdvModel : RDVModel?
-    
-    var rdv: RDVModel?{
+    var rdv: [RDVModel]{
         get{
-            return self.rdvModel
-        }
-        set{
-            self.rdvModel = newValue
-            self.dao.rdv = rdvModel?.dao
+            guard let rdvs = self.dto.rdv else { return [RDVModel]() }
+            return rdvs.allObjects as! [RDVModel]
         }
     }
     
+    @discardableResult
+    func addRdv(rdv: RDVModel) -> DoctorModel{
+        if let rdvs = self.dto.rdv{
+            rdvs.adding(rdv)
+        }
+        else{
+            self.dto.rdv = NSSet(array: [rdv])
+        }
+        return self
+    }
     
-    init(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16, rdv: RDVModel?){
-        let entity = CoreDataManager.entity(forName: "Doctor")
-        self.dao = Doctor(entity: entity, insertInto: CoreDataManager.context)
-        self.dao.adress = adress
-        self.dao.name = name
-        self.dao.phoneNumber = phoneNumber
-        self.dao.speciality = speciality
-        self.dao.travelTime = travelTime
-        self.rdvModel = rdv
-        self.dao.rdv = rdv?.dao
-        
+    
+    init(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16){
+        self.dto = Doctor.createDTO(adress: adress, name: name, phoneNumber: phoneNumber, speciality: speciality, travelTime: travelTime)        
     }
     
 
