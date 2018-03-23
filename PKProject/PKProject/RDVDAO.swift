@@ -17,4 +17,16 @@ extension RDV{
         }
         return RDV(entity: entity, insertInto : CoreDataManager.context)
     }
+    
+    static func create() -> RDV{
+        return RDV(context: CoreDataManager.context)
+    }
+    
+    static func save() {
+        do{
+            try CoreDataManager.save()
+        }catch let error as NSError{
+            fatalError("cannot save data: "+error.description)
+        }
+    }
 }

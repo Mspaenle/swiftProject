@@ -55,8 +55,7 @@ class DrugIntakeModel{
     
     
     init(date : NSDate, med: MedModel, periodicity: PeriodicityModel, dose: String){
-        let entity = CoreDataManager.entity(forName: "DrugIntake")
-        self.dao = DrugIntake(entity: entity, insertInto: CoreDataManager.context)
+        self.dao = DrugIntake.create()
         self.dao.date = date
         self.medModel = med
         self.dao.med = med.dao

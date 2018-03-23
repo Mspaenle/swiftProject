@@ -23,8 +23,7 @@ class PeriodicityModel {
     }
     
     init(title : String){
-        let entity = CoreDataManager.entity(forName: "Periodicity")
-        self.dao = Periodicity(entity: entity, insertInto: CoreDataManager.context)
+        self.dao = Periodicity.create()
         self.dao.title=title
     }
 }

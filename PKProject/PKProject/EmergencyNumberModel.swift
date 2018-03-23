@@ -32,8 +32,7 @@ class EmergencyNumberModel{
     }
     
     init(phoneNumber : String, title : String){
-        let entity = CoreDataManager.entity(forName: "EmergencyNumber")
-        self.dao = EmergencyNumber(entity: entity, insertInto: CoreDataManager.context)
+        self.dao = EmergencyNumber.create()
         self.dao.phoneNumber = phoneNumber
         self.dao.title = title
     }

@@ -60,8 +60,7 @@ class ActivityModel{
     
     
     init(date : NSDate, title : String, specification : String, duration : Int16, periodicity: PeriodicityModel){
-        let entity = CoreDataManager.entity(forName: "Activity")
-        self.dao = Activity(entity: entity, insertInto: CoreDataManager.context)
+        self.dao = Activity.create()
         self.dao.date=date
         self.dao.title=title
         self.dao.specification=specification

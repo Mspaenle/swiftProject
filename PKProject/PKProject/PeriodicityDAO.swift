@@ -17,4 +17,16 @@ extension Periodicity{
         }
         return Periodicity(entity: entity, insertInto : CoreDataManager.context)
     }
+    
+    static func create() -> Periodicity{
+        return Periodicity(context: CoreDataManager.context)
+    }
+    
+    static func save() {
+        do{
+            try CoreDataManager.save()
+        }catch let error as NSError{
+            fatalError("cannot save data: "+error.description)
+        }
+    }
 }

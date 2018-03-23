@@ -42,8 +42,7 @@ class RDVModel{
     
     
     init(date : NSDate, title : String, doctor: DoctorModel){
-        let entity = CoreDataManager.entity(forName: "RDV")
-        self.dao = RDV(entity: entity, insertInto: CoreDataManager.context)
+        self.dao = RDV.create()
         self.dao.date = date
         self.dao.title = title
         self.doctorModel = doctor
