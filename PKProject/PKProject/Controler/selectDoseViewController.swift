@@ -8,12 +8,56 @@
 
 import UIKit
 
-class selectDoseViewController: UIViewController {
+class selectDoseViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var cancelBTN: UIButton!
+    @IBOutlet weak var validateBTN: UIButton!
+    @IBOutlet weak var dosesPicker: UIPickerView!
+    
+    var med: MedModel? = nil
+    var dose: String?
+    var doses: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let amed = self.med {
+            doses = amed.doses
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        return doses[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return doses.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        dose = doses[row]
+    }
+    
+    
+
+    
+    @IBAction func buttonAction(_ sender: Any) {
+        if sender as! UIButton == self.validateBTN {
+            
+        }
+        else {
+            dose = nil
+        }
+        self.performSegue(withIdentifier: "toAddPill", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,7 +66,7 @@ class selectDoseViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -30,6 +74,6 @@ class selectDoseViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

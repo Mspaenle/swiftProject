@@ -20,6 +20,8 @@ class PopUpPillsDateViewController: UIViewController {
         heure = hourPicker.date
     }
     
+    
+    
     @IBAction func buttonAction(_ sender: Any) {
         if sender as! UIButton == self.ValidateBTN {
             

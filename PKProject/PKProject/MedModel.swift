@@ -35,7 +35,7 @@ class MedModel{
 
     var doses: [String]{
         get{
-            return self.doses
+            return self.dao.doses!
         }
         set{
             self.dao.doses = newValue

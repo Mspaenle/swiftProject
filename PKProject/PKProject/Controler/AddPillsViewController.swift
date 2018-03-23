@@ -107,7 +107,16 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
-        
+    
+    let segueAddDose = "addDoseSegue"
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.segueAddDose{
+                let medToDose = segue.destination as! selectDoseViewController
+                medToDose.med = self.med
+            
+        }
+    }
     /*
     // MARK: - Navigation
 
