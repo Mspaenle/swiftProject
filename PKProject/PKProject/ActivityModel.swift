@@ -45,27 +45,13 @@ class ActivityModel{
             self.dao.duration = newValue
         }
     }
+ 
     
-    private var periodicityModel : PeriodicityModel
-    
-    var periodicity: PeriodicityModel{
-        get{
-            return self.periodicityModel
-        }
-        set{
-            self.periodicityModel = newValue
-            self.dao.periodicity = periodicityModel.dao
-        }
-    }
-    
-    
-    init(date : NSDate, title : String, specification : String, duration : Int16, periodicity: PeriodicityModel){
+    init(date : NSDate, title : String, specification : String, duration : Int16){
         self.dao = Activity.create()
         self.dao.date=date
         self.dao.title=title
         self.dao.specification=specification
-        self.periodicityModel = periodicity
-        self.dao.periodicity = periodicity.dao
         
     }
 }

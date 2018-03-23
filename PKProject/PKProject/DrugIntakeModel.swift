@@ -13,17 +13,7 @@ import UIKit
 
 class DrugIntakeModel{
     internal var dao : DrugIntake
-    
-    var date: Date {
-        get{
-            return self.dao.date! as Date
-        }
-        set{
-            self.dao.date = newValue as NSDate
-        }
-    }
-    
-    
+
     private var medModel : MedModel
     
     var med: MedModel{
@@ -32,15 +22,12 @@ class DrugIntakeModel{
         }
     }
     
-    private var periodicityModel : PeriodicityModel
-    
-    var periodicity: PeriodicityModel{
+    var periodicity: [Date]{
         get{
-            return self.periodicityModel
+            return self.dao.periodicity!
         }
         set{
-            self.periodicityModel = newValue
-            self.dao.periodicity = periodicityModel.dao
+            self.dao.periodicity = newValue
         }
     }
     
@@ -54,13 +41,11 @@ class DrugIntakeModel{
     }
     
     
-    init(date : NSDate, med: MedModel, periodicity: PeriodicityModel, dose: String){
+    init(med: MedModel, periodicity: [Date], dose: String){
         self.dao = DrugIntake.create()
-        self.dao.date = date
         self.medModel = med
         self.dao.med = med.dao
-        self.periodicityModel = periodicity
-        self.dao.periodicity = periodicity.dao
+        self.dao.periodicity = periodicity
         self.dose = dose
         
     }
