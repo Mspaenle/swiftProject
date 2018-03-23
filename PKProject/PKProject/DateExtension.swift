@@ -18,4 +18,13 @@ extension Date{
         return dateFormatter.string(from: self)
     }
     
+    func formatHeure() -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.locale = NSLocale(localeIdentifier: "fr_FR") as Locale!
+        dateFormatter.timeZone = TimeZone.current
+        return dateFormatter.string(from: self)
+    }
+
+    
 }

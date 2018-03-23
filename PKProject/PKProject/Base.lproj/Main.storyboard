@@ -1057,8 +1057,8 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8u-2b-bQA">
                                 <rect key="frame" x="0.0" y="99" width="375" height="216"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="jz2-Ee-VtR" id="IR4-Xh-gQF"/>
-                                    <outlet property="delegate" destination="jz2-Ee-VtR" id="ycF-y9-iya"/>
+                                    <outlet property="dataSource" destination="jz2-Ee-VtR" id="Mj5-TZ-5Th"/>
+                                    <outlet property="delegate" destination="jz2-Ee-VtR" id="EPT-mz-IRD"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prises :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sn-Sv-8HV">
@@ -1112,9 +1112,8 @@
                                 <rect key="frame" x="187.5" y="528" width="171.5" height="30"/>
                                 <state key="normal" title="Supprimer Heure"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-Sd-YVO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-Sd-YVO">
                                 <rect key="frame" x="144" y="566" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ajouter dose"/>
                                 <connections>
                                     <segue destination="q6V-Sc-zu9" kind="presentation" id="9JG-f2-eme"/>
@@ -1124,6 +1123,7 @@
                         <color key="backgroundColor" red="0.70196078429999997" green="1" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ZPe-fJ-L7s" firstAttribute="top" secondItem="yGd-Ol-zgU" secondAttribute="bottom" constant="8" id="1Lt-em-l9u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Oc0-Sd-YVO" secondAttribute="trailing" constant="128" id="34K-HK-70f"/>
                             <constraint firstItem="rsy-Fg-EaP" firstAttribute="top" secondItem="yGd-Ol-zgU" secondAttribute="bottom" constant="8" id="3r4-uz-qEU"/>
                             <constraint firstItem="jP1-KA-oF1" firstAttribute="width" secondItem="YAM-50-AQt" secondAttribute="width" id="5i9-HP-EI4"/>
                             <constraint firstItem="J8u-2b-bQA" firstAttribute="leading" secondItem="Xk8-vP-jYR" secondAttribute="leading" id="5pB-6S-M6J"/>
@@ -1150,6 +1150,8 @@
                             <constraint firstItem="jP1-KA-oF1" firstAttribute="leading" secondItem="YAM-50-AQt" secondAttribute="trailing" id="iVI-Ft-gis"/>
                             <constraint firstItem="VFg-gD-qjQ" firstAttribute="leading" secondItem="Xk8-vP-jYR" secondAttribute="leadingMargin" id="jw9-Zv-Rgl"/>
                             <constraint firstItem="4SX-Vs-n8t" firstAttribute="leading" secondItem="Xk8-vP-jYR" secondAttribute="leadingMargin" id="mUf-Zv-8cH"/>
+                            <constraint firstItem="Oc0-Sd-YVO" firstAttribute="top" secondItem="ZPe-fJ-L7s" secondAttribute="bottom" constant="8" id="moe-Ny-9Jh"/>
+                            <constraint firstItem="Oc0-Sd-YVO" firstAttribute="leading" secondItem="Xk8-vP-jYR" secondAttribute="leadingMargin" constant="128" id="poC-bK-HRN"/>
                             <constraint firstItem="jP1-KA-oF1" firstAttribute="leading" secondItem="YAM-50-AQt" secondAttribute="trailing" id="q2N-mt-eU4"/>
                             <constraint firstItem="ZPe-fJ-L7s" firstAttribute="leading" secondItem="rsy-Fg-EaP" secondAttribute="trailing" id="qGk-Bs-Gfl"/>
                             <constraint firstItem="yGd-Ol-zgU" firstAttribute="leading" secondItem="Xk8-vP-jYR" secondAttribute="leadingMargin" id="tjZ-bR-M5M"/>
@@ -1162,8 +1164,8 @@
                     <connections>
                         <outlet property="CancelBTN" destination="YAM-50-AQt" id="9uT-ye-NTJ"/>
                         <outlet property="DateTable" destination="yGd-Ol-zgU" id="2yJ-WH-ygJ"/>
-                        <outlet property="MedPicker" destination="J8u-2b-bQA" id="qhJ-8H-byD"/>
                         <outlet property="ValidateBTN" destination="jP1-KA-oF1" id="Uu4-cv-M6V"/>
+                        <outlet property="medPicker" destination="J8u-2b-bQA" id="bbM-ko-XAs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghA-XR-GVo" userLabel="First Responder" sceneMemberID="firstResponder"/>

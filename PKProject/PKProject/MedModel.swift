@@ -50,4 +50,5 @@ class MedModel{
         self.doses = doses
         
     }
+    
 }

@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Foundation
+import CoreData
 
 class AddPillsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
-
-    @IBOutlet weak var MedPicker: UIPickerView!
     
+    
+    @IBOutlet weak var medPicker: UIPickerView!
     
     @IBOutlet weak var DateTable: UITableView!
     
@@ -22,6 +24,28 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     var med: MedModel?
     var dates: [Date] = []
     var dose: String?
+    var meds: [Med] = []
+    
+   
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        return meds[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return meds.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        med = MedModel(name: meds[row].name!,specification: meds[row].specification!,doses: meds[row].doses!)
+    }
     
     @IBAction func listDatesAction(_ sender: Any) {
 
@@ -39,8 +63,21 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
+            return
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request : NSFetchRequest<Med> = Med.fetchRequest()
+        do{
+            try self.meds = context.fetch(request)
+        }
+        catch{
+            
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +87,7 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.DateTable.dequeueReusableCell(withIdentifier: "datePillCell", for: indexPath) as! DatePillTableViewCell
-        cell.datePillLabel.text = self.dates[indexPath.row].format()
+        cell.datePillLabel.text = self.dates[indexPath.row].formatHeure()
         return cell
     }
     
@@ -60,27 +97,6 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView,canEditRowAt indexPath: IndexPath) -> Bool {
         return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableView, indexPath: IndexPath){
-        if (editingStyle==UITableViewCellEditingStyle.delete){
-            self.DateTable.beginUpdates()
-            if self.delete(dateWithIndex: indexPath.row){
-                self.dateWithIndex.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-            }
-            self.DateTable.endUpdates()
-        }
-    }
-    
-    func delete(dateWithIndex index: Int) -> Bool{
-        guard let context = self.getContext(errorMsg: "Ne peut pas supprimer de date") else {return false}
-        let date = self.dates[index]
-        context.delete(date)
-        do{
-            try context.save()
-            self.dates.remove(at: index)
-            return true
-        }
     }
     
     @IBAction func unwindToAddPills(sender: UIStoryboardSegue){
