@@ -12,13 +12,11 @@ import CoreData
 class MedecinsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var ModifierMedecin: UIButton!
-    
-    var medecin: DoctorModel?
-    var index : Int?
-    
     @IBOutlet weak var medecinTable: UITableView!
     
     var medecins : [Doctor] = []
+    var medecin: DoctorModel?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +52,6 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        index = indexPath.row
-    }
 
     
     
@@ -66,29 +61,43 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func unwindToViewMedecin(sender: UIStoryboardSegue){
         if let controller = sender.source as? AddMedecinViewController{
+            
             if let _ = controller.medecin{
-                if controller.medecin?.phoneNumber != nil {
-                    Doctor.save()
-                    self.medecinTable.reloadData() //ne fonctionne pas
-                }
+                
+                Doctor.save()
+                self.medecinTable.reloadData() //ne fonctionne pas
+
             }
+            
         }
-        if let controller = sender.source as? EditMedecinsViewController{
+        else if let controller = sender.source as? EditMedecinsViewController{
+            
             if let _ = controller.medecin{
-                if controller.medecin?.phoneNumber != nil{
-                    Doctor.save()
-                    self.medecinTable.reloadData() //ne fonctionne pas
-                }
+                
+                Doctor.save()
+                self.medecinTable.reloadData() //ne fonctionne pas
+                
             }
+            
         }
         
         
     }
     
+    let segueEditPerson = "editMedecin"
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.segueEditPerson{
+            if let indexPath = self.medecinTable.indexPathForSelectedRow{
+                let editMedecinController = segue.destination as! EditMedecinsViewController
+                editMedecinController.med = self.medecins[indexPath.row]
+                self.medecinTable.deselectRow(at: indexPath, animated: true)
+            }
+        }
+    }
 
     @IBAction func buttonModifMedecin(_ sender: UIButton) {
         
-        self.performSegue(withIdentifier: "modifMed", sender: self)
         
 
     }

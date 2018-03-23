@@ -22,7 +22,6 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var medecin: DoctorModel?
     let specialities = ["Somnolence","Chute","Hallucination","Prise de dispersible","Clic / bolus d'Apokinon"]
     var speciality: String?
-    var phoneNumber : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,9 +73,8 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
             medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: self.speciality!, travelTime: a!)
             self.performSegue(withIdentifier: "validMed", sender: self)
         } else {
-            //faire cas du nul
-            phoneNumber=nil
-            self.performSegue(withIdentifier: "validMed", sender: self)
+            self.dismiss(animated: true, completion: nil)
+
         }
         
     }

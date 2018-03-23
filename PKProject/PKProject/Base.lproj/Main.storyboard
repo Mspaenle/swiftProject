@@ -2574,7 +2574,7 @@
                         <outlet property="EditTravelMedecin" destination="qPb-K3-xdY" id="jGU-Ai-IQ7"/>
                         <outlet property="cancelModifMedecin" destination="QWf-n6-J3w" id="RJk-eF-6me"/>
                         <outlet property="modifMedecin" destination="nse-oY-rzx" id="Gl1-5W-JSB"/>
-                        <segue destination="KCd-OJ-uXj" kind="unwind" identifier="editMed" unwindAction="unwindToViewMedecinWithSender:" id="XAg-h8-Bwn"/>
+                        <segue destination="KCd-OJ-uXj" kind="unwind" identifier="editMedecin" unwindAction="unwindToViewMedecinWithSender:" id="XAg-h8-Bwn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8O-Y4-kjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2879,6 +2879,7 @@
                                         </state>
                                         <connections>
                                             <action selector="buttonModifMedecin:" destination="M9t-g2-ogg" eventType="touchUpInside" id="dh9-Dl-AYT"/>
+                                            <segue destination="mn2-mh-Nnc" kind="presentation" identifier="editMedecin" id="iaD-6N-aKM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5z-zy-TiW">
@@ -2910,11 +2911,9 @@
                     <connections>
                         <outlet property="ModifierMedecin" destination="g8b-cH-GzZ" id="Xm2-FQ-UQD"/>
                         <outlet property="medecinTable" destination="bME-66-HKh" id="iFr-YF-ZZ5"/>
-                        <segue destination="AW8-4Q-Gkn" kind="unwind" identifier="modifMed" unwindAction="unwindToEditMedecinWithSender:" id="Gwi-2C-fHn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTq-uy-FQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="AW8-4Q-Gkn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-82.400000000000006" y="726.38680659670172"/>
         </scene>
