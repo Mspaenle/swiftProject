@@ -55,8 +55,12 @@ class EditMedecinsViewController: UIViewController {
     @IBAction func modifMedecin(_ sender: UIButton) {
         
             if sender == self.modifMedecin {
+
+                Doctor.delete(object: med!)
                 let a:Int16? = Int16(self.EditTravelMedecin.text!)!
+                
                 medecin = DoctorModel(adress: self.EditAdressMedecin.text!, name: self.EditNameMedecin.text!, phoneNumber: self.EditPhoneMedecin.text!, speciality: self.speciality!, travelTime: a!)
+ 
                 self.performSegue(withIdentifier: "editMedecin", sender: self)
             } else {
                 //TODO dismiss

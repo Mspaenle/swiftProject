@@ -2891,6 +2891,9 @@
                                         <state key="normal" title="Supprimer">
                                             <color key="titleColor" red="1" green="0.66274509800000003" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="deleteMedecin:" destination="M9t-g2-ogg" eventType="touchUpInside" id="6DN-4H-ffu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

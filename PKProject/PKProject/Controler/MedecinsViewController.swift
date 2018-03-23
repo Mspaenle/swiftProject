@@ -37,6 +37,8 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
             //
         }
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -101,7 +103,20 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
         
 
     }
+    
+    
 
+    @IBAction func deleteMedecin(_ sender: UIButton) {
+         if let indexPath = self.medecinTable.indexPathForSelectedRow{
+            medecinTable.beginUpdates()
+            Doctor.delete(object: self.medecins[indexPath.row])
+            Doctor.save()
+            medecinTable.deleteRows(at: [indexPath], with: .fade)
+            self.medecins.remove(at: indexPath.row)
+            medecinTable.endUpdates()
+            
+        }
+    }
 
 
     /*
