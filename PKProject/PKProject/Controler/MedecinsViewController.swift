@@ -11,8 +11,10 @@ import CoreData
 
 class MedecinsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var ModifierMedecin: UIButton!
     
     var medecin: DoctorModel?
+    var index : Int?
     
     @IBOutlet weak var medecinTable: UITableView!
     
@@ -33,7 +35,7 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
         do{
             try self.medecins = context.fetch(request)
         }
-        catch let error as NSError{
+        catch {
             //
         }
     }
@@ -52,6 +54,11 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        index = indexPath.row
+    }
+
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return self.medecins.count
@@ -60,14 +67,32 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func unwindToViewMedecin(sender: UIStoryboardSegue){
         if let controller = sender.source as? AddMedecinViewController{
             if let _ = controller.medecin{
+                if controller.medecin?.phoneNumber != nil {
+                    Doctor.save()
+                    self.medecinTable.reloadData() //ne fonctionne pas
+                }
+            }
+        }
+        if let controller = sender.source as? EditMedecinsViewController{
+            if let _ = controller.medecin{
                 if controller.medecin?.phoneNumber != nil{
                     Doctor.save()
-                    self.medecinTable.reloadData()
+                    self.medecinTable.reloadData() //ne fonctionne pas
                 }
             }
         }
         
+        
     }
+    
+
+    @IBAction func buttonModifMedecin(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "modifMed", sender: self)
+        
+
+    }
+
 
 
     /*

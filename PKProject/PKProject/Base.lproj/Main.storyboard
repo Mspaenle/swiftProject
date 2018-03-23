@@ -2477,6 +2477,9 @@
                                 <state key="normal" title="Valider">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="modifMedecin:" destination="mn2-mh-Nnc" eventType="touchUpInside" id="BQ4-86-65j"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPb-K3-xdY">
                                 <rect key="frame" x="16" y="469" width="343" height="30"/>
@@ -2569,9 +2572,13 @@
                         <outlet property="EditPhoneMedecin" destination="rYq-u6-QJe" id="Uy4-GA-F9g"/>
                         <outlet property="EditSpecialityMedecin" destination="nIn-sr-8rv" id="Qrk-ft-odn"/>
                         <outlet property="EditTravelMedecin" destination="qPb-K3-xdY" id="jGU-Ai-IQ7"/>
+                        <outlet property="cancelModifMedecin" destination="QWf-n6-J3w" id="RJk-eF-6me"/>
+                        <outlet property="modifMedecin" destination="nse-oY-rzx" id="Gl1-5W-JSB"/>
+                        <segue destination="KCd-OJ-uXj" kind="unwind" identifier="editMed" unwindAction="unwindToViewMedecinWithSender:" id="XAg-h8-Bwn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8O-Y4-kjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KCd-OJ-uXj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1695.2" y="725.48725637181417"/>
         </scene>
@@ -2748,7 +2755,6 @@
                         <outlet property="SpecialtyMedein" destination="60D-ZK-jBO" id="4l0-h1-WhJ"/>
                         <outlet property="TravelMedecin" destination="tF5-No-DwK" id="hvc-7w-Ig1"/>
                         <segue destination="tfu-Ya-aE5" kind="unwind" identifier="validMed" unwindAction="unwindToViewMedecinWithSender:" id="Fgf-I5-xUb"/>
-                        <segue destination="tfu-Ya-aE5" kind="unwind" identifier="validMed" unwindAction="unwindToViewMedecinWithSender:" id="Fxz-eb-kCl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjm-ph-jqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2871,6 +2877,9 @@
                                         <state key="normal" title="Modifier">
                                             <color key="titleColor" red="1" green="0.66274509800000003" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonModifMedecin:" destination="M9t-g2-ogg" eventType="touchUpInside" id="dh9-Dl-AYT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5z-zy-TiW">
                                         <rect key="frame" x="234.5" y="0.0" width="108.5" height="50"/>
@@ -2899,10 +2908,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ModifierMedecin" destination="g8b-cH-GzZ" id="Xm2-FQ-UQD"/>
                         <outlet property="medecinTable" destination="bME-66-HKh" id="iFr-YF-ZZ5"/>
+                        <segue destination="AW8-4Q-Gkn" kind="unwind" identifier="modifMed" unwindAction="unwindToEditMedecinWithSender:" id="Gwi-2C-fHn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTq-uy-FQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="AW8-4Q-Gkn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-82.400000000000006" y="726.38680659670172"/>
         </scene>

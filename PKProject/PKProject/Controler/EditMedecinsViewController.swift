@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EditMedecinsViewController: UIViewController {
 
@@ -15,6 +16,13 @@ class EditMedecinsViewController: UIViewController {
     @IBOutlet weak var EditAdressMedecin: UITextField!
     @IBOutlet weak var EditSpecialityMedecin: UIPickerView!
     @IBOutlet weak var EditTravelMedecin: UITextField!
+    @IBOutlet weak var modifMedecin: UIButton!
+    @IBOutlet weak var cancelModifMedecin: UIButton!
+    
+    
+    var medecin: DoctorModel?
+    var medecins : [Doctor] = []
+    var speciality: String?
     
     
     @IBAction func DeleteMedecin(_ sender: UIButton) {
@@ -23,27 +31,68 @@ class EditMedecinsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
+            return
+        }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request : NSFetchRequest<Doctor> = Doctor.fetchRequest()
+        do{
+            try self.medecins = context.fetch(request)
+        }
+        catch {
+            //
+        }
     }
+    
 
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    @IBAction func modifMedecin(_ sender: UIButton) {
+        
+            if sender == self.modifMedecin {
+                let a:Int16? = Int16(self.EditTravelMedecin.text!)!
+                medecin = DoctorModel(adress: self.EditAdressMedecin.text!, name: self.EditNameMedecin.text!, phoneNumber: self.EditPhoneMedecin.text!, speciality: self.speciality!, travelTime: a!)
+                self.performSegue(withIdentifier: "modifMed", sender: self)
+            } else {
+                //TODO dismiss
+                self.performSegue(withIdentifier: "modifMed", sender: self)
+            }
+            
+        
+    }
+
+
     @IBAction func unwindToEditMedecin(sender: UIStoryboardSegue){
         if let controller = sender.source as? MedecinsViewController{
+            
             if let _ = controller.medecin{
-                self.EditNameMedecin.text = controller.medecin?.name
-                self.EditAdressMedecin.text = controller.medecin?.adress
-                self.EditPhoneMedecin.text = controller.medecin?.phoneNumber
-                // TODO picker self.EditSpecialityMedecin. = controller.medecin?.speciality
-                self.EditTravelMedecin.text = String(describing: controller.medecin?.travelTime)
+                var medecin : Doctor
+                medecin = controller.medecins[controller.index!]
+                self.EditNameMedecin.text = medecin.name
+                self.EditAdressMedecin.text = medecin.adress
+                self.EditPhoneMedecin.text = medecin.phoneNumber
+                self.EditTravelMedecin.text = String(describing: medecin.travelTime)
+                speciality=medecin.speciality
+                
             }
         }
         
     }
+    
+
+    
+    
+
     /*
     // MARK: - Navigation
 
