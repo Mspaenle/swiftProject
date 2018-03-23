@@ -27,7 +27,6 @@ class ParameterMedecinViewController: UIViewController {
             if let _ = controller.med{
                 if controller.titleF != nil{
                     Med.save()
-                    print("created")
                 }
             }
         }

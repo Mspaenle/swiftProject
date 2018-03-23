@@ -50,7 +50,6 @@ class AddMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return
             }
             med = MedModel(name: titleMed, specification: descr, doses: self.doses)
-            print(doses)
         }
         else {
             self.titleF = nil

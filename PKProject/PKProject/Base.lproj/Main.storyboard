@@ -2119,19 +2119,47 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="viU-kU-VY7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="viU-kU-VY7">
                                 <rect key="frame" x="16" y="106" width="343" height="541"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="osN-cV-MKh">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medCell" rowHeight="70" id="osN-cV-MKh" customClass="MedTableViewCell" customModule="PKProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="osN-cV-MKh" id="PVw-yR-njz">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2N-Un-qI6">
+                                                    <rect key="frame" x="8" y="12" width="37" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rws-OZ-FmO">
+                                                    <rect key="frame" x="8" y="41" width="88" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="t2N-Un-qI6" firstAttribute="top" secondItem="PVw-yR-njz" secondAttribute="topMargin" constant="4" id="9yV-ul-J5T"/>
+                                                <constraint firstItem="rws-OZ-FmO" firstAttribute="leading" secondItem="PVw-yR-njz" secondAttribute="leadingMargin" id="Bi5-pc-lpb"/>
+                                                <constraint firstItem="t2N-Un-qI6" firstAttribute="leading" secondItem="PVw-yR-njz" secondAttribute="leadingMargin" id="N6W-lU-Jpe"/>
+                                                <constraint firstItem="rws-OZ-FmO" firstAttribute="top" secondItem="t2N-Un-qI6" secondAttribute="bottom" constant="8" id="weR-ct-n4j"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="medDescrLabel" destination="rws-OZ-FmO" id="IiS-5v-jMC"/>
+                                            <outlet property="medNameLabel" destination="t2N-Un-qI6" id="A6F-W0-WGG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IJl-ny-f14" id="xyk-6r-sEh"/>
+                                    <outlet property="delegate" destination="IJl-ny-f14" id="GLz-uP-ID6"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.66274509800000003" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -2145,10 +2173,13 @@
                             <constraint firstItem="oVO-rc-wMz" firstAttribute="top" secondItem="pqg-hA-lmN" secondAttribute="bottom" id="gyC-kB-9kA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="MedTable" destination="viU-kU-VY7" id="pze-Ov-hxW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2M-7a-65m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="1407"/>
+            <point key="canvasLocation" x="-82.400000000000006" y="1406.4467766116943"/>
         </scene>
         <!--Emergency Numbers View Controller-->
         <scene sceneID="9ll-xX-Faw">

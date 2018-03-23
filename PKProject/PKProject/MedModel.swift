@@ -38,8 +38,6 @@ class MedModel{
             return self.doses
         }
         set{
-            
-            
             self.dao.doses = newValue
         }
     }
