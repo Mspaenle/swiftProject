@@ -863,6 +863,150 @@
             </objects>
             <point key="canvasLocation" x="-60" y="2884"/>
         </scene>
+        <!--Select Dose View Controller-->
+        <scene sceneID="yR3-eF-1Wh">
+            <objects>
+                <viewController id="q6V-Sc-zu9" customClass="selectDoseViewController" customModule="PKProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="usJ-Zv-1iL"/>
+                        <viewControllerLayoutGuide type="bottom" id="g42-x6-aJw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0on-iA-yd5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choisir dose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJZ-r7-hgI">
+                                <rect key="frame" x="16" y="28" width="343" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="28"/>
+                                <color key="textColor" red="0.69803921570000005" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSz-CS-4ba">
+                                <rect key="frame" x="0.0" y="617" width="187.5" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Annuler">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="Fe6-nb-UBk" eventType="touchUpInside" id="ouk-6p-udI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Vd-9n-juu">
+                                <rect key="frame" x="187.5" y="617" width="187.5" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2f6-iW-m6w"/>
+                                </constraints>
+                                <state key="normal" title="Valider">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="Fe6-nb-UBk" eventType="touchUpInside" id="WP4-MD-Sd7"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ygr-IK-Fcb">
+                                <rect key="frame" x="0.0" y="207" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.70196078429999997" green="1" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pSz-CS-4ba" firstAttribute="height" secondItem="5Vd-9n-juu" secondAttribute="height" id="DNX-Nh-Ovi"/>
+                            <constraint firstItem="5Vd-9n-juu" firstAttribute="leading" secondItem="pSz-CS-4ba" secondAttribute="trailing" id="Fi3-b6-KXD"/>
+                            <constraint firstItem="pSz-CS-4ba" firstAttribute="baseline" secondItem="5Vd-9n-juu" secondAttribute="baseline" id="UDX-qw-eFa"/>
+                            <constraint firstAttribute="trailing" secondItem="5Vd-9n-juu" secondAttribute="trailing" id="WeC-FO-QQY"/>
+                            <constraint firstItem="pSz-CS-4ba" firstAttribute="width" secondItem="5Vd-9n-juu" secondAttribute="width" id="qHU-Ke-Cq9"/>
+                            <constraint firstItem="5Vd-9n-juu" firstAttribute="leading" secondItem="pSz-CS-4ba" secondAttribute="trailing" id="wQU-GT-dKO"/>
+                            <constraint firstItem="pSz-CS-4ba" firstAttribute="leading" secondItem="0on-iA-yd5" secondAttribute="leading" id="whK-yE-PqZ"/>
+                            <constraint firstItem="pSz-CS-4ba" firstAttribute="bottom" secondItem="g42-x6-aJw" secondAttribute="top" id="ww3-F0-HOU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxb-eV-8oP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2746" y="2113"/>
+        </scene>
+        <!--Pop Up Pills Date View Controller-->
+        <scene sceneID="ysB-e6-0yU">
+            <objects>
+                <viewController id="Fe6-nb-UBk" customClass="PopUpPillsDateViewController" customModule="PKProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yyn-SQ-Kjj"/>
+                        <viewControllerLayoutGuide type="bottom" id="zQS-39-fPG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hzE-XH-1P2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cue-3e-BNq">
+                                <rect key="frame" x="0.0" y="617" width="187.5" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Annuler">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="Fe6-nb-UBk" eventType="touchUpInside" id="ygo-Sd-f7F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E96-la-gxK">
+                                <rect key="frame" x="188" y="617" width="187" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jqi-up-BsC"/>
+                                </constraints>
+                                <state key="normal" title="Valider">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonAction:" destination="Fe6-nb-UBk" eventType="touchUpInside" id="Dpq-eB-qks"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saisir heure de prise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrp-nL-URf">
+                                <rect key="frame" x="16" y="28" width="343" height="42"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="28"/>
+                                <color key="textColor" red="0.69803921570000005" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="IOJ-aO-ECi">
+                                <rect key="frame" x="0.0" y="209" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="543503266.48573399">
+                                    <!--2018-03-23 13:07:46 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="fr"/>
+                                <connections>
+                                    <action selector="heurePickerAction:" destination="Fe6-nb-UBk" eventType="valueChanged" id="pAr-Gj-9Ob"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" red="0.70196078429999997" green="1" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cue-3e-BNq" firstAttribute="leading" secondItem="hzE-XH-1P2" secondAttribute="leading" id="1Hi-4y-Ga2"/>
+                            <constraint firstItem="E96-la-gxK" firstAttribute="leading" secondItem="cue-3e-BNq" secondAttribute="trailing" id="524-Ut-iF0"/>
+                            <constraint firstItem="Jrp-nL-URf" firstAttribute="trailing" secondItem="hzE-XH-1P2" secondAttribute="trailingMargin" id="Cvj-G0-sc1"/>
+                            <constraint firstItem="cue-3e-BNq" firstAttribute="height" secondItem="E96-la-gxK" secondAttribute="height" id="NLx-jX-nhW"/>
+                            <constraint firstItem="zQS-39-fPG" firstAttribute="top" secondItem="E96-la-gxK" secondAttribute="bottom" id="NRp-tC-ybP"/>
+                            <constraint firstItem="Jrp-nL-URf" firstAttribute="top" secondItem="Yyn-SQ-Kjj" secondAttribute="bottom" constant="8" id="UnW-nN-EcT"/>
+                            <constraint firstItem="Jrp-nL-URf" firstAttribute="leading" secondItem="hzE-XH-1P2" secondAttribute="leadingMargin" id="aU2-sY-i9X"/>
+                            <constraint firstItem="cue-3e-BNq" firstAttribute="width" secondItem="E96-la-gxK" secondAttribute="width" id="igH-Aj-IS5"/>
+                            <constraint firstAttribute="trailing" secondItem="E96-la-gxK" secondAttribute="trailing" id="md3-Kd-ZWa"/>
+                            <constraint firstItem="E96-la-gxK" firstAttribute="leading" secondItem="cue-3e-BNq" secondAttribute="trailing" id="wUP-kJ-PC3"/>
+                            <constraint firstItem="zQS-39-fPG" firstAttribute="top" secondItem="cue-3e-BNq" secondAttribute="bottom" id="zyo-d0-j3y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="CancelBTN" destination="cue-3e-BNq" id="AFn-Gc-Z0U"/>
+                        <outlet property="ValidateBTN" destination="E96-la-gxK" id="H3K-be-v5C"/>
+                        <outlet property="hourPicker" destination="IOJ-aO-ECi" id="Kgq-81-vit"/>
+                        <segue destination="Rgf-MW-1dw" kind="unwind" identifier="toAddPill" unwindAction="unwindToAddPillsWithSender:" id="X67-IR-c3V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfR-Fv-mvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Rgf-MW-1dw" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1958" y="2113"/>
+        </scene>
         <!--Add Pills View Controller-->
         <scene sceneID="VaV-xV-Y5Z">
             <objects>
@@ -881,6 +1025,9 @@
                                 <state key="normal" title="Annuler">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="validateAction:" destination="jz2-Ee-VtR" eventType="touchUpInside" id="PVu-0K-CE3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jP1-KA-oF1">
                                 <rect key="frame" x="187.5" y="617" width="187.5" height="50"/>
@@ -891,6 +1038,9 @@
                                 <state key="normal" title="Valider">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="validateAction:" destination="jz2-Ee-VtR" eventType="touchUpInside" id="pfA-v2-ZGW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajouter Prise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SX-Vs-n8t">
                                 <rect key="frame" x="16" y="20" width="343" height="42"/>
@@ -906,6 +1056,10 @@
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8u-2b-bQA">
                                 <rect key="frame" x="0.0" y="99" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jz2-Ee-VtR" id="IR4-Xh-gQF"/>
+                                    <outlet property="delegate" destination="jz2-Ee-VtR" id="ycF-y9-iya"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prises :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sn-Sv-8HV">
                                 <rect key="frame" x="16" y="323" width="56" height="21"/>
@@ -948,14 +1102,23 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsy-Fg-EaP">
                                 <rect key="frame" x="16" y="528" width="171.5" height="30"/>
-                                <state key="normal" title="Ajouter Dose"/>
+                                <state key="normal" title="Ajouter Heure"/>
                                 <connections>
                                     <action selector="listDatesAction:" destination="jz2-Ee-VtR" eventType="touchUpInside" id="hng-hP-zKU"/>
+                                    <segue destination="Fe6-nb-UBk" kind="presentation" id="QJa-sB-fbm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPe-fJ-L7s">
                                 <rect key="frame" x="187.5" y="528" width="171.5" height="30"/>
-                                <state key="normal" title="Supprimer Dose"/>
+                                <state key="normal" title="Supprimer Heure"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-Sd-YVO">
+                                <rect key="frame" x="144" y="566" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Ajouter dose"/>
+                                <connections>
+                                    <segue destination="q6V-Sc-zu9" kind="presentation" id="9JG-f2-eme"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.70196078429999997" green="1" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -978,10 +1141,10 @@
                             <constraint firstItem="J8u-2b-bQA" firstAttribute="top" secondItem="VFg-gD-qjQ" secondAttribute="bottom" constant="8" id="RtA-VM-W5O"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZPe-fJ-L7s" secondAttribute="trailing" id="X0k-Cn-Ncd"/>
                             <constraint firstItem="YAM-50-AQt" firstAttribute="baseline" secondItem="jP1-KA-oF1" secondAttribute="firstBaseline" id="YAq-Fg-CYr"/>
-                            <constraint firstAttribute="trailing" secondItem="J8u-2b-bQA" secondAttribute="trailing" id="ZEc-TP-8l5"/>
                             <constraint firstItem="YAM-50-AQt" firstAttribute="bottom" secondItem="Rnq-Rj-ao1" secondAttribute="top" id="cRS-eS-16i"/>
                             <constraint firstItem="6sn-Sv-8HV" firstAttribute="top" secondItem="J8u-2b-bQA" secondAttribute="bottom" constant="8" id="cbc-Yw-mSt"/>
                             <constraint firstItem="yGd-Ol-zgU" firstAttribute="top" secondItem="6sn-Sv-8HV" secondAttribute="bottom" constant="8" id="eEx-mh-Mu2"/>
+                            <constraint firstAttribute="trailing" secondItem="J8u-2b-bQA" secondAttribute="trailing" id="eV3-iW-Q4M"/>
                             <constraint firstItem="6sn-Sv-8HV" firstAttribute="top" secondItem="J8u-2b-bQA" secondAttribute="bottom" constant="8" id="es2-No-p1F"/>
                             <constraint firstItem="ZPe-fJ-L7s" firstAttribute="width" secondItem="rsy-Fg-EaP" secondAttribute="width" id="gcF-xi-jgr"/>
                             <constraint firstItem="jP1-KA-oF1" firstAttribute="leading" secondItem="YAM-50-AQt" secondAttribute="trailing" id="iVI-Ft-gis"/>
