@@ -30,7 +30,7 @@ extension DrugIntake{
         }
     }
     
-    static func delete(object: Doctor){
+    static func delete(object: DrugIntake){
         do{
             try CoreDataManager.delete(object: object)
         }catch let error as NSError{

@@ -50,6 +50,15 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func listDatesAction(_ sender: Any) {
 
     }
+    @IBAction func deleteHour(_ sender: Any) {
+        if let indexPath = self.DateTable.indexPathForSelectedRow{
+            DateTable.beginUpdates()
+            DateTable.deleteRows(at: [indexPath], with: .fade)
+            self.dates.remove(at: indexPath.row)
+            DateTable.endUpdates()
+            
+        }
+    }
     
     @IBAction func validateAction(_ sender: Any) {
         if sender as! UIButton == self.ValidateBTN {

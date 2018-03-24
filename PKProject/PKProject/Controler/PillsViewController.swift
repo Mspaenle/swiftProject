@@ -13,8 +13,8 @@ import UserNotifications
 
 class PillsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UNUserNotificationCenterDelegate{
 
-    @IBOutlet weak var EditBTN: UIButton!
     @IBOutlet weak var AddBTN: UIButton!
+    @IBOutlet weak var DeleteBTN: UIButton!
     
     @IBOutlet weak var PillTable: UITableView!
     var pills: [DrugIntake] = []
@@ -61,6 +61,18 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return self.pills.count
+    }
+    
+    @IBAction func deleteDrugIntake(_ sender: UIButton) {
+        if let indexPath = self.PillTable.indexPathForSelectedRow{
+            PillTable.beginUpdates()
+            DrugIntake.delete(object: self.pills[indexPath.row])
+            DrugIntake.save()
+            PillTable.deleteRows(at: [indexPath], with: .fade)
+            self.pills.remove(at: indexPath.row)
+            PillTable.endUpdates()
+            
+        }
     }
     
     @IBAction func unwindToPilulier(sender: UIStoryboardSegue){
