@@ -8,8 +8,10 @@
 
 import UIKit
 import CoreData
+import Foundation
+import UserNotifications
 
-class PillsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class PillsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UNUserNotificationCenterDelegate{
 
     @IBOutlet weak var EditBTN: UIButton!
     @IBOutlet weak var AddBTN: UIButton!
@@ -62,6 +64,7 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
         if let controller = sender.source as? AddPillsViewController{
             if let _ = controller.drugIntake{
                 DrugIntake.save()
+                self.addNotif(jour : 6, heure : 12, minute : 0)
                 self.PillTable.reloadData()
             }
         }
@@ -76,5 +79,21 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
         print("prepare")
     }
     
+    public func addNotif(jour : Int, heure : Int, minute : Int){
+        let content = UNMutableNotificationContent()
+        content.title = "Prise"
+        content.body = "Pensez à prendre votre médicament"
+        content.badge = 1
+        
+        // add notification for Mondays at 11:00 a.m.
+        var dateComponents = DateComponents()
+        dateComponents.hour = 12
+        dateComponents.minute = 19
+        let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        let request2 = UNNotificationRequest(identifier: "notification1", content: content, trigger: notificationTrigger)
+        UNUserNotificationCenter.current().add(request2, withCompletionHandler: nil)
+        print("ok")
+    }
 
 }

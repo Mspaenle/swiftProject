@@ -32,5 +32,12 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - Alerts
+    
+    func createAlert(title : String, message : String) {
+        
+    }
+
 }
 

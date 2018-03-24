@@ -19,6 +19,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if launchedBefore  {
+        }
+        else {
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            //Seeders
+            MedModel(name: "Modopar", specification: "", doses: ["62,5","125","250"])
+            MedModel(name: "Modopar LP", specification: "", doses: ["125"])
+            MedModel(name: "Modopar Dispersible", specification: "", doses: ["125"])
+            MedModel(name: "Sinemet", specification: "", doses: ["100","250"])
+            MedModel(name: "Sienmet LP", specification: "", doses: ["100","200"])
+            MedModel(name: "Stavelo", specification: "", doses: ["50","75","100","125","150","175","200"])
+            MedModel(name: "Parlodel", specification: "", doses: ["2,5","5","10"])
+            MedModel(name: "Trivastal", specification: "", doses: ["20"])
+            MedModel(name: "Trivastal LP", specification: "", doses: ["50"])
+            MedModel(name: "Sifrol", specification: "", doses: ["0,18","0,7"])
+            MedModel(name: "Sifrol LP", specification: "", doses: ["0,26","0,52","1,05","2,1"])
+            MedModel(name: "Requip", specification: "", doses: ["0,25","0,5","1","2","5"])
+            MedModel(name: "Requip LP", specification: "", doses: ["2","4","8"])
+            MedModel(name: "Neupro (Patch)", specification: "", doses: ["2","4","6","8"])
+            MedModel(name: "Mantadix", specification: "", doses: ["100"])
+            MedModel(name: "Azilect", specification: "", doses: ["1"])
+            MedModel(name: "Comtan", specification: "", doses: ["200"])
+            MedModel(name: "Artane", specification: "", doses: ["2","5"])
+            MedModel(name: "Parkinane LP", specification: "", doses: ["2","5"])
+            MedModel(name: "Lepticur", specification: "", doses: ["10"])
+            MedModel(name: "Exelon", specification: "", doses: ["1,5","3","4,5","6"])
+            MedModel(name: "Exelon (Patch)", specification: "", doses: ["4,6","9,5"])
+            
+        }
+        return true
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

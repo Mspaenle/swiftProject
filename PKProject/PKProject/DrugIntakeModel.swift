@@ -14,9 +14,9 @@ import UIKit
 class DrugIntakeModel{
     internal var dao : DrugIntake
 
-    private var medModel : MedModel
+    private var medModel : Med
     
-    var med: MedModel{
+    var med: Med{
         get{
             return self.medModel
         }
@@ -41,10 +41,10 @@ class DrugIntakeModel{
     }
     
     
-    init(med: MedModel, periodicity: [Date], dose: String){
+    init(med: Med, periodicity: [Date], dose: String){
         self.dao = DrugIntake.create()
         self.medModel = med
-        self.dao.med = med.dao
+        self.dao.med = med
         self.dao.periodicity = periodicity
         self.dose = dose
         

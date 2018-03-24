@@ -30,4 +30,12 @@ extension Med{
         }
     }
     
+    static func delete(object: Med){
+        do{
+            try CoreDataManager.delete(object: object)
+        }catch let error as NSError{
+            fatalError("cannot save data: "+error.description)
+        }
+    }
+    
 }

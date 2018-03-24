@@ -21,7 +21,7 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var CancelBTN: UIButton!
     
     var drugIntake: DrugIntakeModel?
-    var med: MedModel?
+    var med: Med?
     var dates: [Date] = []
     var dose: String? = nil
     var meds: [Med] = []
@@ -44,7 +44,7 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        med = MedModel(name: meds[row].name!,specification: meds[row].specification!,doses: meds[row].doses!)
+        med = meds[row]
     }
     
     @IBAction func listDatesAction(_ sender: Any) {

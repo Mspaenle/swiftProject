@@ -14,7 +14,7 @@ class selectDoseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var validateBTN: UIButton!
     @IBOutlet weak var dosesPicker: UIPickerView!
     
-    var med: MedModel? = nil
+    var med: Med? = nil
     var dose: String?
     var doses: [String] = []
     
@@ -22,7 +22,7 @@ class selectDoseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         super.viewDidLoad()
         
         if let amed = self.med {
-            doses = amed.doses
+            doses = amed.doses!
         }
         // Do any additional setup after loading the view.
     }
