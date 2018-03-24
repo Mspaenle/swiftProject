@@ -82,8 +82,8 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
             return
         }
         let context = appDelegate.persistentContainer.viewContext
-        
         let request : NSFetchRequest<Med> = Med.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Med.name), ascending: true)]
         do{
             try self.meds = context.fetch(request)
         }
