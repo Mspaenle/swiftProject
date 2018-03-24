@@ -15,6 +15,10 @@ class EditRDVMedViewController: UIViewController {
     @IBOutlet weak var validRDV: UIButton!
     @IBOutlet weak var cancelRDV: UIButton!
     
+    
+    @IBOutlet weak var rdvMedecin: UILabel!
+    
+    
     var rdv2 : RDV? = nil
     var rdv: RDVModel?
     var rdvs : [RDV] = []
@@ -28,6 +32,7 @@ class EditRDVMedViewController: UIViewController {
             self.editRDVTitle.text = ardv.title
             self.editRDVDate.date = (ardv.date)! as Date
             medecin = rdv2?.doctor
+            self.rdvMedecin.text = ardv.doctor?.name
             
         }
     }
