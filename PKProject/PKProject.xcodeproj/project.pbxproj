@@ -12,6 +12,7 @@
 		12E111A6205FEBEE00124F7D /* DrugIntakeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E111A5205FEBEE00124F7D /* DrugIntakeDAO.swift */; };
 		247BD353205938BD00D94876 /* DoctorDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247BD352205938BD00D94876 /* DoctorDAO.swift */; };
 		247BD35520593C4600D94876 /* EmergencyNumberDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247BD35420593C4600D94876 /* EmergencyNumberDAO.swift */; };
+		24C17703206650A200DE3D73 /* RDVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C17702206650A200DE3D73 /* RDVTableViewCell.swift */; };
 		24D457FC204D958300E27BC5 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457FB204D958300E27BC5 /* EventModel.swift */; };
 		24D457FF204D959900E27BC5 /* ListEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457FE204D959900E27BC5 /* ListEventModel.swift */; };
 		24D45805204DA7A700E27BC5 /* ListDoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D45804204DA7A700E27BC5 /* ListDoctorModel.swift */; };
@@ -101,6 +102,7 @@
 		12E111A5205FEBEE00124F7D /* DrugIntakeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugIntakeDAO.swift; sourceTree = "<group>"; };
 		247BD352205938BD00D94876 /* DoctorDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorDAO.swift; sourceTree = "<group>"; };
 		247BD35420593C4600D94876 /* EmergencyNumberDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyNumberDAO.swift; sourceTree = "<group>"; };
+		24C17702206650A200DE3D73 /* RDVTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDVTableViewCell.swift; sourceTree = "<group>"; };
 		24D457FB204D958300E27BC5 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		24D457FE204D959900E27BC5 /* ListEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEventModel.swift; sourceTree = "<group>"; };
 		24D45804204DA7A700E27BC5 /* ListDoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDoctorModel.swift; sourceTree = "<group>"; };
@@ -265,18 +267,19 @@
 				8F90A900203C74ED00B74A0A /* EditMedecinsViewController.swift */,
 				8F90A8FD203C74C100B74A0A /* MedecinsViewController.swift */,
 				8F90A903203C754A00B74A0A /* AddMedecinViewController.swift */,
+				8FC480462040111400B9FD29 /* MedInfosViewController.swift */,
 				8F90A8FA203C69C100B74A0A /* InformationsViewController.swift */,
 				8F90A906203C814400B74A0A /* EmergencyNumbersViewController.swift */,
 				8F90A909203C838400B74A0A /* AddEmergencyNumberViewController.swift */,
 				8FC480492040121700B9FD29 /* EtatViewController.swift */,
 				8F90A90C203C840A00B74A0A /* EditEmergencyNumberViewController.swift */,
-				8FC480462040111400B9FD29 /* MedInfosViewController.swift */,
 				8FC4804C204014C600B9FD29 /* EventViewController.swift */,
 				8FC4804F2040185300B9FD29 /* PillsViewController.swift */,
 				8FC48052204019D700B9FD29 /* EditPillsViewController.swift */,
 				8FC4805520401BEF00B9FD29 /* EditMedPillsViewController.swift */,
 				8FC4805820401FD300B9FD29 /* AddPillsViewController.swift */,
 				8FC4805E204022FC00B9FD29 /* RDVMedViewController.swift */,
+				24C17702206650A200DE3D73 /* RDVTableViewCell.swift */,
 				8FC480612040232500B9FD29 /* AddRDVMedViewController.swift */,
 				8FC480642040253500B9FD29 /* EditRDVMedViewController.swift */,
 				8F385E6F20468C3300F29058 /* EditPriseViewController.swift */,
@@ -508,6 +511,7 @@
 				8FC480472040111400B9FD29 /* MedInfosViewController.swift in Sources */,
 				8F385E85204695E700F29058 /* AddSportViewController.swift in Sources */,
 				12E111A4205FEA5200124F7D /* RDVDAO.swift in Sources */,
+				24C17703206650A200DE3D73 /* RDVTableViewCell.swift in Sources */,
 				8F52A54520590CD600FDF76D /* DoctorModel.swift in Sources */,
 				8F90A8CB203C5C4700B74A0A /* PKProject.xcdatamodeld in Sources */,
 				8F385E7C2046932500F29058 /* ParameterMedecinViewController.swift in Sources */,
