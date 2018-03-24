@@ -1419,6 +1419,9 @@
                                 <state key="normal" title="Supprimer">
                                     <color key="titleColor" red="1" green="0.66274509800000003" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteRDV:" destination="HDv-Z8-HGd" eventType="touchUpInside" id="d9A-CG-i3L"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSw-e0-nzq">
                                 <rect key="frame" x="133" y="597" width="109" height="50"/>
@@ -1430,6 +1433,9 @@
                                 <state key="normal" title="Modifier">
                                     <color key="titleColor" red="1" green="0.66274509800000003" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="EGM-Z2-cte" kind="presentation" identifier="editRDV" id="UhR-Pk-O4F"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jH-my-0XR">
                                 <rect key="frame" x="16" y="597" width="109" height="50"/>
@@ -2061,6 +2067,9 @@
                                 <state key="normal" title="Annuler">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="modifRDV:" destination="EGM-Z2-cte" eventType="touchUpInside" id="0oE-jq-EAk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgk-lY-2so">
                                 <rect key="frame" x="187.5" y="617" width="187.5" height="50"/>
@@ -2071,6 +2080,9 @@
                                 <state key="normal" title="Valider">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="modifRDV:" destination="EGM-Z2-cte" eventType="touchUpInside" id="c3t-sQ-13V"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit RDV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NX-Gc-oB0">
                                 <rect key="frame" x="16" y="2" width="343" height="42"/>
@@ -2117,7 +2129,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="GeT-NO-8Kz" kind="unwind" unwindAction="unwindToViewRDVWithSender:" id="Ic9-NF-uTS"/>
+                        <outlet property="cancelRDV" destination="6KH-4D-soe" id="6sz-gf-yJS"/>
+                        <outlet property="editRDVDate" destination="Mhu-J1-Nsl" id="Fuq-N5-27v"/>
+                        <outlet property="editRDVTitle" destination="Xf9-Xa-560" id="4NH-rX-Bws"/>
+                        <outlet property="validRDV" destination="fgk-lY-2so" id="4rE-mN-XzG"/>
+                        <segue destination="GeT-NO-8Kz" kind="unwind" identifier="editRDV" unwindAction="unwindToViewRDVWithSender:" id="Ic9-NF-uTS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hnu-ak-fHq" userLabel="First Responder" sceneMemberID="firstResponder"/>

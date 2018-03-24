@@ -44,8 +44,7 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.rdvTable.dequeueReusableCell(withIdentifier: "RDVCell", for: indexPath) as! RDVTableViewCell
-        let heure = self.rdvs[indexPath.row].date! as Date
-        cell.rdvHeure.text = heure.format()
+        cell.rdvHeure.text = (self.rdvs[indexPath.row].date! as Date).format()
         cell.rdvIntitule.text = self.rdvs[indexPath.row].title
         cell.rdvMedecin.text = self.rdvs[indexPath.row].doctor?.name
         return cell
@@ -60,10 +59,18 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let controller = sender.source as? AddRDVMedViewController{
             
             if let _ = controller.rdv{
-                print(controller.rdv)
-                print(controller.rdv?.date)
+
                 RDV.save()
-                print(rdvs[0].date)
+                self.rdvTable.reloadData() //ne fonctionne pas
+                
+            }
+            
+        }
+        else if let controller = sender.source as? EditRDVMedViewController{
+            
+            if let _ = controller.rdv{
+                print(controller.rdv?.date)
+                //RDV.save()
                 self.rdvTable.reloadData() //ne fonctionne pas
                 
             }
@@ -71,6 +78,30 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
 
         
+    }
+    
+    let segueEditRDV = "editRDV"
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.segueEditRDV{
+            if let indexPath = self.rdvTable.indexPathForSelectedRow{
+                let editRDVController = segue.destination as! EditRDVMedViewController
+                editRDVController.rdv2 = self.rdvs[indexPath.row]
+                self.rdvTable.deselectRow(at: indexPath, animated: true)
+            }
+        }
+    }
+    
+    @IBAction func deleteRDV(_ sender: UIButton) {
+        if let indexPath = self.rdvTable.indexPathForSelectedRow{
+            rdvTable.beginUpdates()
+            RDV.delete(object: self.rdvs[indexPath.row])
+            RDV.save()
+            rdvTable.deleteRows(at: [indexPath], with: .fade)
+            self.rdvs.remove(at: indexPath.row)
+            rdvTable.endUpdates()
+            
+        }
     }
 
     /*

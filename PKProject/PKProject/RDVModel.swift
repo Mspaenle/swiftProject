@@ -32,9 +32,9 @@ class RDVModel{
     }
     
     
-    private var doctorModel : DoctorModel
+    private var doctorModel : Doctor
     
-    var doctor: DoctorModel{
+    var doctor: Doctor{
         get{
             return self.doctorModel
         }
@@ -43,12 +43,12 @@ class RDVModel{
     
     
     
-    init(date : NSDate, title : String, doctor: DoctorModel){
+    init(date : NSDate, title : String, doctor: Doctor){
         self.dao = RDV.create()
         self.dao.date = date
         self.dao.title = title
         self.doctorModel = doctor
-        self.dao.doctor = doctor.dto
+        self.dao.doctor = doctor
         //self.doctorModel.addRdv(rdv: self)
     }   
 

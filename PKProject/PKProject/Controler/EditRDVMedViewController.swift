@@ -10,16 +10,51 @@ import UIKit
 
 class EditRDVMedViewController: UIViewController {
 
+    @IBOutlet weak var editRDVTitle: UITextField!
+    @IBOutlet weak var editRDVDate: UIDatePicker!
+    @IBOutlet weak var validRDV: UIButton!
+    @IBOutlet weak var cancelRDV: UIButton!
+    
+    var rdv2 : RDV? = nil
+    var rdv: RDVModel?
+    var rdvs : [RDV] = []
+    var medecin : Doctor?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let ardv = self.rdv2{
+            self.editRDVTitle.text = ardv.title
+            self.editRDVDate.date = (ardv.date)! as Date
+            medecin = rdv2?.doctor
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func modifRDV(_ sender: UIButton) {
+        
+        if sender == self.validRDV {
+            
+            RDV.delete(object: rdv2!)
+            
+
+            rdv = RDVModel(date: self.editRDVDate.date as NSDate, title: self.editRDVTitle.text!, doctor: medecin!)
+
+            self.performSegue(withIdentifier: "editRDV", sender: self)
+        } else {
+            //TODO dismiss
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        
+    }
+
     
 
     /*

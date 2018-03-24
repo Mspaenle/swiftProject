@@ -19,10 +19,11 @@ class AddRDVMedViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var rdvIntitule: UITextField!
     
     var rdv: RDVModel?
-    var medecin: DoctorModel?
+    var medecin: Doctor?
     var medecins: [Doctor] = []
     var dateRDV : Date?
     var rdvs: [RDV] = []
+
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -32,7 +33,6 @@ class AddRDVMedViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        
         
         return medecins[row].name
         
@@ -50,7 +50,7 @@ class AddRDVMedViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
         
         
-        medecin = DoctorModel(adress: medecins[row].adress!, name: medecins[row].name!,phoneNumber: medecins[row].phoneNumber!, speciality: medecins[row].speciality! ,travelTime: medecins[row].travelTime)
+        medecin = medecins[row]
         
     }
     
