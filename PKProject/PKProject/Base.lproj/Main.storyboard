@@ -1406,7 +1406,7 @@
                                 <rect key="frame" x="16" y="126" width="343" height="471"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="p5e-2t-eGx" customClass="RDVTableViewCell" customModule="PKProject" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RDVCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="RDVCell" rowHeight="72" id="p5e-2t-eGx" userLabel="RDVCell" customClass="RDVTableViewCell" customModule="PKProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p5e-2t-eGx" id="nB2-HP-oYM">
@@ -1451,6 +1451,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="HDv-Z8-HGd" id="PfZ-3s-7Vp"/>
+                                    <outlet property="delegate" destination="HDv-Z8-HGd" id="OiP-yD-bSC"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVA-9L-7QZ">
                                 <rect key="frame" x="250" y="597" width="109" height="50"/>

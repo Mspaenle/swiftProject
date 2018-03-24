@@ -22,6 +22,8 @@ class AddRDVMedViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     var medecin: DoctorModel?
     var medecins: [Doctor] = []
     var dateRDV : Date?
+    var rdvs: [RDV] = []
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
@@ -30,8 +32,11 @@ class AddRDVMedViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-  
+        
+        
         return medecins[row].name
+        
+        
         
     }
     
@@ -42,6 +47,9 @@ class AddRDVMedViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
+
+        
+        
         medecin = DoctorModel(adress: medecins[row].adress!, name: medecins[row].name!,phoneNumber: medecins[row].phoneNumber!, speciality: medecins[row].speciality! ,travelTime: medecins[row].travelTime)
         
     }
@@ -79,10 +87,14 @@ class AddRDVMedViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     
 
-    @IBAction func actionOnRDV(_ sender: Any) {
-        if sender as! UIButton == self.validRDV {
+    @IBAction func actionOnRDV(_ sender: UIButton) {
+        if sender == self.validRDV {
+            guard let amedecin = medecin else {
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
             
-            rdv = RDVModel(date : self.dateRDV! as NSDate, title : self.rdvIntitule.text! , doctor: self.medecin!)
+            rdv = RDVModel(date : self.dateRDV! as NSDate, title : self.rdvIntitule.text! , doctor: amedecin)
             self.performSegue(withIdentifier: "addRDV", sender: self)
         } else {
             self.dismiss(animated: true, completion: nil)

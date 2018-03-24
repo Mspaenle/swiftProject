@@ -58,23 +58,23 @@ class DoctorModel{
         }
     }
     
-    var rdv: [RDVModel]{
-        get{
-            guard let rdvs = self.dto.rdv else { return [RDVModel]() }
-            return rdvs.allObjects as! [RDVModel]
-        }
-    }
+    //var rdv: [RDVModel]{
+      //  get{
+      //      guard let rdvs = self.dto.rdv else { return [RDVModel]() }
+       //     return rdvs.allObjects as! [RDVModel]
+       // }
+    //}
     
-    @discardableResult
-    func addRdv(rdv: RDVModel) -> DoctorModel{
-        if let rdvs = self.dto.rdv{
-            rdvs.adding(rdv)
-        }
-        else{
-            self.dto.rdv = NSSet(array: [rdv])
-        }
-        return self
-    }
+    //@discardableResult
+    //func addRdv(rdv: RDVModel) -> DoctorModel{
+    //    if let rdvs = self.dto.rdv{
+     //       rdvs.adding(rdv)
+     //   }
+     //   else{
+      //      self.dto.rdv = NSSet(array: [rdv])
+     //   }
+    //    return self
+    //}
     
     
     init(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16){

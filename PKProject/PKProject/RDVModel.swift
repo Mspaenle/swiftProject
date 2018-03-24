@@ -41,12 +41,15 @@ class RDVModel{
     }
     
     
+    
+    
     init(date : NSDate, title : String, doctor: DoctorModel){
         self.dao = RDV.create()
         self.dao.date = date
         self.dao.title = title
         self.doctorModel = doctor
-        self.doctorModel.addRdv(rdv: self)
+        self.dao.doctor = doctor.dto
+        //self.doctorModel.addRdv(rdv: self)
     }   
 
 }

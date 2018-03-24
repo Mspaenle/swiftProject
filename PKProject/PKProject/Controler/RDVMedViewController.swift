@@ -60,8 +60,10 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let controller = sender.source as? AddRDVMedViewController{
             
             if let _ = controller.rdv{
-                
+                print(controller.rdv)
+                print(controller.rdv?.date)
                 RDV.save()
+                print(rdvs[0].date)
                 self.rdvTable.reloadData() //ne fonctionne pas
                 
             }
