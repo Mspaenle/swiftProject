@@ -31,7 +31,6 @@ class MedModel{
             self.dao.name = newValue
         }
     }
-    
 
     var doses: [String]{
         get{
@@ -48,7 +47,6 @@ class MedModel{
         self.dao.name = name
         self.dao.specification = specification
         self.doses = doses
-        
     }
     
 }

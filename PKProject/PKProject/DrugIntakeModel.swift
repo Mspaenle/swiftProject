@@ -36,7 +36,7 @@ class DrugIntakeModel{
             return self.dose
         }
         set{
-            self.dose = newValue
+            self.dao.dose = newValue
         }
     }
     
@@ -49,4 +49,5 @@ class DrugIntakeModel{
         self.dose = dose
         
     }
+    
 }
