@@ -932,7 +932,7 @@
                         <outlet property="cancelBTN" destination="pSz-CS-4ba" id="H5o-4X-bNf"/>
                         <outlet property="dosesPicker" destination="Ygr-IK-Fcb" id="Iwa-ol-hOk"/>
                         <outlet property="validateBTN" destination="5Vd-9n-juu" id="ybr-Iq-OMc"/>
-                        <segue destination="RMu-jZ-qDy" kind="unwind" unwindAction="unwindToAddPillsWithSender:" id="C1K-bQ-Khi"/>
+                        <segue destination="RMu-jZ-qDy" kind="unwind" identifier="toAddPill" unwindAction="unwindToAddPillsWithSender:" id="C1K-bQ-Khi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxb-eV-8oP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1179,9 +1179,11 @@
                         <outlet property="DateTable" destination="yGd-Ol-zgU" id="2yJ-WH-ygJ"/>
                         <outlet property="ValidateBTN" destination="jP1-KA-oF1" id="Uu4-cv-M6V"/>
                         <outlet property="medPicker" destination="J8u-2b-bQA" id="bbM-ko-XAs"/>
+                        <segue destination="RAy-dY-ZCe" kind="unwind" identifier="addDrugIntake" unwindAction="unwindToPilulierWithSender:" id="9YJ-dF-mGq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghA-XR-GVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RAy-dY-ZCe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1047.2" y="2113.4932533733136"/>
         </scene>

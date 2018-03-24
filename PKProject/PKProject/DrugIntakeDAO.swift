@@ -29,5 +29,13 @@ extension DrugIntake{
             fatalError("cannot save data: "+error.description)
         }
     }
+    
+    static func delete(object: Doctor){
+        do{
+            try CoreDataManager.delete(object: object)
+        }catch let error as NSError{
+            fatalError("cannot save data: "+error.description)
+        }
+    }
 
 }

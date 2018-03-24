@@ -44,9 +44,13 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = self.PillTable.dequeueReusableCell(withIdentifier: "drugCell", for: indexPath) as! MedTableViewCell
+        let cell = self.PillTable.dequeueReusableCell(withIdentifier: "drugCell", for: indexPath) as! DrugIntakeTableViewCell
         cell.medNameLabel.text = self.pills[indexPath.row].med?.name
-        cell.medDescrLabel.text = String(describing: self.pills[indexPath.row].periodicity)
+        var ret = ""
+        for var date in self.pills[indexPath.row].periodicity! {
+            ret = ret + date.formatHeure() + " "
+        }
+        cell.medPeriodicityLabel.text = ret
         return cell
     }
     
@@ -58,6 +62,7 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
         if let controller = sender.source as? AddPillsViewController{
             if let _ = controller.drugIntake{
                 DrugIntake.save()
+                self.PillTable.reloadData()
             }
         }
     }

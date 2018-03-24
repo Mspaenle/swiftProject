@@ -23,7 +23,7 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     var drugIntake: DrugIntakeModel?
     var med: MedModel?
     var dates: [Date] = []
-    var dose: String?
+    var dose: String? = nil
     var meds: [Med] = []
     
    
@@ -53,7 +53,12 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func validateAction(_ sender: Any) {
         if sender as! UIButton == self.ValidateBTN {
-            drugIntake = DrugIntakeModel(med: med!, periodicity: dates, dose: dose!)
+            guard let adoses = dose, let amed = med else {
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
+            drugIntake = DrugIntakeModel(med: amed, periodicity: dates, dose: adoses)
+            self.performSegue(withIdentifier: "addDrugIntake", sender: self)
         }
         else {
             self.dismiss(animated: true, completion: nil)
@@ -105,26 +110,29 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
                 self.dates.append(dateToSave)
                 self.DateTable.reloadData()
             }
+        } else if let controller = sender.source as? selectDoseViewController{
+            if let doseToSave = controller.dose{
+                self.dose = doseToSave
+            }
         }
     }
     
+
+    
+    
+    // MARK: - Navigation
+
     let segueAddDose = "addDoseSegue"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == self.segueAddDose{
-                let medToDose = segue.destination as! selectDoseViewController
-                medToDose.med = self.med
+            let medToDose = segue.destination as! selectDoseViewController
+            medToDose.med = self.med
             
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
+    
 
 }
