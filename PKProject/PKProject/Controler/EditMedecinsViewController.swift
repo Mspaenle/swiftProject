@@ -14,11 +14,10 @@ class EditMedecinsViewController: UIViewController {
     @IBOutlet weak var EditNameMedecin: UITextField!
     @IBOutlet weak var EditPhoneMedecin: UITextField!
     @IBOutlet weak var EditAdressMedecin: UITextField!
-    @IBOutlet weak var EditSpecialityMedecin: UIPickerView!
     @IBOutlet weak var EditTravelMedecin: UITextField!
     @IBOutlet weak var modifMedecin: UIButton!
     @IBOutlet weak var cancelModifMedecin: UIButton!
-    
+    @IBOutlet weak var specialityMedecin: UILabel!
     
     var medecin: DoctorModel?
     var medecins : [Doctor] = []
@@ -38,7 +37,9 @@ class EditMedecinsViewController: UIViewController {
             self.EditAdressMedecin.text = amedecin.adress
             self.EditPhoneMedecin.text = amedecin.phoneNumber
             self.EditTravelMedecin.text = String(describing: amedecin.travelTime)
-            speciality=amedecin.speciality
+            speciality = amedecin.speciality
+            self.specialityMedecin.text = amedecin.speciality
+            
             
         }
     }
