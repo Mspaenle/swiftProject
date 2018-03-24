@@ -54,6 +54,14 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
         return self.pills.count
     }
     
+    @IBAction func unwindToPilulier(sender: UIStoryboardSegue){
+        if let controller = sender.source as? AddPillsViewController{
+            if let _ = controller.drugIntake{
+                DrugIntake.save()
+            }
+        }
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

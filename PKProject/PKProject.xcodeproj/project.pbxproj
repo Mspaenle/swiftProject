@@ -69,6 +69,8 @@
 		8FC4805F204022FC00B9FD29 /* RDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4805E204022FC00B9FD29 /* RDVMedViewController.swift */; };
 		8FC480622040232500B9FD29 /* AddRDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480612040232500B9FD29 /* AddRDVMedViewController.swift */; };
 		8FC480652040253500B9FD29 /* EditRDVMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480642040253500B9FD29 /* EditRDVMedViewController.swift */; };
+		8FCF4865206532BA0012495C /* PopUpPillsDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF4864206532BA0012495C /* PopUpPillsDateViewController.swift */; };
+		8FCF486720653C220012495C /* selectDoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCF486620653C220012495C /* selectDoseViewController.swift */; };
 		8FDA57A52059338400A29B77 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57A42059338400A29B77 /* CoreDataManager.swift */; };
 		8FDA57A7205933BF00A29B77 /* StateDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57A6205933BF00A29B77 /* StateDAO.swift */; };
 		8FDA57A9205937B800A29B77 /* EventDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57A8205937B800A29B77 /* EventDAO.swift */; };
@@ -161,6 +163,8 @@
 		8FC4805E204022FC00B9FD29 /* RDVMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RDVMedViewController.swift; path = Controler/RDVMedViewController.swift; sourceTree = "<group>"; };
 		8FC480612040232500B9FD29 /* AddRDVMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRDVMedViewController.swift; path = Controler/AddRDVMedViewController.swift; sourceTree = "<group>"; };
 		8FC480642040253500B9FD29 /* EditRDVMedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditRDVMedViewController.swift; path = Controler/EditRDVMedViewController.swift; sourceTree = "<group>"; };
+		8FCF4864206532BA0012495C /* PopUpPillsDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpPillsDateViewController.swift; path = Controler/PopUpPillsDateViewController.swift; sourceTree = "<group>"; };
+		8FCF486620653C220012495C /* selectDoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = selectDoseViewController.swift; path = Controler/selectDoseViewController.swift; sourceTree = "<group>"; };
 		8FDA57A42059338400A29B77 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8FDA57A6205933BF00A29B77 /* StateDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDAO.swift; sourceTree = "<group>"; };
 		8FDA57A8205937B800A29B77 /* EventDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDAO.swift; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 				8F53E7E22064E24800764758 /* MedTableViewCell.swift */,
 				8F53E7E42064FC9100764758 /* DrugIntakeTableViewCell.swift */,
 				8F53E7E620650A1A00764758 /* DatePillTableViewCell.swift */,
+				8FCF4864206532BA0012495C /* PopUpPillsDateViewController.swift */,
+				8FCF486620653C220012495C /* selectDoseViewController.swift */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -474,6 +480,7 @@
 				8FC4805920401FD300B9FD29 /* AddPillsViewController.swift in Sources */,
 				24D45817204DB4DE00E27BC5 /* ListRDVModel.swift in Sources */,
 				8F90A90D203C840A00B74A0A /* EditEmergencyNumberViewController.swift in Sources */,
+				8FCF4865206532BA0012495C /* PopUpPillsDateViewController.swift in Sources */,
 				8F385E82204695DB00F29058 /* EditSportViewController.swift in Sources */,
 				8F52A5482059117100FDF76D /* MedModel.swift in Sources */,
 				8F52A551205911E600FDF76D /* EmergencyNumberModel.swift in Sources */,
@@ -515,6 +522,7 @@
 				8F90A8FE203C74C100B74A0A /* MedecinsViewController.swift in Sources */,
 				8F9192A3206425DF00060780 /* DoseTableViewCell.swift in Sources */,
 				24D4580E204DB02200E27BC5 /* ListMedModel.swift in Sources */,
+				8FCF486720653C220012495C /* selectDoseViewController.swift in Sources */,
 				8FC480622040232500B9FD29 /* AddRDVMedViewController.swift in Sources */,
 				8FDA57A7205933BF00A29B77 /* StateDAO.swift in Sources */,
 				8F385E792046926100F29058 /* RecapPatientViewController.swift in Sources */,

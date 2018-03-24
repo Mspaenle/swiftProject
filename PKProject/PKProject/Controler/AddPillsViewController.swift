@@ -7,24 +7,77 @@
 //
 
 import UIKit
+import Foundation
+import CoreData
 
-class AddPillsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var MedPicker: UIPickerView!
+class AddPillsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    @IBOutlet weak var medPicker: UIPickerView!
+    
     @IBOutlet weak var DateTable: UITableView!
-    var dates: [Date] = []
+    
     @IBOutlet weak var ValidateBTN: UIButton!
     @IBOutlet weak var CancelBTN: UIButton!
     
+    var drugIntake: DrugIntakeModel?
+    var med: MedModel?
+    var dates: [Date] = []
+    var dose: String?
+    var meds: [Med] = []
+    
+   
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        return meds[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return meds.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        med = MedModel(name: meds[row].name!,specification: meds[row].specification!,doses: meds[row].doses!)
+    }
+    
     @IBAction func listDatesAction(_ sender: Any) {
+
+    }
+    
+    @IBAction func validateAction(_ sender: Any) {
+        if sender as! UIButton == self.ValidateBTN {
+            drugIntake = DrugIntakeModel(med: med!, periodicity: dates, dose: dose!)
+        }
+        else {
+            self.dismiss(animated: true, completion: nil)
+        }
         
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
+            return
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request : NSFetchRequest<Med> = Med.fetchRequest()
+        do{
+            try self.meds = context.fetch(request)
+        }
+        catch{
+            
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,14 +87,36 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.DateTable.dequeueReusableCell(withIdentifier: "datePillCell", for: indexPath) as! DatePillTableViewCell
-        cell.datePillLabel.text = self.dates[indexPath.row].format()
+        cell.datePillLabel.text = self.dates[indexPath.row].formatHeure()
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return self.dates.count
     }
-        
+    
+    func tableView(_ tableView: UITableView,canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    @IBAction func unwindToAddPills(sender: UIStoryboardSegue){
+        if let controller = sender.source as? PopUpPillsDateViewController{
+            if let dateToSave = controller.heure{
+                self.dates.append(dateToSave)
+                self.DateTable.reloadData()
+            }
+        }
+    }
+    
+    let segueAddDose = "addDoseSegue"
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.segueAddDose{
+                let medToDose = segue.destination as! selectDoseViewController
+                medToDose.med = self.med
+            
+        }
+    }
     /*
     // MARK: - Navigation
 
