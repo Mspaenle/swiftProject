@@ -38,6 +38,9 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
         catch {
             //self.alertError(errorMsg: "\(error)", userInfo:"\(error.userInfo)")
         }
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,10 +65,13 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBAction func unwindToPilulier(sender: UIStoryboardSegue){
         if let controller = sender.source as? AddPillsViewController{
-            if let _ = controller.drugIntake{
+            if let drug = controller.drugIntake{
                 DrugIntake.save()
-                self.addNotif(jour : 6, heure : 12, minute : 0)
                 self.PillTable.reloadData()
+                let calendar = Calendar.current
+                for var date in drug.periodicity {
+                    addNotif(heure: calendar.component(.hour, from: date),minute: calendar.component(.minute, from: date), med: drug.med, drug: drug)
+                }
             }
         }
     }
@@ -79,16 +85,16 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
         print("prepare")
     }
     
-    public func addNotif(jour : Int, heure : Int, minute : Int){
+    public func addNotif(heure : Int, minute : Int, med: Med, drug: DrugIntakeModel){
         let content = UNMutableNotificationContent()
-        content.title = "Prise"
-        content.body = "Pensez à prendre votre médicament"
+        content.title = "Prise de " + med.name!
+        content.body = "Pensez à prendre votre médicament " + med.name! + " : " + drug.dose
         content.badge = 1
         
         // add notification for Mondays at 11:00 a.m.
         var dateComponents = DateComponents()
-        dateComponents.hour = 12
-        dateComponents.minute = 19
+        dateComponents.hour = heure
+        dateComponents.minute = minute
         let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         let request2 = UNNotificationRequest(identifier: "notification1", content: content, trigger: notificationTrigger)

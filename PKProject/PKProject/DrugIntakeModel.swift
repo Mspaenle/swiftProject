@@ -33,7 +33,7 @@ class DrugIntakeModel{
     
     var dose: String{
         get{
-            return self.dose
+            return self.dao.dose!
         }
         set{
             self.dao.dose = newValue
