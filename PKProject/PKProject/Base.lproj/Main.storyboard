@@ -2467,6 +2467,9 @@
                                 <state key="normal" title="Annuler">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="modifMedecin:" destination="mn2-mh-Nnc" eventType="touchUpInside" id="1BE-Sj-Kgt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nse-oY-rzx">
                                 <rect key="frame" x="188" y="617" width="188" height="50"/>
