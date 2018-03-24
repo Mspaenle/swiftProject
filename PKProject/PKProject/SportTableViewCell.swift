@@ -10,6 +10,13 @@ import UIKit
 
 class SportTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var heureSport: UILabel!
+    @IBOutlet weak var dureeSport: UILabel!
+    @IBOutlet weak var intituleSport: UILabel!
+    @IBOutlet weak var descriptionSport: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

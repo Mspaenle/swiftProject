@@ -10,10 +10,21 @@ import UIKit
 
 class AddSportViewController: UIViewController {
 
+    @IBOutlet weak var intituleSport: UITextField!
+    @IBOutlet weak var descriptionSport: UITextField!
+    @IBOutlet weak var dureeSport: UITextField!
+    @IBOutlet weak var dateSport: UIDatePicker!
+    @IBOutlet weak var validSport: UIButton!
+    @IBOutlet weak var cancelSport: UIButton!
+    
+    
+    var sport: ActivityModel?
+    var datesport : Date?
+    var sports: [Activity] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +32,9 @@ class AddSportViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func rdvDatePicker(_ sender: UIDatePicker) {
+        datesport = dateSport.date
+    }
 
     /*
     // MARK: - Navigation
@@ -31,5 +45,17 @@ class AddSportViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func actionOnSport(_ sender: UIButton) {
+        if sender == self.validSport {
+            let a:Int16? = Int16(self.dureeSport.text!)!
+            
+            sport = ActivityModel(date: self.dateSport.date as NSDate, title: self.intituleSport.text!, specification: self.descriptionSport.text!, duration: a!)
+            self.performSegue(withIdentifier: "addSport", sender: self)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+    }
 
 }
