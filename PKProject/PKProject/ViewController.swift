@@ -30,6 +30,10 @@ class ViewController: UIViewController {
             if controller.eventValue != nil{
                 Event.save()
             }
+        } else if let controller = sender.source as? JournalViewController{
+            if controller.journal != nil{
+                Journal.save()
+            }
         }
     }
     

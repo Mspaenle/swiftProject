@@ -11,14 +11,31 @@ import CoreData
 
 class RecapPatientViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     var states : [State] = []
+    var events : [Event] = []
+    var kase : Int = 0
     
     
     @IBOutlet weak var StateTable: UITableView!
     
+    @IBAction func windowChanged(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            self.kase = 0
+            StateTable.reloadData()
+        case 1:
+            self.kase = 1
+            StateTable.reloadData()
+        default:
+            break
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
@@ -34,9 +51,21 @@ class RecapPatientViewController: UIViewController , UITableViewDataSource, UITa
         do{
             try self.states = context.fetch(request)
         }
-        catch let error as NSError{
-            //self.alertError(errorMsg: "\(error)", userInfo:"\(error.userInfo)")
+        catch {
+            fatalError()
         }
+        
+        
+        let request2 : NSFetchRequest<Event> = Event.fetchRequest()
+        request2.predicate = NSPredicate(format: "date > %@", current)
+        request2.sortDescriptors = [NSSortDescriptor(key: #keyPath(Event.date), ascending: true)]
+        do{
+            try self.events = context.fetch(request2)
+        }
+        catch {
+            fatalError()
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,9 +75,19 @@ class RecapPatientViewController: UIViewController , UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.StateTable.dequeueReusableCell(withIdentifier: "StateCell", for: indexPath) as! StateTableViewCell
-        let date = self.states[indexPath.row].date as! Date
-        cell.StateDateLabel.text = date.format()
-        cell.StateTitleLabel.text = self.states[indexPath.row].value
+        switch self.kase
+        {
+        case 0:
+            let date = self.states[indexPath.row].date as! Date
+            cell.StateDateLabel.text = date.format()
+            cell.StateTitleLabel.text = self.states[indexPath.row].value
+        case 1:
+            let date = self.events[indexPath.row].date as! Date
+            cell.StateDateLabel.text = date.format()
+            cell.StateTitleLabel.text = self.events[indexPath.row].value
+        default:
+            break
+        }
         return cell
     }
     
