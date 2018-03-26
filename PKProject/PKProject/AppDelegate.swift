@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -54,8 +55,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MedModel(name: "Exelon", specification: "", doses: ["1,5","3","4,5","6"])
             MedModel(name: "Exelon (Patch)", specification: "", doses: ["4,6","9,5"])
             
+            // Notifications
+            
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+            addNotif(heure: 19, minute: 8)
+            
         }
         return true
+    }
+    
+    public func addNotif(heure : Int, minute : Int){
+        let content = UNMutableNotificationContent()
+        content.title = "Prises"
+        content.body = "Entrez vos données pour la journée"
+        content.badge = 1
+        
+        // add notification for Mondays at 11:00 a.m.
+        var dateComponents = DateComponents()
+        dateComponents.hour = heure
+        dateComponents.minute = minute
+        let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        let request2 = UNNotificationRequest(identifier: "notification2", content: content, trigger: notificationTrigger)
+        UNUserNotificationCenter.current().add(request2, withCompletionHandler: nil)
+        print("ok")
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
