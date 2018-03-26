@@ -78,6 +78,9 @@
 		8FDA57A9205937B800A29B77 /* EventDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57A8205937B800A29B77 /* EventDAO.swift */; };
 		8FDA57B120593BAD00A29B77 /* ActivityDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA57B020593BAD00A29B77 /* ActivityDAO.swift */; };
 		8FE1D9A920611513001BD850 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1D9A820611513001BD850 /* DateExtension.swift */; };
+		8FF43E75206920CB00928204 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43E74206920CB00928204 /* JournalViewController.swift */; };
+		8FF43E772069245100928204 /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43E762069245100928204 /* JournalModel.swift */; };
+		8FF43E792069245E00928204 /* JournalDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43E782069245E00928204 /* JournalDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +177,9 @@
 		8FDA57A8205937B800A29B77 /* EventDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDAO.swift; sourceTree = "<group>"; };
 		8FDA57B020593BAD00A29B77 /* ActivityDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDAO.swift; sourceTree = "<group>"; };
 		8FE1D9A820611513001BD850 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		8FF43E74206920CB00928204 /* JournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JournalViewController.swift; path = Controler/JournalViewController.swift; sourceTree = "<group>"; };
+		8FF43E762069245100928204 /* JournalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
+		8FF43E782069245E00928204 /* JournalDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +308,7 @@
 				8FCF4864206532BA0012495C /* PopUpPillsDateViewController.swift */,
 				8FCF486620653C220012495C /* selectDoseViewController.swift */,
 				2407151020669377006FE538 /* SportTableViewCell.swift */,
+				8FF43E74206920CB00928204 /* JournalViewController.swift */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -336,6 +343,8 @@
 				8FDA57A42059338400A29B77 /* CoreDataManager.swift */,
 				8F90A8C9203C5C4700B74A0A /* PKProject.xcdatamodeld */,
 				8FE1D9A820611513001BD850 /* DateExtension.swift */,
+				8FF43E762069245100928204 /* JournalModel.swift */,
+				8FF43E782069245E00928204 /* JournalDAO.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -516,9 +525,11 @@
 				8F385E85204695E700F29058 /* AddSportViewController.swift in Sources */,
 				12E111A4205FEA5200124F7D /* RDVDAO.swift in Sources */,
 				24C17703206650A200DE3D73 /* RDVTableViewCell.swift in Sources */,
+				8FF43E75206920CB00928204 /* JournalViewController.swift in Sources */,
 				8F52A54520590CD600FDF76D /* DoctorModel.swift in Sources */,
 				8F90A8CB203C5C4700B74A0A /* PKProject.xcdatamodeld in Sources */,
 				8F385E7C2046932500F29058 /* ParameterMedecinViewController.swift in Sources */,
+				8FF43E792069245E00928204 /* JournalDAO.swift in Sources */,
 				24D457FC204D958300E27BC5 /* EventModel.swift in Sources */,
 				8F53E7E720650A1A00764758 /* DatePillTableViewCell.swift in Sources */,
 				8FDA57A9205937B800A29B77 /* EventDAO.swift in Sources */,
@@ -535,6 +546,7 @@
 				8FDA57A7205933BF00A29B77 /* StateDAO.swift in Sources */,
 				8F385E792046926100F29058 /* RecapPatientViewController.swift in Sources */,
 				8F52A54220590C6800FDF76D /* StateModel.swift in Sources */,
+				8FF43E772069245100928204 /* JournalModel.swift in Sources */,
 				8F90A90A203C838400B74A0A /* AddEmergencyNumberViewController.swift in Sources */,
 				247BD353205938BD00D94876 /* DoctorDAO.swift in Sources */,
 				8F52A5542059120F00FDF76D /* DrugIntakeModel.swift in Sources */,

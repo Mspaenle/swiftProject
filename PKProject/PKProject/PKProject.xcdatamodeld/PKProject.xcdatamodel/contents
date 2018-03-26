@@ -27,6 +27,10 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Journal" representedClassName="Journal" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Med" representedClassName="Med" syncable="YES" codeGenerationType="class">
         <attribute name="doses" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -51,5 +55,6 @@
         <element name="Med" positionX="-236" positionY="-603" width="128" height="103"/>
         <element name="RDV" positionX="-396" positionY="27" width="128" height="88"/>
         <element name="State" positionX="-198" positionY="-72" width="128" height="75"/>
+        <element name="Journal" positionX="-207" positionY="-450" width="128" height="75"/>
     </elements>
 </model>
