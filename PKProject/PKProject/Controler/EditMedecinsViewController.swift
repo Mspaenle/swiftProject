@@ -24,10 +24,8 @@ class EditMedecinsViewController: UIViewController {
     var speciality: String?
     var med : Doctor? = nil
     
-    
     @IBAction func DeleteMedecin(_ sender: UIButton) {
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,20 +37,15 @@ class EditMedecinsViewController: UIViewController {
             self.EditTravelMedecin.text = String(describing: amedecin.travelTime)
             speciality = amedecin.speciality
             self.specialityMedecin.text = amedecin.speciality
-            
-            
         }
     }
     
-
-
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    //TODO vérifier les types des données et données vides
+    // MARK: - Action Button and Navigation
+    
     @IBAction func modifMedecin(_ sender: UIButton) {
         
             if sender == self.modifMedecin {
@@ -67,17 +60,8 @@ class EditMedecinsViewController: UIViewController {
                 //TODO dismiss
                 self.dismiss(animated: true, completion: nil)
             }
-            
-        
     }
-
-
-
     
-
-    
-    
-
     /*
     // MARK: - Navigation
 

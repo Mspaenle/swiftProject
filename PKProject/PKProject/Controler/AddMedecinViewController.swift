@@ -22,13 +22,12 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var TravelMedecin: UITextField!
     
     var medecin: DoctorModel?
-    let specialities = ["Somnolence","Chute","Hallucination","Prise de dispersible","Clic / bolus d'Apokinon"]
+    let specialities = ["Neurologue","Kinésithérapeuthe","Psychiatre","Généraliste"]
     var speciality: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        self.speciality = specialities[0]
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +36,7 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     
+    // MARK: - Unwind
     
     @IBAction func unwindToAddMedecin(sender: UIStoryboardSegue){
         if let controller = sender.source as? MedecinsViewController{
@@ -46,6 +46,8 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
         
     }
+    
+    // MARK: - PickerView
     
     func numberOfComponents(in SpecialtyMedein: UIPickerView) -> Int
     {
@@ -67,6 +69,8 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
         speciality = specialities[row]
     }
     
+    // MARK: - Action Button and Navigation
+    
     // TODO tests champs non vides + rdv nil
     
     @IBAction func buttonMedecin(_ sender: Any) {
@@ -81,20 +85,10 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

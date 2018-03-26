@@ -17,7 +17,6 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
     var medecins : [Doctor] = []
     var medecin: DoctorModel?
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,12 +37,12 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Table View
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.medecinTable.dequeueReusableCell(withIdentifier: "MedecinCell", for: indexPath) as! MedecinTableViewCell
@@ -54,12 +53,11 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return self.medecins.count
     }
+    
+    // MARK: - Unwind
     
     @IBAction func unwindToViewMedecin(sender: UIStoryboardSegue){
         if let controller = sender.source as? AddMedecinViewController{
@@ -98,9 +96,9 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
 
+    // MARK: - Button Action
+    
     @IBAction func buttonModifMedecin(_ sender: UIButton) {
-        
-        
 
     }
     

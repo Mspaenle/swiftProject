@@ -9,15 +9,14 @@
 import UIKit
 import CoreData
 
-class RecapPatientViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
+class RecapPatientViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var StateTable: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     var states : [State] = []
     var events : [Event] = []
     var kase : Int = 0
-    
-    
-    @IBOutlet weak var StateTable: UITableView!
     
     @IBAction func windowChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex
@@ -35,15 +34,12 @@ class RecapPatientViewController: UIViewController , UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
             return
         }
-        
         let context = appDelegate.persistentContainer.viewContext
-        
         let request : NSFetchRequest<State> = State.fetchRequest()
         let current = (Calendar.current as NSCalendar).date(byAdding: .day, value: -5, to: Date(), options: [])! as NSDate
         request.predicate = NSPredicate(format: "date > %@", current)
@@ -54,8 +50,6 @@ class RecapPatientViewController: UIViewController , UITableViewDataSource, UITa
         catch {
             fatalError()
         }
-        
-        
         let request2 : NSFetchRequest<Event> = Event.fetchRequest()
         request2.predicate = NSPredicate(format: "date > %@", current)
         request2.sortDescriptors = [NSSortDescriptor(key: #keyPath(Event.date), ascending: true)]
@@ -65,7 +59,6 @@ class RecapPatientViewController: UIViewController , UITableViewDataSource, UITa
         catch {
             fatalError()
         }
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,16 +66,18 @@ class RecapPatientViewController: UIViewController , UITableViewDataSource, UITa
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Table View
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.StateTable.dequeueReusableCell(withIdentifier: "StateCell", for: indexPath) as! StateTableViewCell
         switch self.kase
         {
         case 0:
-            let date = self.states[indexPath.row].date as! Date
+            let date = self.states[indexPath.row].date! as Date
             cell.StateDateLabel.text = date.format()
             cell.StateTitleLabel.text = self.states[indexPath.row].value
         case 1:
-            let date = self.events[indexPath.row].date as! Date
+            let date = self.events[indexPath.row].date! as Date
             cell.StateDateLabel.text = date.format()
             cell.StateTitleLabel.text = self.events[indexPath.row].value
         default:
@@ -92,7 +87,11 @@ class RecapPatientViewController: UIViewController , UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return self.states.count
+        if kase == 0 {
+            return self.states.count
+        } else if kase == 1 {
+            return self.events.count
+        } else {return 0}
     }
     
     /*

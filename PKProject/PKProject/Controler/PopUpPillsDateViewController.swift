@@ -16,35 +16,33 @@ class PopUpPillsDateViewController: UIViewController {
     
     var heure: Date?
     
-    @IBAction func heurePickerAction(_ sender: Any) {
-        heure = hourPicker.date
-    }
-    
-    
-    
-    @IBAction func buttonAction(_ sender: Any) {
-        if sender as! UIButton == self.ValidateBTN {
-            
-        }
-        else {
-            heure = nil
-        }
-        self.performSegue(withIdentifier: "toAddPill", sender: self)
-
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.heure = hourPicker.date
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    // MARK: - Date Picker
+    
+    @IBAction func heurePickerAction(_ sender: Any) {
+        heure = hourPicker.date
+    }
+    
+    // MARK: - Button Action
+    
+    @IBAction func buttonAction(_ sender: Any) {
+        if sender as! UIButton == self.ValidateBTN {
+        }
+        else {
+            heure = nil
+        }
+        self.performSegue(withIdentifier: "toAddPill", sender: self)
+    }
     
     // MARK: - Navigation
 

@@ -18,9 +18,6 @@ class EtatViewController: UIViewController {
     var dateState: Date!
     var state: StateModel?
     
-    @IBAction func DatePickerAction(_ sender: Any) {
-        dateState = myDatePicker.date
-    }
 
     
     override func viewDidLoad() {
@@ -35,6 +32,11 @@ class EtatViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Button Action
+    
+    @IBAction func DatePickerAction(_ sender: Any) {
+        dateState = myDatePicker.date
+    }
     
     @IBAction func selectStateAction(_ sender: Any) {
         if sender as! UIButton == self.OnBtn {

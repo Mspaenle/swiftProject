@@ -31,6 +31,7 @@ class JournalViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Action Button
     
     @IBAction func actionButton(_ sender: Any) {
         if sender as! UIButton == self.validateBtn {
@@ -46,7 +47,6 @@ class JournalViewController: UIViewController {
         self.performSegue(withIdentifier: "validJournal", sender: self)
     }
 
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

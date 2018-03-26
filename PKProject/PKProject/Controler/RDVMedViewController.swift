@@ -18,7 +18,6 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
@@ -32,15 +31,16 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
             try self.rdvs = context.fetch(request)
         }
         catch {
-            //
+            fatalError()
         }
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Table View
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.rdvTable.dequeueReusableCell(withIdentifier: "RDVCell", for: indexPath) as! RDVTableViewCell
@@ -50,34 +50,25 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return self.rdvs.count
     }
     
+    // MARK: - Unwind and Action Button
+    
     @IBAction func unwindToViewRDV(sender: UIStoryboardSegue){
         if let controller = sender.source as? AddRDVMedViewController{
-            
             if let _ = controller.rdv{
-
                 RDV.save()
                 self.rdvTable.reloadData() //ne fonctionne pas
-                
             }
-            
         }
         else if let controller = sender.source as? EditRDVMedViewController{
-            
             if let _ = controller.rdv{
-                print(controller.rdv?.date)
                 //RDV.save()
-                self.rdvTable.reloadData() //ne fonctionne pas
-                
+                self.rdvTable.reloadData()
             }
-            
         }
-
-        
     }
     
     let segueEditRDV = "editRDV"

@@ -12,11 +12,8 @@ import CoreData
 
 class AddPillsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
     @IBOutlet weak var medPicker: UIPickerView!
-    
     @IBOutlet weak var DateTable: UITableView!
-    
     @IBOutlet weak var ValidateBTN: UIButton!
     @IBOutlet weak var CancelBTN: UIButton!
     
@@ -26,7 +23,33 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     var dose: String? = nil
     var meds: [Med] = []
     
-   
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
+            return
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        let request : NSFetchRequest<Med> = Med.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Med.name), ascending: true)]
+        do{
+            try self.meds = context.fetch(request)
+        }
+        catch{
+            
+        }
+        self.med = meds[0]
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Picker View
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
@@ -46,10 +69,25 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     {
         med = meds[row]
     }
-    
-    @IBAction func listDatesAction(_ sender: Any) {
 
+    // MARK: - Table View
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = self.DateTable.dequeueReusableCell(withIdentifier: "datePillCell", for: indexPath) as! DatePillTableViewCell
+        cell.datePillLabel.text = self.dates[indexPath.row].formatHeure()
+        return cell
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return self.dates.count
+    }
+    
+    func tableView(_ tableView: UITableView,canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    // MARK: - Button Action
+    
     @IBAction func deleteHour(_ sender: Any) {
         if let indexPath = self.DateTable.indexPathForSelectedRow{
             DateTable.beginUpdates()
@@ -75,43 +113,7 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
-            return
-        }
-        let context = appDelegate.persistentContainer.viewContext
-        let request : NSFetchRequest<Med> = Med.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Med.name), ascending: true)]
-        do{
-            try self.meds = context.fetch(request)
-        }
-        catch{
-            
-        }
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = self.DateTable.dequeueReusableCell(withIdentifier: "datePillCell", for: indexPath) as! DatePillTableViewCell
-        cell.datePillLabel.text = self.dates[indexPath.row].formatHeure()
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return self.dates.count
-    }
-    
-    func tableView(_ tableView: UITableView,canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
+    // MARK: - Unwind
     
     @IBAction func unwindToAddPills(sender: UIStoryboardSegue){
         if let controller = sender.source as? PopUpPillsDateViewController{
@@ -125,10 +127,7 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
-    
 
-    
-    
     // MARK: - Navigation
 
     let segueAddDose = "addDoseSegue"

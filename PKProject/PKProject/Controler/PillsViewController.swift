@@ -39,14 +39,16 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
             //self.alertError(errorMsg: "\(error)", userInfo:"\(error.userInfo)")
         }
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
-        })
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Table View
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.PillTable.dequeueReusableCell(withIdentifier: "drugCell", for: indexPath) as! DrugIntakeTableViewCell
@@ -62,6 +64,8 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return self.pills.count
     }
+    
+    // MARK: - Navigation
     
     @IBAction func deleteDrugIntake(_ sender: UIButton) {
         if let indexPath = self.PillTable.indexPathForSelectedRow{
@@ -94,8 +98,9 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        print("prepare")
     }
+    
+    // MARK: - Notifications
     
     public func addNotif(heure : Int, minute : Int, med: Med, drug: DrugIntakeModel){
         let content = UNMutableNotificationContent()

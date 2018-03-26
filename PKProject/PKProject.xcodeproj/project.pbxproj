@@ -21,6 +21,7 @@
 		24D45817204DB4DE00E27BC5 /* ListRDVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D45816204DB4DE00E27BC5 /* ListRDVModel.swift */; };
 		24D4581D204DB9C400E27BC5 /* ListActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D4581C204DB9C400E27BC5 /* ListActivityModel.swift */; };
 		24D947BD2062C865003E99B1 /* MedecinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D947BC2062C865003E99B1 /* MedecinTableViewCell.swift */; };
+		8F1FCD492069459A00E01546 /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1FCD482069459A00E01546 /* AgendaTableViewCell.swift */; };
 		8F385E7020468C3300F29058 /* EditPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E6F20468C3300F29058 /* EditPriseViewController.swift */; };
 		8F385E7320468F6A00F29058 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E7220468F6A00F29058 /* DiaryViewController.swift */; };
 		8F385E762046910100F29058 /* MedecinMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E752046910100F29058 /* MedecinMenuViewController.swift */; };
@@ -115,6 +116,7 @@
 		24D45816204DB4DE00E27BC5 /* ListRDVModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRDVModel.swift; sourceTree = "<group>"; };
 		24D4581C204DB9C400E27BC5 /* ListActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListActivityModel.swift; sourceTree = "<group>"; };
 		24D947BC2062C865003E99B1 /* MedecinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedecinTableViewCell.swift; sourceTree = "<group>"; };
+		8F1FCD482069459A00E01546 /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
 		8F385E6F20468C3300F29058 /* EditPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPriseViewController.swift; path = Controler/EditPriseViewController.swift; sourceTree = "<group>"; };
 		8F385E7220468F6A00F29058 /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = Controler/DiaryViewController.swift; sourceTree = "<group>"; };
 		8F385E752046910100F29058 /* MedecinMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedecinMenuViewController.swift; path = Controler/MedecinMenuViewController.swift; sourceTree = "<group>"; };
@@ -299,16 +301,17 @@
 				8F385E81204695DB00F29058 /* EditSportViewController.swift */,
 				8F385E84204695E700F29058 /* AddSportViewController.swift */,
 				8F385E872046995900F29058 /* AddMedViewController.swift */,
-				8F54C75A2056D4DC007F17AE /* StateTableViewCell.swift */,
-				24D947BC2062C865003E99B1 /* MedecinTableViewCell.swift */,
-				8F9192A2206425DF00060780 /* DoseTableViewCell.swift */,
-				8F53E7E22064E24800764758 /* MedTableViewCell.swift */,
-				8F53E7E42064FC9100764758 /* DrugIntakeTableViewCell.swift */,
-				8F53E7E620650A1A00764758 /* DatePillTableViewCell.swift */,
 				8FCF4864206532BA0012495C /* PopUpPillsDateViewController.swift */,
 				8FCF486620653C220012495C /* selectDoseViewController.swift */,
-				2407151020669377006FE538 /* SportTableViewCell.swift */,
 				8FF43E74206920CB00928204 /* JournalViewController.swift */,
+				8F9192A2206425DF00060780 /* DoseTableViewCell.swift */,
+				8F53E7E22064E24800764758 /* MedTableViewCell.swift */,
+				8F53E7E620650A1A00764758 /* DatePillTableViewCell.swift */,
+				8F53E7E42064FC9100764758 /* DrugIntakeTableViewCell.swift */,
+				2407151020669377006FE538 /* SportTableViewCell.swift */,
+				24D947BC2062C865003E99B1 /* MedecinTableViewCell.swift */,
+				8F54C75A2056D4DC007F17AE /* StateTableViewCell.swift */,
+				8F1FCD482069459A00E01546 /* AgendaTableViewCell.swift */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F90A904203C754A00B74A0A /* AddMedecinViewController.swift in Sources */,
+				8F1FCD492069459A00E01546 /* AgendaTableViewCell.swift in Sources */,
 				8FC4805920401FD300B9FD29 /* AddPillsViewController.swift in Sources */,
 				24D45817204DB4DE00E27BC5 /* ListRDVModel.swift in Sources */,
 				8F90A90D203C840A00B74A0A /* EditEmergencyNumberViewController.swift in Sources */,

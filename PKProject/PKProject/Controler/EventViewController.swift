@@ -20,29 +20,22 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     var event: EventModel?
     let events = ["Somnolence","Chute","Hallucination","Prise de dispersible","Clic / bolus d'Apokinon"]
     
-    @IBAction func buttonAction(_ sender: Any) {
-        
-        if sender as! UIButton == self.validateBTN {
-            let val = eventValue
-            let ret : EventValue
-            if val == "Somnolence" {
-                ret = .somnolence
-            } else if val == "Chute" {
-                ret = .chute
-            } else if val == "Hallucination" {
-                ret = .hallucination
-            } else if val == "Prise de dispersible" {
-                ret = .prise
-            } else {
-                ret = .clic
-            }
-            event = EventModel(date: dateEvent,eventValue: ret)
-        }
-        else {
-            eventValue = nil
-        }
-        self.performSegue(withIdentifier: "validEvent", sender: self)
+   
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.dateEvent = datePicker.date
+        self.eventValue = events[0]
+        // Do any additional setup after loading the view.
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Picker View
     
     @IBAction func DatePickerAction(_ sender: Any) {
         dateEvent = datePicker.date
@@ -68,20 +61,31 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         eventValue = events[row]
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.dateEvent = datePicker.date
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    // MARK: - Action Button
     
-
+    @IBAction func buttonAction(_ sender: Any) {
+        
+        if sender as! UIButton == self.validateBTN {
+            let val = eventValue
+            let ret : EventValue
+            if val == "Somnolence" {
+                ret = .somnolence
+            } else if val == "Chute" {
+                ret = .chute
+            } else if val == "Hallucination" {
+                ret = .hallucination
+            } else if val == "Prise de dispersible" {
+                ret = .prise
+            } else {
+                ret = .clic
+            }
+            event = EventModel(date: dateEvent,eventValue: ret)
+        }
+        else {
+            eventValue = nil
+        }
+        self.performSegue(withIdentifier: "validEvent", sender: self)
+    }
     
     // MARK: - Navigation
 

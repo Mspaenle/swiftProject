@@ -14,10 +14,7 @@ class EditRDVMedViewController: UIViewController {
     @IBOutlet weak var editRDVDate: UIDatePicker!
     @IBOutlet weak var validRDV: UIButton!
     @IBOutlet weak var cancelRDV: UIButton!
-    
-    
     @IBOutlet weak var rdvMedecin: UILabel!
-    
     
     var rdv2 : RDV? = nil
     var rdv: RDVModel?
@@ -27,13 +24,12 @@ class EditRDVMedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let ardv = self.rdv2{
             self.editRDVTitle.text = ardv.title
             self.editRDVDate.date = (ardv.date)! as Date
             medecin = rdv2?.doctor
             self.rdvMedecin.text = ardv.doctor?.name
-            
         }
     }
 
@@ -42,26 +38,18 @@ class EditRDVMedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Button Action
+    
     @IBAction func modifRDV(_ sender: UIButton) {
-        
         if sender == self.validRDV {
-            
             RDV.delete(object: rdv2!)
-            
-
             rdv = RDVModel(date: self.editRDVDate.date as NSDate, title: self.editRDVTitle.text!, doctor: medecin!)
-
             self.performSegue(withIdentifier: "editRDV", sender: self)
         } else {
-            //TODO dismiss
             self.dismiss(animated: true, completion: nil)
         }
-        
-        
     }
-
     
-
     /*
     // MARK: - Navigation
 

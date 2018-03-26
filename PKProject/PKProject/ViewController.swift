@@ -12,15 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-
+    // MARK: - Unwind
+    
     @IBAction func unwindToMenu(sender: UIStoryboardSegue){
         if let controller = sender.source as? EtatViewController{
             if let _ = controller.state{
@@ -35,12 +34,6 @@ class ViewController: UIViewController {
                 Journal.save()
             }
         }
-    }
-    
-    // MARK: - Alerts
-    
-    func createAlert(title : String, message : String) {
-        
     }
 
 }

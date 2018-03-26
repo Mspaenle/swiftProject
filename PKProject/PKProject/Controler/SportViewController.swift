@@ -41,6 +41,8 @@ class SportViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Table View
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.sportTable.dequeueReusableCell(withIdentifier: "SportCell", for: indexPath) as! SportTableViewCell
         cell.descriptionSport.text = self.sports[indexPath.row].specification
@@ -55,20 +57,15 @@ class SportViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return self.sports.count
     }
 
+    // MARK: - Action Button
     
     @IBAction func unwindToViewSport(sender: UIStoryboardSegue){
         if let controller = sender.source as? AddSportViewController{
-            
             if let _ = controller.sport{
-                
                 Activity.save()
                 self.sportTable.reloadData() //ne fonctionne pas
-                
             }
-            
         }
-
-        
     }
     
     @IBAction func deleteSport(_ sender: UIButton) {
@@ -79,7 +76,6 @@ class SportViewController: UIViewController, UITableViewDelegate, UITableViewDat
             sportTable.deleteRows(at: [indexPath], with: .fade)
             self.sports.remove(at: indexPath.row)
             sportTable.endUpdates()
-            
         }
     }
     /*

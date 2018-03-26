@@ -26,8 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else {
             UserDefaults.standard.set(true, forKey: "launchedBefore")
+            
             //Seeders
+            
             DoctorModel(adress: "Grabels", name: "Dupont", phoneNumber: "0680729162", speciality: "Neurologue", travelTime: 15)
+            DoctorModel(adress: "Montpellier", name: "Hoarau", phoneNumber: "0680729162", speciality: "Psychiatre", travelTime: 15)
             MedModel(name: "Modopar", specification: "", doses: ["62,5","125","250"])
             MedModel(name: "Modopar LP", specification: "", doses: ["125"])
             MedModel(name: "Modopar Dispersible", specification: "", doses: ["125"])

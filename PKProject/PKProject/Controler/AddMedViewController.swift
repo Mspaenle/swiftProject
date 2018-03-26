@@ -21,6 +21,21 @@ class AddMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var med: MedModel?
     var doses: [String] = []
     
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Button Action
+    
     @IBAction func addDoseAction(_ sender: Any) {
         let alert = UIAlertController(title: "Nouvelle Dose", message: "Ajouter une dose (ex: 250mg)",preferredStyle: .alert)
         
@@ -56,17 +71,8 @@ class AddMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         self.performSegue(withIdentifier: "validMed", sender: self)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    // MARK: - Table View
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.DosesTable.dequeueReusableCell(withIdentifier: "DoseCell", for: indexPath) as! DoseTableViewCell

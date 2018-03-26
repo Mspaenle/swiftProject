@@ -20,12 +20,19 @@ class selectDoseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let amed = self.med {
             doses = amed.doses!
         }
+        self.dose = doses[0]
         // Do any additional setup after loading the view.
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Picker View
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
@@ -47,8 +54,7 @@ class selectDoseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         dose = doses[row]
     }
     
-    
-
+    // MARK: - Action Button
     
     @IBAction func buttonAction(_ sender: Any) {
         if sender as! UIButton == self.validateBTN {
@@ -60,13 +66,6 @@ class selectDoseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.performSegue(withIdentifier: "toAddPill", sender: self)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

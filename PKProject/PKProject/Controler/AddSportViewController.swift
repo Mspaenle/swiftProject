@@ -24,13 +24,16 @@ class AddSportViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.datesport = dateSport.date
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Date Picker
     
     @IBAction func rdvDatePicker(_ sender: UIDatePicker) {
         datesport = dateSport.date
@@ -45,6 +48,8 @@ class AddSportViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Button Action
     
     @IBAction func actionOnSport(_ sender: UIButton) {
         if sender == self.validSport {

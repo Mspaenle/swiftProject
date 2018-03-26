@@ -28,8 +28,8 @@ class MedInfosViewController: UIViewController, UITableViewDataSource, UITableVi
         do{
             try self.med = context.fetch(request)
         }
-        catch let error as NSError{
-            //self.alertError(errorMsg: "\(error)", userInfo:"\(error.userInfo)")
+        catch {
+            fatalError()
         }
     }
 
@@ -37,6 +37,8 @@ class MedInfosViewController: UIViewController, UITableViewDataSource, UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Table View
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.MedTable.dequeueReusableCell(withIdentifier: "medCell", for: indexPath) as! MedTableViewCell
