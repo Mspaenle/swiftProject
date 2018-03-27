@@ -52,6 +52,7 @@ class ActivityModel{
         self.dao = Activity.create()
         self.dao.date=date
         self.dao.title=title
+        self.dao.duration=duration
         self.dao.specification=specification
         
     }

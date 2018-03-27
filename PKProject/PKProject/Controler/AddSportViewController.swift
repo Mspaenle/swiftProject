@@ -25,7 +25,8 @@ class AddSportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.datesport = dateSport.date
+        self.datesport = Date()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,14 +50,21 @@ class AddSportViewController: UIViewController {
     }
     */
     
+    //TODO alerte + vérification d'un nombre si possible
+    
     // MARK: - Button Action
     
     @IBAction func actionOnSport(_ sender: UIButton) {
         if sender == self.validSport {
-            let a:Int16? = Int16(self.dureeSport.text!)!
-            
-            sport = ActivityModel(date: self.dateSport.date as NSDate, title: self.intituleSport.text!, specification: self.descriptionSport.text!, duration: a!)
-            self.performSegue(withIdentifier: "addSport", sender: self)
+            if self.intituleSport.text != nil && self.descriptionSport.text != nil && self.dureeSport.text != nil  {
+                    let a:Int16? = Int16(self.dureeSport.text!)!
+
+                    sport = ActivityModel(date: self.dateSport.date as NSDate, title: self.intituleSport.text!, specification: self.descriptionSport.text!, duration: a!)
+                    self.performSegue(withIdentifier: "addSport", sender: self)
+            }
+            else{
+                self.dismiss(animated: true, completion: nil)
+            }
         } else {
             self.dismiss(animated: true, completion: nil)
         }

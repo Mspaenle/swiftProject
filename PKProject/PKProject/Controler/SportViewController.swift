@@ -57,13 +57,29 @@ class SportViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return self.sports.count
     }
 
-    // MARK: - Action Button
+    // MARK: - Unwind & Action Button
     
     @IBAction func unwindToViewSport(sender: UIStoryboardSegue){
         if let controller = sender.source as? AddSportViewController{
-            if let _ = controller.sport{
+            if let NewSport = controller.sport{
                 Activity.save()
+                self.sports.append(NewSport.dao)
                 self.sportTable.reloadData() //ne fonctionne pas
+            }
+        }
+    }
+    
+    let segueEditSport = "editSport"
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.segueEditSport{
+            if let indexPath = self.sportTable.indexPathForSelectedRow{
+                let editSportController = segue.destination as! EditSportViewController
+                editSportController.sport2 = self.sports[indexPath.row]
+                sportTable.beginUpdates()
+                sportTable.deleteRows(at: [indexPath], with: .fade)
+                self.sports.remove(at: indexPath.row)
+                sportTable.endUpdates()
             }
         }
     }
