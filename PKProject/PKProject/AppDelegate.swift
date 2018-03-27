@@ -59,7 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
             addNotif(heure: 20, minute: 0)
-            
         }
         return true
     }

@@ -59,7 +59,7 @@ class DoctorModel{
         }
     }
 
-    init(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16){
+    @discardableResult init(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16){
         self.dto = Doctor.createDTO(adress: adress, name: name, phoneNumber: phoneNumber, speciality: speciality, travelTime: travelTime)        
     }
 

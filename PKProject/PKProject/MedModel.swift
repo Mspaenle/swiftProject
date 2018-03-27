@@ -42,8 +42,7 @@ class MedModel{
         }
     }
     
-    
-    init(name : String, specification : String, doses: [String]){
+    @discardableResult init(name : String, specification : String, doses: [String]){
         self.dao = Med.create()
         self.dao.name = name
         self.dao.specification = specification
