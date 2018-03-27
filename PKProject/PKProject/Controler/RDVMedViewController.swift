@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -62,6 +63,9 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 RDV.save()
                 self.rdvs.append(newRDV.dao)
                 self.rdvTable.reloadData()
+                if newRDV.doctor.speciality == "Neurologue"{
+                    addNotifState(date : newRDV.date)
+                }
             }
         }
         else if let controller = sender.source as? EditRDVMedViewController{
@@ -69,6 +73,9 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 RDV.save()
                 self.rdvs.append(editedRDV.dao)
                 self.rdvTable.reloadData()
+                if editedRDV.doctor.speciality == "Neurologue"{
+                    addNotifState(date : editedRDV.date)
+                }
             }
         }
     }
@@ -100,6 +107,40 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
+    
+    func addNotifState(date : Date){
+        let content = UNMutableNotificationContent()
+        content.title = "Etat"
+        content.body = "Entrez votre état actuel."
+        content.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
+        let fmt = DateFormatter()
+        fmt.dateFormat = "dd/MM/yyyy"
+        var dateComponents = DateComponents()
+        let calendar = NSCalendar.current
+        for day in 1 ... 5 {
+            var dayComp = DateComponents()
+            dayComp.day = -1*day
+            let dateMinus = Calendar.current.date(byAdding: dayComp, to: date)
+            let components = calendar.dateComponents([.day, .month, .year], from: dateMinus!)
+            dateComponents.day = components.day!
+            dateComponents.month = components.month!
+            dateComponents.year = components.year!
+            for heures in 08 ... 20{
+                dateComponents.hour = heures
+                dateComponents.minute = 00
+                let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+                let nom = String(Int(arc4random_uniform(1000000)))
+                let request1 = UNNotificationRequest(identifier: nom , content: content, trigger: notificationTrigger)
+                // Schedule the request.
+                let center = UNUserNotificationCenter.current()
+                center.add(request1) { (error : Error?) in
+                    if let theError = error {
+                        print(theError.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

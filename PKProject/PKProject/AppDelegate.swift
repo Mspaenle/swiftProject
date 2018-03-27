@@ -28,9 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {
             UserDefaults.standard.set(true, forKey: "launchedBefore")
             
-            //Seeders
+            // Seeders
             
-            DoctorModel(adress: "Grabels", name: "Dupont", phoneNumber: "0680729162", speciality: "Neurologue", travelTime: 15)
             DoctorModel(adress: "Montpellier", name: "Hoarau", phoneNumber: "0680729162", speciality: "Psychiatre", travelTime: 15)
             MedModel(name: "Modopar", specification: "", doses: ["62,5","125","250"])
             MedModel(name: "Modopar LP", specification: "", doses: ["125"])
@@ -77,9 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let request2 = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: notificationTrigger)
         UNUserNotificationCenter.current().add(request2, withCompletionHandler: nil)
-        print("ok")
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
