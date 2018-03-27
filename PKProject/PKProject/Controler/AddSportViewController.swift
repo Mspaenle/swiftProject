@@ -73,6 +73,7 @@ class AddSportViewController: UIViewController {
 
                     sport = ActivityModel(date: self.dateSport.date as NSDate, title: self.intituleSport.text!, specification: self.descriptionSport.text!, duration: a!)
                     self.performSegue(withIdentifier: "addSport", sender: self)
+             self.dismiss(animated: true, completion: nil)
         }
             
         else {

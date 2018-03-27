@@ -314,10 +314,10 @@
 				8F52A54120590C6800FDF76D /* StateModel.swift */,
 				8FDA57A6205933BF00A29B77 /* StateDAO.swift */,
 				8FDA57A42059338400A29B77 /* CoreDataManager.swift */,
-				8F90A8C9203C5C4700B74A0A /* PKProject.xcdatamodeld */,
 				8FE1D9A820611513001BD850 /* DateExtension.swift */,
 				8FF43E762069245100928204 /* JournalModel.swift */,
 				8FF43E782069245E00928204 /* JournalDAO.swift */,
+				8F90A8C9203C5C4700B74A0A /* PKProject.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";

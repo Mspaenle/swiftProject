@@ -53,7 +53,6 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
             fatalError()
         }
         let request2 : NSFetchRequest<Activity> = Activity.fetchRequest()
-        request2.predicate = NSPredicate(format: "date > %@", current)
         request2.sortDescriptors = [NSSortDescriptor(key: #keyPath(Activity.date), ascending: true)]
         do{
             try self.activities = context.fetch(request2)
@@ -81,9 +80,9 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
             cell.medAgendaLabel.text = self.rdvs[indexPath.row].doctor?.name
         case 1:
             let date = self.activities[indexPath.row].date! as Date
-            cell.dateAgendaLabel.text = date.format()
+            cell.dateAgendaLabel.text = date.formatHeure()
             cell.titleAgendaLabel.text = self.activities[indexPath.row].title
-            cell.medAgendaLabel.text = ""
+            cell.medAgendaLabel.text = String(self.activities[indexPath.row].duration) + " min"
         default:
             break
         }

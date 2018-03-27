@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let content = UNMutableNotificationContent()
         content.title = "Prises"
         content.body = "Entrez vos données pour la journée"
-        content.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
+        content.badge = 0
         
         // add notification for Mondays at 11:00 a.m.
         var dateComponents = DateComponents()
@@ -96,6 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

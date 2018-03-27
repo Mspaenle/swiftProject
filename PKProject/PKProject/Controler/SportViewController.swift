@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class SportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -32,7 +33,7 @@ class SportViewController: UIViewController, UITableViewDelegate, UITableViewDat
             try self.sports = context.fetch(request)
         }
         catch {
-            //
+            fatalError()
         }
     }
 
@@ -47,7 +48,7 @@ class SportViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = self.sportTable.dequeueReusableCell(withIdentifier: "SportCell", for: indexPath) as! SportTableViewCell
         cell.descriptionSport.text = self.sports[indexPath.row].specification
         cell.dureeSport.text = String(self.sports[indexPath.row].duration)
-        cell.heureSport.text = (self.sports[indexPath.row].date! as Date).format()
+        cell.heureSport.text = (self.sports[indexPath.row].date! as Date).formatHeure()
         cell.intituleSport.text = self.sports[indexPath.row].title
         return cell
     }
@@ -57,14 +58,17 @@ class SportViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return self.sports.count
     }
 
-    // MARK: - Unwind & Action Button
+    // MARK: - Action Button
     
     @IBAction func unwindToViewSport(sender: UIStoryboardSegue){
         if let controller = sender.source as? AddSportViewController{
             if let NewSport = controller.sport{
                 Activity.save()
+                let calendar = Calendar.current
+                let dateN = NewSport.dao.date
+                addNotif(heure: calendar.component(.hour, from: dateN! as Date),minute: calendar.component(.minute, from: dateN! as Date), sport: NewSport.dao)
                 self.sports.append(NewSport.dao)
-                self.sportTable.reloadData() //ne fonctionne pas
+                self.sportTable.reloadData()
             }
         }
         else if let controller = sender.source as? EditSportViewController{
@@ -75,6 +79,19 @@ class SportViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
+    
+    @IBAction func deleteSport(_ sender: UIButton) {
+        if let indexPath = self.sportTable.indexPathForSelectedRow{
+            sportTable.beginUpdates()
+            Activity.delete(object: self.sports[indexPath.row])
+            Activity.save()
+            sportTable.deleteRows(at: [indexPath], with: .fade)
+            self.sports.remove(at: indexPath.row)
+            sportTable.endUpdates()
+        }
+    }
+    
+    // MARK: - Navigation
     
     let segueEditSport = "editSport"
     
@@ -90,25 +107,24 @@ class SportViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
-    
-    @IBAction func deleteSport(_ sender: UIButton) {
-        if let indexPath = self.sportTable.indexPathForSelectedRow{
-            sportTable.beginUpdates()
-            Activity.delete(object: self.sports[indexPath.row])
-            Activity.save()
-            sportTable.deleteRows(at: [indexPath], with: .fade)
-            self.sports.remove(at: indexPath.row)
-            sportTable.endUpdates()
-        }
-    }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - Notifications
+    
+    public func addNotif(heure : Int, minute : Int, sport: Activity){
+        let content = UNMutableNotificationContent()
+        content.title = "Sport : " + sport.title!
+        content.body = "Il est temps de se bouger et de faire du sport : " + sport.description + " détails : " + String(sport.duration)
+        content.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = heure
+        dateComponents.minute = minute
+        let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        let request2 = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: notificationTrigger)
+        UNUserNotificationCenter.current().add(request2, withCompletionHandler: nil)
     }
-    */
+
 
 }
