@@ -78,8 +78,21 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
     /// - Parameter sender: Button
     @IBAction func buttonMedecin(_ sender: Any) {
         if sender as! UIButton == self.AddMedecin {
-            let a:Int16? = Int16(self.TravelMedecin.text!)!
-            medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: self.speciality!, travelTime: a!)
+            guard PhoneMedecin.text != "" && AdressMedecin.text != "" && TravelMedecin.text != "" && NameMedecin.text != "" , let aspeciality = speciality else {
+                let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir tous les champs",preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "OK", style: .default)
+                alert.addAction(cancelAction)
+                present(alert, animated: true)
+                return
+            }
+            guard let a: Int = (self.TravelMedecin.text! as NSString).integerValue, a < 100 else {
+                let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir le champs temps de trajet avec un nombre",preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "OK", style: .default)
+                alert.addAction(cancelAction)
+                present(alert, animated: true)
+                return
+            }
+            medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: aspeciality, travelTime: Int16(a))
             self.performSegue(withIdentifier: "validMed", sender: self)
         } else {
             self.dismiss(animated: true, completion: nil)
