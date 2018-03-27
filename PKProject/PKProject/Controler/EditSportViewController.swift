@@ -37,7 +37,7 @@ class EditSportViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //Verification d'un cast de String vers Int
+    // Check if a string is an Int or not
     func isStringAnInt(string: String) -> Bool {
         return Int(string) != nil
     }
