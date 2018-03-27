@@ -59,7 +59,7 @@ class AddMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func buttonAction(_ sender: Any) {
         if sender as! UIButton == self.validateBTN {
-            guard medTitle.text != "" && medDescr.text != "" && doses.count != 0 else {
+            guard medTitle.text != "" && doses.count != 0 else {
                 let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir tous les champs",preferredStyle: .alert)
                 let cancelAction = UIAlertAction(title: "OK", style: .default)
                 alert.addAction(cancelAction)
