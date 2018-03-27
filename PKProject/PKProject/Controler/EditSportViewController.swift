@@ -64,12 +64,13 @@ class EditSportViewController: UIViewController {
                 return
             }
             
+            Activity.delete(object: sport2!)
             let a:Int16? = Int16(self.dureeEditSport.text!)!
-                
-                sport = ActivityModel(date: self.dateEditSport.date as NSDate, title: self.titleEditSport.text!, specification: self.descriptionEditSport.text!, duration: a!)
-                self.performSegue(withIdentifier: "editSport", sender: self)
+            
+            sport = ActivityModel(date: self.dateEditSport.date as NSDate, title: self.titleEditSport.text!, specification: self.descriptionEditSport.text!, duration: a!)
+            self.performSegue(withIdentifier: "editSport", sender: self)
         }
-        else {
+        else if sender == self.cancelSport{
             self.dismiss(animated: true, completion: nil)
         }
     }
