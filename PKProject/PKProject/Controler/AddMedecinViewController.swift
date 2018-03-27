@@ -35,6 +35,12 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // Dispose of any resources that can be recreated.
     }
     
+    //Verification d'un cast de String vers Int
+    func isStringAnInt(string: String) -> Bool {
+        return Int(string) != nil
+    }
+    
+    
     
     // MARK: - Unwind
     
@@ -85,7 +91,19 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
                 present(alert, animated: true)
                 return
             }
-            //medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: aspeciality, travelTime: Int(self.TravelMedecin.text)!)
+            let isint = isStringAnInt(string: self.TravelMedecin.text!)
+            
+            guard isint else{
+                let alert2 = UIAlertController(title: "Entrée incorrecte", message: "Veuillez mettre un entier dans le champs de duree",preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "OK", style: .default)
+                alert2.addAction(cancelAction)
+                present(alert2, animated: true)
+                return
+            }
+            
+            let a:Int16? = Int16(self.TravelMedecin.text!)!
+            
+            medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: aspeciality, travelTime: a!)
             self.performSegue(withIdentifier: "validMed", sender: self)
         } else {
             self.dismiss(animated: true, completion: nil)
