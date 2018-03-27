@@ -27,6 +27,11 @@ class AddRDVMedViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dateRDV = rdvDate.date
+        
+        if medecins.count != 0 {
+            self.medecin = medecins[0]
+        }
+        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
             return
