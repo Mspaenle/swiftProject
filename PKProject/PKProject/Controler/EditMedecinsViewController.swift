@@ -54,7 +54,6 @@ class EditMedecinsViewController: UIViewController {
     ///
     /// - Parameter sender: UIButton
     @IBAction func modifMedecin(_ sender: UIButton) {
-        
             if sender == self.modifMedecin {
                 
                 guard self.EditNameMedecin.text != "" && self.EditPhoneMedecin.text != "" && self.EditAdressMedecin.text != "" && self.EditTravelMedecin.text != "" else {

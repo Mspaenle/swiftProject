@@ -18,8 +18,6 @@ class EtatViewController: UIViewController {
     var dateState: Date!
     var state: StateModel?
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dateState = myDatePicker.date
@@ -43,7 +41,7 @@ class EtatViewController: UIViewController {
             state = StateModel(date: dateState,stateValue: StateValue.on)
         } else if sender as! UIButton == self.OffBtn {
             state = StateModel(date: dateState,stateValue: StateValue.off)
-        } else {
+        } else if sender as! UIButton == self.DyskinesieBtn {
             state = StateModel(date: dateState,stateValue: StateValue.dys)
         }
         self.performSegue(withIdentifier: "validState", sender: self)

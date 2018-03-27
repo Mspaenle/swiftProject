@@ -82,7 +82,7 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             event = EventModel(date: dateEvent,eventValue: ret)
             self.performSegue(withIdentifier: "validEvent", sender: self)
         }
-        else {
+        else if sender as! UIButton == self.cancelBTN{
             self.dismiss(animated: true, completion: nil)
         }
     }

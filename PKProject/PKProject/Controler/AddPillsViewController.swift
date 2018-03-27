@@ -109,11 +109,9 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
             }
             drugIntake = DrugIntakeModel(med: amed, periodicity: dates, dose: adoses)
             self.performSegue(withIdentifier: "addDrugIntake", sender: self)
-        }
-        else {
+        } else if sender as! UIButton == self.CancelBTN {
             self.dismiss(animated: true, completion: nil)
         }
-        
     }
     
     // MARK: - Unwind

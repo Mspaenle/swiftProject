@@ -28,6 +28,7 @@ class AddEmergencyNumberViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Button Action
     
     @IBAction func buttonAdd(_ sender: Any) {
         if sender as! UIButton == self.validateBTN {
@@ -42,8 +43,7 @@ class AddEmergencyNumberViewController: UIViewController {
             }
             emergencyNumber = EmergencyNumberModel(phoneNumber: anum!, title: atitle!)
             self.performSegue(withIdentifier: "addNumber", sender: self)
-        }
-        else {
+        } else if sender as! UIButton == self.cancelBTN {
             self.dismiss(animated: true, completion: nil)
         }
     }

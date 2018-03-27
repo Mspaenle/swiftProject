@@ -42,7 +42,7 @@ class JournalViewController: UIViewController {
             journal = JournalModel(number: nb, date: dateJournal)
             self.performSegue(withIdentifier: "validJournal", sender: self)
         }
-        else {
+        else if sender as! UIButton == self.cancelBtn{
             self.dismiss(animated: true, completion: nil)
         }
     }

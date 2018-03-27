@@ -68,8 +68,7 @@ class AddMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             med = MedModel(name: medTitle.text!, specification: medDescr.text!, doses: self.doses)
             self.performSegue(withIdentifier: "validMed", sender: self)
-        }
-        else {
+        } else if sender as! UIButton == self.cancelBTN {
             self.dismiss(animated: true, completion: nil)
         }
     }
