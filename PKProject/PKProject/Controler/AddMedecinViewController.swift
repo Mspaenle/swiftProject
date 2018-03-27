@@ -22,7 +22,7 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var TravelMedecin: UITextField!
     
     var medecin: DoctorModel?
-    let specialities = ["Neurologue","Kinésithérapeuthe","Psychiatre","Généraliste"]
+    let specialities = ["Diététicien(ne)", "Ergothérapeuthe", "Généraliste", "Infirmier", "Kinésithérapeuthe", "Neurologue", "Neuropsychologue", "Orthophoniste", "Orthoptiste", "Pédicure-Podologue",  "Psychologue Clinicien", "Psychomotricien", "Autres"]
     var speciality: String?
     
     override func viewDidLoad() {
