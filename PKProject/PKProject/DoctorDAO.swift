@@ -17,7 +17,6 @@ extension Doctor{
         return Doctor(context: CoreDataManager.context)
     }
     
-    //TODO regarder si clé existe déjà en BD si oui, retourner l'occurrence
     static public func createDTO(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16) -> Doctor{
         let dto = self.getNewDoctorDTO()
         dto.adress = adress
