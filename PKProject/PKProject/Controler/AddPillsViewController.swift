@@ -101,7 +101,10 @@ class AddPillsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func validateAction(_ sender: Any) {
         if sender as! UIButton == self.ValidateBTN {
             guard let adoses = dose, let amed = med else {
-                self.dismiss(animated: true, completion: nil)
+                let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir tous les champs",preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "OK", style: .default)
+                alert.addAction(cancelAction)
+                present(alert, animated: true)
                 return
             }
             drugIntake = DrugIntakeModel(med: amed, periodicity: dates, dose: adoses)

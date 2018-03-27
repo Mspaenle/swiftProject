@@ -77,9 +77,11 @@ class AddRDVMedViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBAction func actionOnRDV(_ sender: UIButton) {
         if sender == self.validRDV {
-            print("ok")
-            guard let amedecin = medecin else {
-                self.dismiss(animated: true, completion: nil)
+            guard let amedecin = medecin, rdvIntitule.text != "" else {
+                let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir tous les champs",preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "OK", style: .default)
+                alert.addAction(cancelAction)
+                present(alert, animated: true)
                 return
             }
             rdv = RDVModel(date : self.dateRDV! as NSDate, title : self.rdvIntitule.text! , doctor: amedecin)
