@@ -34,9 +34,8 @@ class AddEmergencyNumberViewController: UIViewController {
             let anum = numTF.text
             let atitle = titleTF.text
             guard anum != "" && atitle != "" else {
-                let alert = UIAlertController(title: "Entrée incorecte", message: "Veillez à remplir tous les champs",preferredStyle: .alert)
+                let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir tous les champs",preferredStyle: .alert)
                 let cancelAction = UIAlertAction(title: "OK", style: .default)
-                alert.addTextField()
                 alert.addAction(cancelAction)
                 present(alert, animated: true)
                 return
