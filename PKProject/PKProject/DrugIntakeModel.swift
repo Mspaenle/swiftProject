@@ -10,8 +10,8 @@ import Foundation
 import CoreData
 import UIKit
 
-
 class DrugIntakeModel{
+    
     internal var dao : DrugIntake
 
     private var medModel : Med
@@ -47,7 +47,6 @@ class DrugIntakeModel{
         self.dao.med = med
         self.dao.periodicity = periodicity
         self.dose = dose
-        
     }
     
 }

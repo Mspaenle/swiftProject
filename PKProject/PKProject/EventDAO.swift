@@ -10,7 +10,9 @@ import Foundation
 import CoreData
 import UIKit
 
+/// DAO Extension to access the data base
 extension Event{
+    
     static func getNewEventDAO() -> Event?{
         guard let entity = NSEntityDescription.entity(forEntityName: "Event", in: CoreDataManager.context) else {
             return nil
@@ -29,4 +31,5 @@ extension Event{
             fatalError("cannot save data: "+error.description)
         }
     }
+    
 }

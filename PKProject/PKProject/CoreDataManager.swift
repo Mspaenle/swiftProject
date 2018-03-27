@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
+/// Links the DAO with the Data Base
 class CoreDataManager{
     
     public static let context : NSManagedObjectContext  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -31,4 +32,5 @@ class CoreDataManager{
             CoreDataManager.context.delete(object)
 
     }
+    
 }

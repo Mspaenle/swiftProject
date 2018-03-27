@@ -13,8 +13,9 @@ import Foundation
 import CoreData
 import UIKit
 
-/// DAO extension
+/// DAO Extension to access the data base
 extension Doctor{
+    
     static private func getNewDoctorDTO() -> Doctor{
         return Doctor(context: CoreDataManager.context)
     }
@@ -43,7 +44,6 @@ extension Doctor{
     }
     
     static func delete(object: Doctor){
-        
         do{
             try CoreDataManager.delete(object: object)
         }catch let error as NSError{

@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
+/// DAO Extension to access the data base
 extension Journal{
     
     static func getNewJournalDAO() -> Journal?{

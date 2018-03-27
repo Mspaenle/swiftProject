@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
+/// DAO Extension to access the data base
 extension Activity{
     static func getNewActivityDAO() -> Activity?{
         guard let entity = NSEntityDescription.entity(forEntityName: "Activity", in: CoreDataManager.context) else {

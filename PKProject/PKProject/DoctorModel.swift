@@ -11,6 +11,7 @@ import CoreData
 import UIKit
 
 class DoctorModel{
+    
     internal var dto : Doctor
     
     var adress: String {
@@ -57,29 +58,9 @@ class DoctorModel{
             self.dto.travelTime = newValue
         }
     }
-    
-    //var rdv: [RDVModel]{
-      //  get{
-      //      guard let rdvs = self.dto.rdv else { return [RDVModel]() }
-       //     return rdvs.allObjects as! [RDVModel]
-       // }
-    //}
-    
-    //@discardableResult
-    //func addRdv(rdv: RDVModel) -> DoctorModel{
-    //    if let rdvs = self.dto.rdv{
-     //       rdvs.adding(rdv)
-     //   }
-     //   else{
-      //      self.dto.rdv = NSSet(array: [rdv])
-     //   }
-    //    return self
-    //}
-    
-    
+
     init(adress : String, name : String, phoneNumber: String, speciality: String, travelTime: Int16){
         self.dto = Doctor.createDTO(adress: adress, name: name, phoneNumber: phoneNumber, speciality: speciality, travelTime: travelTime)        
     }
-    
 
 }

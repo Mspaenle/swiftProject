@@ -12,6 +12,7 @@ import UIKit
 
 
 class MedModel{
+    
     internal var dao : Med
     
     var name: String {

@@ -10,7 +10,9 @@ import Foundation
 import CoreData
 import UIKit
 
+/// DAO Extension to access the data base
 extension State{
+    
     static func getNewStateDAO() -> State?{
         guard let entity = NSEntityDescription.entity(forEntityName: "State", in: CoreDataManager.context) else {
             return nil
@@ -29,4 +31,5 @@ extension State{
             fatalError("cannot save data: "+error.description)
         }
     }
+    
 }

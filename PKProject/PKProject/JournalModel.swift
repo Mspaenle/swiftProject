@@ -11,6 +11,7 @@ import CoreData
 import UIKit
 
 class JournalModel {
+    
     private var dao : Journal;
     
     var number: String {
@@ -36,4 +37,5 @@ class JournalModel {
         self.dao.number = number
         self.dao.date = date as NSDate
     }
+    
 }

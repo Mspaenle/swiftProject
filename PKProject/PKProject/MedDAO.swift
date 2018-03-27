@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 import CoreData
 
+/// DAO Extension to access the data base
 extension Med{
+    
     static func getNewMedDAO() -> Med?{
         guard let entity = NSEntityDescription.entity(forEntityName: "Med", in: CoreDataManager.context) else {
             return nil

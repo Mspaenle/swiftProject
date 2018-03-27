@@ -10,7 +10,9 @@ import Foundation
 import CoreData
 import UIKit
 
+/// DAO Extension to access the data base
 extension DrugIntake{
+    
     static func getNewDrugIntakeDAO() -> DrugIntake?{
         guard let entity = NSEntityDescription.entity(forEntityName: "DrugIntake", in: CoreDataManager.context) else {
             return nil

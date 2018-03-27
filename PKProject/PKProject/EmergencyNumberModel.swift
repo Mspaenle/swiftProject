@@ -11,6 +11,7 @@ import CoreData
 import UIKit
 
 class EmergencyNumberModel{
+    
     internal var dao : EmergencyNumber
     
     var phoneNumber: String {
@@ -36,4 +37,5 @@ class EmergencyNumberModel{
         self.dao.phoneNumber = phoneNumber
         self.dao.title = title
     }
+    
 }

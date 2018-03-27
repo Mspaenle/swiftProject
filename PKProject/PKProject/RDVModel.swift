@@ -11,6 +11,7 @@ import CoreData
 import UIKit
 
 class RDVModel{
+    
     internal var dao : RDV
     
     var date: Date {
@@ -40,16 +41,12 @@ class RDVModel{
         }
     }
     
-    
-    
-    
     init(date : NSDate, title : String, doctor: Doctor){
         self.dao = RDV.create()
         self.dao.date = date
         self.dao.title = title
         self.doctorModel = doctor
         self.dao.doctor = doctor
-        //self.doctorModel.addRdv(rdv: self)
     }   
 
 }

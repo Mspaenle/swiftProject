@@ -18,16 +18,18 @@ enum EventValue : String{
     case clic = "Clic / bolus d'Apokinon"
 }
 
+/// Event Model represent an event that happened at a given date and time
 class EventModel  {
+    
     private var dao : Event
     
-     var date: Date {
+    var date: Date {
         get{
             return self.dao.date! as Date
         }
     }
     
-     var value: EventValue {
+    var value: EventValue {
         get{
             let val = self.dao.value!
             if val == "Somnolence" {
@@ -49,4 +51,5 @@ class EventModel  {
         self.dao.date=date as NSDate
         self.dao.value=eventValue.rawValue
     }
+    
 }

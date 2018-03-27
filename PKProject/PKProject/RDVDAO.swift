@@ -10,7 +10,9 @@ import Foundation
 import CoreData
 import UIKit
 
+/// DAO Extension to access the data base
 extension RDV{
+    
     static func getNewRDVDAO() -> RDV?{
         guard let entity = NSEntityDescription.entity(forEntityName: "RDV", in: CoreDataManager.context) else {
             return nil
@@ -38,4 +40,5 @@ extension RDV{
             fatalError("cannot save data: "+error.description)
         }
     }
+    
 }

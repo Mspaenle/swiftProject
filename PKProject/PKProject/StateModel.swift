@@ -17,6 +17,7 @@ enum StateValue : String{
 }
 
 class StateModel{
+    
     internal var dao : State
     
     
@@ -44,4 +45,5 @@ class StateModel{
         self.dao.date=date as NSDate
         self.dao.value=stateValue.rawValue
     }
+    
 }

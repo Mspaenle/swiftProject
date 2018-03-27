@@ -11,6 +11,7 @@ import CoreData
 import UIKit
 
 class ActivityModel{
+    
     internal var dao : Activity
     
     var date: Date {
@@ -54,4 +55,5 @@ class ActivityModel{
         self.dao.specification=specification
         
     }
+    
 }

@@ -16,6 +16,7 @@
 		24C17703206650A200DE3D73 /* RDVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C17702206650A200DE3D73 /* RDVTableViewCell.swift */; };
 		24D457FC204D958300E27BC5 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457FB204D958300E27BC5 /* EventModel.swift */; };
 		24D947BD2062C865003E99B1 /* MedecinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D947BC2062C865003E99B1 /* MedecinTableViewCell.swift */; };
+		8F02CA9D206A1CD10041E495 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F02CA9C206A1CD10041E495 /* logo2.png */; };
 		8F1FCD492069459A00E01546 /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1FCD482069459A00E01546 /* AgendaTableViewCell.swift */; };
 		8F385E7020468C3300F29058 /* EditPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E6F20468C3300F29058 /* EditPriseViewController.swift */; };
 		8F385E7320468F6A00F29058 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E7220468F6A00F29058 /* DiaryViewController.swift */; };
@@ -103,6 +104,7 @@
 		24C17702206650A200DE3D73 /* RDVTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDVTableViewCell.swift; sourceTree = "<group>"; };
 		24D457FB204D958300E27BC5 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		24D947BC2062C865003E99B1 /* MedecinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedecinTableViewCell.swift; sourceTree = "<group>"; };
+		8F02CA9C206A1CD10041E495 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = SOURCE_ROOT; };
 		8F1FCD482069459A00E01546 /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
 		8F385E6F20468C3300F29058 /* EditPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPriseViewController.swift; path = Controler/EditPriseViewController.swift; sourceTree = "<group>"; };
 		8F385E7220468F6A00F29058 /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = Controler/DiaryViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		8F90A8C1203C5C4700B74A0A /* PKProject */ = {
 			isa = PBXGroup;
 			children = (
+				8F02CA9C206A1CD10041E495 /* logo2.png */,
 				8F54C7592056D294007F17AE /* Helpers */,
 				8F90A8F5203C5E0F00B74A0A /* Views */,
 				8F90A8F4203C5E0900B74A0A /* Models */,
@@ -445,6 +448,7 @@
 				8F90A8D0203C5C4700B74A0A /* LaunchScreen.storyboard in Resources */,
 				8F90A8CD203C5C4700B74A0A /* Assets.xcassets in Resources */,
 				8F90A8C8203C5C4700B74A0A /* Main.storyboard in Resources */,
+				8F02CA9D206A1CD10041E495 /* logo2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
