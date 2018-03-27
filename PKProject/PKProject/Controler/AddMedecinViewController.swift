@@ -85,14 +85,7 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
                 present(alert, animated: true)
                 return
             }
-            guard let a: Int = (self.TravelMedecin.text! as NSString).integerValue, a < 100 else {
-                let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir le champs temps de trajet avec un nombre",preferredStyle: .alert)
-                let cancelAction = UIAlertAction(title: "OK", style: .default)
-                alert.addAction(cancelAction)
-                present(alert, animated: true)
-                return
-            }
-            medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: aspeciality, travelTime: Int16(a))
+            //medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: aspeciality, travelTime: Int(self.TravelMedecin.text)!)
             self.performSegue(withIdentifier: "validMed", sender: self)
         } else {
             self.dismiss(animated: true, completion: nil)

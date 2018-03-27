@@ -59,12 +59,12 @@ class AddMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func buttonAction(_ sender: Any) {
         if sender as! UIButton == self.validateBTN {
-            guard medTitle.text != "" && let descr = medDescr.text else {
+            guard medTitle.text != "" && medDescr.text != "" else {
                 self.titleF = nil
                 self.performSegue(withIdentifier: "validMed", sender: self)
                 return
             }
-            med = MedModel(name: titleMed, specification: descr, doses: self.doses)
+            med = MedModel(name: medTitle.text!, specification: medDescr.text!, doses: self.doses)
             self.performSegue(withIdentifier: "validMed", sender: self)
         }
         else {
