@@ -12,12 +12,14 @@ import UIKit
 
 /// DAO Extension to access the data base
 extension Activity{
+    
     static func getNewActivityDAO() -> Activity?{
         guard let entity = NSEntityDescription.entity(forEntityName: "Activity", in: CoreDataManager.context) else {
             return nil
         }
         return Activity(entity: entity, insertInto : CoreDataManager.context)
     }
+    
     static func create() -> Activity{
         return Activity(context: CoreDataManager.context)
     }
@@ -31,7 +33,6 @@ extension Activity{
     }
     
     static func delete(object: Activity){
-        
         do{
             try CoreDataManager.delete(object: object)
         }catch let error as NSError{

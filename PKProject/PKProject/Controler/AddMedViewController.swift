@@ -17,7 +17,7 @@ class AddMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var validateBTN: UIButton!
     @IBOutlet weak var cancelBTN: UIButton!
     
-    var titleF: String? = "ok"
+    var titleF: String?
     var med: MedModel?
     var doses: [String] = []
     

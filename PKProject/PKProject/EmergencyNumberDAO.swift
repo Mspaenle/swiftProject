@@ -12,6 +12,7 @@ import UIKit
 
 /// DAO Extension to access the data base
 extension EmergencyNumber{
+    
     static func getNewEmergencyNumberDAO() -> EmergencyNumber?{
         guard let entity = NSEntityDescription.entity(forEntityName: "EmergencyNumber", in: CoreDataManager.context) else {
             return nil
