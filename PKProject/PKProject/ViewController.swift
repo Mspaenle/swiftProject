@@ -20,6 +20,9 @@ class ViewController: UIViewController {
 
     // MARK: - Unwind
     
+    /// Permit to exit from another view to access this view. Handle this exit.
+    ///
+    /// - Parameter sender: Most of the time, a IBAction
     @IBAction func unwindToMenu(sender: UIStoryboardSegue){
         if let controller = sender.source as? EtatViewController{
             if let _ = controller.state{

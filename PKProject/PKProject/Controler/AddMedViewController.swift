@@ -65,11 +65,11 @@ class AddMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return
             }
             med = MedModel(name: titleMed, specification: descr, doses: self.doses)
+            self.performSegue(withIdentifier: "validMed", sender: self)
         }
         else {
-            self.titleF = nil
+            self.dismiss(animated: true, completion: nil)
         }
-        self.performSegue(withIdentifier: "validMed", sender: self)
     }
     
     // MARK: - Table View

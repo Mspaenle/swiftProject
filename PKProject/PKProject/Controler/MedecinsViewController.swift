@@ -33,7 +33,7 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
             try self.medecins = context.fetch(request)
         }
         catch {
-            //
+            fatalError()
         }
     }
     
@@ -61,22 +61,18 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func unwindToViewMedecin(sender: UIStoryboardSegue){
         if let controller = sender.source as? AddMedecinViewController{
-            
-            if let _ = controller.medecin{
-                
+            if let NewMed = controller.medecin{
                 Doctor.save()
-                self.medecinTable.reloadData() //ne fonctionne pas
-
+                self.medecins.append(NewMed.dto)
+                self.medecinTable.reloadData()
             }
             
         }
         else if let controller = sender.source as? EditMedecinsViewController{
-            
-            if let _ = controller.medecin{
-                
+            if let EditedMed = controller.medecin{
                 Doctor.save()
-                self.medecinTable.reloadData() //ne fonctionne pas
-                
+                self.medecins.append(EditedMed.dto)
+                self.medecinTable.reloadData()
             }
             
         }
@@ -91,7 +87,11 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
             if let indexPath = self.medecinTable.indexPathForSelectedRow{
                 let editMedecinController = segue.destination as! EditMedecinsViewController
                 editMedecinController.med = self.medecins[indexPath.row]
-                self.medecinTable.deselectRow(at: indexPath, animated: true)
+                medecinTable.beginUpdates()
+                medecinTable.deleteRows(at: [indexPath], with: .fade)
+                self.medecins.remove(at: indexPath.row)
+                medecinTable.endUpdates()
+                
             }
         }
     }
@@ -102,8 +102,6 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
 
     }
     
-    
-
     @IBAction func deleteMedecin(_ sender: UIButton) {
          if let indexPath = self.medecinTable.indexPathForSelectedRow{
             medecinTable.beginUpdates()
@@ -115,16 +113,5 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
             
         }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

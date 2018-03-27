@@ -38,13 +38,15 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     // MARK: - Unwind
     
+    /// Permit to exit from another view to this one, handle the changes.
+    ///
+    /// - Parameter sender: IBAction from another view
     @IBAction func unwindToAddMedecin(sender: UIStoryboardSegue){
         if let controller = sender.source as? MedecinsViewController{
             if let _ = controller.medecin{
                 Doctor.save()
             }
         }
-        
     }
     
     // MARK: - PickerView
@@ -71,8 +73,9 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     // MARK: - Action Button and Navigation
     
-    // TODO tests champs non vides + rdv nil
-    
+    /// Handle Action on buttons from the view. Send a new doctor if "validate", just dismiss the view if not.
+    ///
+    /// - Parameter sender: Button
     @IBAction func buttonMedecin(_ sender: Any) {
         if sender as! UIButton == self.AddMedecin {
             let a:Int16? = Int16(self.TravelMedecin.text!)!
@@ -80,9 +83,7 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
             self.performSegue(withIdentifier: "validMed", sender: self)
         } else {
             self.dismiss(animated: true, completion: nil)
-
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

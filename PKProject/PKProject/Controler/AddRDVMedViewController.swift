@@ -82,7 +82,6 @@ class AddRDVMedViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                 self.dismiss(animated: true, completion: nil)
                 return
             }
-            print(amedecin.name)
             rdv = RDVModel(date : self.dateRDV! as NSDate, title : self.rdvIntitule.text! , doctor: amedecin)
             self.performSegue(withIdentifier: "addRDV", sender: self)
             self.dismiss(animated: true, completion: nil)

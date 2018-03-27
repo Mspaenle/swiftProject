@@ -49,7 +49,6 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK: - Table View
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.PillTable.dequeueReusableCell(withIdentifier: "drugCell", for: indexPath) as! DrugIntakeTableViewCell
         cell.medNameLabel.text = self.pills[indexPath.row].med?.name
@@ -75,7 +74,6 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
             PillTable.deleteRows(at: [indexPath], with: .fade)
             self.pills.remove(at: indexPath.row)
             PillTable.endUpdates()
-            
         }
     }
     
@@ -83,11 +81,12 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
         if let controller = sender.source as? AddPillsViewController{
             if let drug = controller.drugIntake{
                 DrugIntake.save()
-                self.PillTable.reloadData()
                 let calendar = Calendar.current
                 for var date in drug.periodicity {
                     addNotif(heure: calendar.component(.hour, from: date),minute: calendar.component(.minute, from: date), med: drug.med, drug: drug)
                 }
+                self.pills.append(drug.dao)
+                self.PillTable.reloadData()
             }
         }
     }
@@ -116,7 +115,6 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let request2 = UNNotificationRequest(identifier: "notification1", content: content, trigger: notificationTrigger)
         UNUserNotificationCenter.current().add(request2, withCompletionHandler: nil)
-        print("ok")
     }
 
 }

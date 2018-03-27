@@ -58,14 +58,16 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func unwindToViewRDV(sender: UIStoryboardSegue){
         if let controller = sender.source as? AddRDVMedViewController{
-            if let _ = controller.rdv{
+            if let newRDV = controller.rdv{
                 RDV.save()
-                self.rdvTable.reloadData() //ne fonctionne pas
+                self.rdvs.append(newRDV.dao)
+                self.rdvTable.reloadData()
             }
         }
         else if let controller = sender.source as? EditRDVMedViewController{
-            if let _ = controller.rdv{
-                //RDV.save()
+            if let editedRDV = controller.rdv{
+                RDV.save()
+                self.rdvs.append(editedRDV.dao)
                 self.rdvTable.reloadData()
             }
         }
@@ -78,7 +80,10 @@ class RDVMedViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if let indexPath = self.rdvTable.indexPathForSelectedRow{
                 let editRDVController = segue.destination as! EditRDVMedViewController
                 editRDVController.rdv2 = self.rdvs[indexPath.row]
-                self.rdvTable.deselectRow(at: indexPath, animated: true)
+                rdvTable.beginUpdates()
+                rdvTable.deleteRows(at: [indexPath], with: .fade)
+                self.rdvs.remove(at: indexPath.row)
+                rdvTable.endUpdates()
             }
         }
     }
