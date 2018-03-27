@@ -68,7 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let content = UNMutableNotificationContent()
         content.title = "Prises"
         content.body = "Entrez vos données pour la journée"
-        content.badge = 1
         
         // add notification for Mondays at 11:00 a.m.
         var dateComponents = DateComponents()
@@ -76,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         dateComponents.minute = minute
         let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
-        let request2 = UNNotificationRequest(identifier: "notification2", content: content, trigger: notificationTrigger)
+        let request2 = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: notificationTrigger)
         UNUserNotificationCenter.current().add(request2, withCompletionHandler: nil)
         print("ok")
     }

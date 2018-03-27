@@ -74,10 +74,7 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
                 self.medecins.append(EditedMed.dto)
                 self.medecinTable.reloadData()
             }
-            
         }
-        
-        
     }
     
     let segueEditPerson = "editMedecin"
@@ -91,7 +88,6 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
                 medecinTable.deleteRows(at: [indexPath], with: .fade)
                 self.medecins.remove(at: indexPath.row)
                 medecinTable.endUpdates()
-                
             }
         }
     }
@@ -110,7 +106,6 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
             medecinTable.deleteRows(at: [indexPath], with: .fade)
             self.medecins.remove(at: indexPath.row)
             medecinTable.endUpdates()
-            
         }
     }
     

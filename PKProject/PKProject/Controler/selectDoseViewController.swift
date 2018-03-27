@@ -58,12 +58,11 @@ class selectDoseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     @IBAction func buttonAction(_ sender: Any) {
         if sender as! UIButton == self.validateBTN {
-            
+            self.performSegue(withIdentifier: "toAddPill", sender: self)
         }
         else {
-            dose = nil
+            self.dismiss(animated: true, completion: nil)
         }
-        self.performSegue(withIdentifier: "toAddPill", sender: self)
     }
 
     // MARK: - Navigation

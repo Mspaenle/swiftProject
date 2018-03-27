@@ -37,11 +37,11 @@ class PopUpPillsDateViewController: UIViewController {
     
     @IBAction func buttonAction(_ sender: Any) {
         if sender as! UIButton == self.ValidateBTN {
+            self.performSegue(withIdentifier: "toAddPill", sender: self)
         }
         else {
-            heure = nil
+            self.dismiss(animated: true, completion: nil)
         }
-        self.performSegue(withIdentifier: "toAddPill", sender: self)
     }
     
     // MARK: - Navigation

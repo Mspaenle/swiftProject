@@ -40,11 +40,11 @@ class JournalViewController: UIViewController {
                 return
             }
             journal = JournalModel(number: nb, date: dateJournal)
+            self.performSegue(withIdentifier: "validJournal", sender: self)
         }
         else {
             self.dismiss(animated: true, completion: nil)
         }
-        self.performSegue(withIdentifier: "validJournal", sender: self)
     }
 
     // MARK: - Navigation

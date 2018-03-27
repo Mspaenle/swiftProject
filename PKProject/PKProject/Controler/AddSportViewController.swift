@@ -59,7 +59,6 @@ class AddSportViewController: UIViewController {
             self.performSegue(withIdentifier: "addSport", sender: self)
         } else {
             self.dismiss(animated: true, completion: nil)
-            
         }
     }
 

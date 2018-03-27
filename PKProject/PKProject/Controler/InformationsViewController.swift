@@ -29,7 +29,6 @@ class InformationsViewController: UIViewController {
                 Doctor.save()
             }
         }
-        
     }
     
     /*

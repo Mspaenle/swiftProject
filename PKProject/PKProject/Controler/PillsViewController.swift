@@ -113,7 +113,7 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
         dateComponents.minute = minute
         let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
-        let request2 = UNNotificationRequest(identifier: "notification1", content: content, trigger: notificationTrigger)
+        let request2 = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: notificationTrigger)
         UNUserNotificationCenter.current().add(request2, withCompletionHandler: nil)
     }
 

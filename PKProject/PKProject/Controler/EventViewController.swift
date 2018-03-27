@@ -80,11 +80,11 @@ class EventViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                 ret = .clic
             }
             event = EventModel(date: dateEvent,eventValue: ret)
+            self.performSegue(withIdentifier: "validEvent", sender: self)
         }
         else {
-            eventValue = nil
+            self.dismiss(animated: true, completion: nil)
         }
-        self.performSegue(withIdentifier: "validEvent", sender: self)
     }
     
     // MARK: - Navigation
