@@ -36,7 +36,7 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
             try self.pills = context.fetch(request)
         }
         catch {
-            //self.alertError(errorMsg: "\(error)", userInfo:"\(error.userInfo)")
+            fatalError()
         }
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
@@ -91,7 +91,6 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -105,9 +104,8 @@ class PillsViewController: UIViewController, UITableViewDataSource, UITableViewD
         let content = UNMutableNotificationContent()
         content.title = "Prise de " + med.name!
         content.body = "Pensez à prendre votre médicament " + med.name! + " : " + drug.dose
-        content.badge = 1
+        content.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
         
-        // add notification for Mondays at 11:00 a.m.
         var dateComponents = DateComponents()
         dateComponents.hour = heure
         dateComponents.minute = minute

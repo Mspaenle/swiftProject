@@ -30,4 +30,13 @@ extension EmergencyNumber{
             fatalError("cannot save data: "+error.description)
         }
     }
+    
+    static func delete(object: EmergencyNumber){
+        
+        do{
+            try CoreDataManager.delete(object: object)
+        }catch let error as NSError{
+            fatalError("cannot save data: "+error.description)
+        }
+    }
 }
