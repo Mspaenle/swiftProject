@@ -67,6 +67,13 @@ class SportViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.sportTable.reloadData() //ne fonctionne pas
             }
         }
+        else if let controller = sender.source as? EditSportViewController{
+            if let editedSport = controller.sport{
+                Activity.save()
+                self.sports.append(editedSport.dao)
+                self.sportTable.reloadData()
+            }
+        }
     }
     
     let segueEditSport = "editSport"

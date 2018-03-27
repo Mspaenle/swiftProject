@@ -1491,7 +1491,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlC-2c-a1j">
-                                <rect key="frame" x="0.0" y="261.5" width="375" height="134.5"/>
+                                <rect key="frame" x="0.0" y="261.5" width="375" height="135"/>
                                 <color key="backgroundColor" red="1" green="0.71764705882352942" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="RDV Médecin">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1501,7 +1501,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDg-TE-cvA">
-                                <rect key="frame" x="0.0" y="396.5" width="375" height="135.5"/>
+                                <rect key="frame" x="0.0" y="397" width="375" height="135.5"/>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.36862745099999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Activités Sportives">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1511,7 +1511,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re2-Da-nLe">
-                                <rect key="frame" x="0.0" y="532" width="375" height="135"/>
+                                <rect key="frame" x="0.0" y="532.5" width="375" height="134.5"/>
                                 <color key="backgroundColor" red="1" green="0.71764705882352942" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Récapitulatif Quotidien"/>
@@ -1808,6 +1808,9 @@
                                 <state key="normal" title="Modifier">
                                     <color key="titleColor" red="1" green="0.66274509800000003" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="9Vy-Bw-dwP" kind="presentation" identifier="editSport" id="ODC-U7-PUQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwK-cv-AMH">
                                 <rect key="frame" x="244.5" y="597" width="114.5" height="50"/>
@@ -1850,11 +1853,9 @@
                     </view>
                     <connections>
                         <outlet property="sportTable" destination="GOp-0g-vh0" id="qjA-Gp-TV2"/>
-                        <segue destination="qEk-jl-PIh" kind="unwind" unwindAction="unwindToViewSportWithSender:" id="FJ9-Aq-RVR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdj-zE-WGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="qEk-jl-PIh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1784.8" y="2834.9325337331338"/>
         </scene>
@@ -2053,6 +2054,9 @@
                                 <state key="normal" title="Annuler">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="modifSport:" destination="9Vy-Bw-dwP" eventType="touchUpInside" id="l2I-2E-Qcb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqo-B4-HmJ">
                                 <rect key="frame" x="187.5" y="617" width="187.5" height="50"/>
@@ -2063,6 +2067,9 @@
                                 <state key="normal" title="Valider">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="modifSport:" destination="9Vy-Bw-dwP" eventType="touchUpInside" id="93m-Nq-3B0"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="04F-ei-Xtn">
                                 <rect key="frame" x="28" y="264" width="320" height="216"/>
@@ -2182,9 +2189,11 @@
                         <outlet property="dureeEditSport" destination="XQ6-hY-4yp" id="3he-KQ-D1E"/>
                         <outlet property="titleEditSport" destination="9N0-Ed-iTa" id="b8G-Nd-E6V"/>
                         <outlet property="validSport" destination="vqo-B4-HmJ" id="BOF-pg-x0X"/>
+                        <segue destination="l8A-G5-NvN" kind="unwind" identifier="editSport" unwindAction="unwindToViewSportWithSender:" id="izK-FQ-SSs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDp-04-R2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="l8A-G5-NvN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3396" y="2835"/>
         </scene>

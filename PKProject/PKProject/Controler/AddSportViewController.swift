@@ -34,6 +34,11 @@ class AddSportViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Verification d'un cast de String vers Int
+    func isStringAnInt(string: String) -> Bool {
+        return Int(string) != nil
+    }
+    
     // MARK: - Date Picker
     
     @IBAction func rdvDatePicker(_ sender: UIDatePicker) {
@@ -50,22 +55,35 @@ class AddSportViewController: UIViewController {
     }
     */
     
-    //TODO alerte + vérification d'un nombre si possible
     
     // MARK: - Button Action
     
     @IBAction func actionOnSport(_ sender: UIButton) {
         if sender == self.validSport {
-            if self.intituleSport.text != nil && self.descriptionSport.text != nil && self.dureeSport.text != nil  {
-                    let a:Int16? = Int16(self.dureeSport.text!)!
+                guard self.intituleSport.text != "" && self.descriptionSport.text != "" && self.dureeSport.text != "" else {
+                    let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir tous les champs",preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "OK", style: .default)
+                    alert.addAction(cancelAction)
+                    present(alert, animated: true)
+                    return
+                }
+
+            let isint = isStringAnInt(string: self.dureeSport.text!)
+            
+            guard isint else{
+                let alert2 = UIAlertController(title: "Entrée incorrecte", message: "Veuillez mettre un entier dans le champs de duree",preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "OK", style: .default)
+                alert2.addAction(cancelAction)
+                present(alert2, animated: true)
+                return
+            }
+            let a:Int16? = Int16(self.dureeSport.text!)!
 
                     sport = ActivityModel(date: self.dateSport.date as NSDate, title: self.intituleSport.text!, specification: self.descriptionSport.text!, duration: a!)
                     self.performSegue(withIdentifier: "addSport", sender: self)
-            }
-            else{
-                self.dismiss(animated: true, completion: nil)
-            }
-        } else {
+        }
+            
+        else {
             self.dismiss(animated: true, completion: nil)
         }
     }

@@ -37,20 +37,39 @@ class EditSportViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Verification d'un cast de String vers Int
+    func isStringAnInt(string: String) -> Bool {
+        return Int(string) != nil
+    }
+    
     // MARK: - Button Action
     
     @IBAction func modifSport(_ sender: UIButton) {
         if sender == self.validSport {
-            if self.titleEditSport.text != nil && self.descriptionEditSport.text != nil && self.dureeEditSport.text != nil {
-                let a:Int16? = Int16(self.dureeEditSport.text!)!
+            guard self.titleEditSport.text != "" && self.descriptionEditSport.text != "" && self.dureeEditSport.text != "" else {
+                    let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir tous les champs",preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "OK", style: .default)
+                    alert.addAction(cancelAction)
+                    present(alert, animated: true)
+                    return
+            }
+            
+            let isint = isStringAnInt(string: self.dureeEditSport.text!)
+            
+            guard isint else{
+                let alert2 = UIAlertController(title: "Entrée incorrecte", message: "Veuillez mettre un entier dans le champs de duree",preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "OK", style: .default)
+                alert2.addAction(cancelAction)
+                present(alert2, animated: true)
+                return
+            }
+            
+            let a:Int16? = Int16(self.dureeEditSport.text!)!
                 
                 sport = ActivityModel(date: self.dateEditSport.date as NSDate, title: self.titleEditSport.text!, specification: self.descriptionEditSport.text!, duration: a!)
                 self.performSegue(withIdentifier: "editSport", sender: self)
-            }
-            else{
-                self.dismiss(animated: true, completion: nil)
-            }
-        } else {
+        }
+        else {
             self.dismiss(animated: true, completion: nil)
         }
     }
