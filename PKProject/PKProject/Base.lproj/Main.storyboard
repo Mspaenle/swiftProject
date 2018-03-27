@@ -1718,7 +1718,7 @@
                                 <rect key="frame" x="16" y="134" width="343" height="463"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SportCell" selectionStyle="default" indentationWidth="10" rowHeight="89" id="19z-bb-BxF" customClass="SportTableViewCell" customModule="PKProject" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SportCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SportCell" rowHeight="89" id="19z-bb-BxF" userLabel="SportCell" customClass="SportTableViewCell" customModule="PKProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="19z-bb-BxF" id="0zO-gO-bIb">
@@ -1791,7 +1791,7 @@
                                     <constraint firstAttribute="height" constant="50" id="5zF-b5-Ycr"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="LPI-Be-Dn9"/>
                                 </constraints>
-                                <state key="normal" title="Ajouter">
+                                <state key="normal" title="Ajouter Prise">
                                     <color key="titleColor" red="1" green="0.66274509800000003" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -1883,7 +1883,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionOnSport:" destination="ZaS-WN-atp" eventType="touchUpInside" id="jDy-vQ-isE"/>
+                                    <action selector="actionOnSport:" destination="ZaS-WN-atp" eventType="touchUpInside" id="5uy-7j-wZt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwg-JV-bXt">
@@ -1896,8 +1896,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="actionOnRDV:" destination="ZaS-WN-atp" eventType="touchUpInside" id="xrZ-ri-oCL"/>
-                                    <action selector="actionOnSport:" destination="ZaS-WN-atp" eventType="touchUpInside" id="AwK-hV-BNj"/>
+                                    <action selector="actionOnSport:" destination="ZaS-WN-atp" eventType="touchUpInside" id="7E5-I6-1kc"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pmZ-2P-XEv">
@@ -2013,15 +2012,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cancelSport" destination="1at-QD-WgB" id="T69-HZ-aWc"/>
+                        <outlet property="cancelSport" destination="1at-QD-WgB" id="z9o-cI-Yzp"/>
                         <outlet property="dateSport" destination="pmZ-2P-XEv" id="xoO-f9-klZ"/>
                         <outlet property="descriptionSport" destination="xp0-ye-sIY" id="1ab-pT-t2O"/>
                         <outlet property="dureeSport" destination="f2L-G7-H6e" id="7j8-Pe-qTG"/>
                         <outlet property="intituleSport" destination="NcW-Kc-dRS" id="0gX-eD-qPs"/>
-                        <outlet property="validSport" destination="Zwg-JV-bXt" id="c8q-Zy-Mzc"/>
+                        <outlet property="validSport" destination="Zwg-JV-bXt" id="jMo-bi-vG3"/>
+                        <segue destination="7fe-HW-eO2" kind="unwind" identifier="addSport" unwindAction="unwindToViewSportWithSender:" id="6mT-s9-jeR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hur-Hy-BWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7fe-HW-eO2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2598" y="2835"/>
         </scene>
@@ -2063,7 +2064,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="04F-ei-Xtn">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="04F-ei-Xtn">
                                 <rect key="frame" x="28" y="264" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="541074633.16787195">
                                     <!--2018-02-23 10:30:33 +0000-->
@@ -2174,6 +2175,14 @@
                             <constraint firstItem="cex-xR-hng" firstAttribute="top" secondItem="oMd-Tz-5vu" secondAttribute="bottom" id="zeI-uT-9ek"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelSport" destination="1Tc-I2-oBr" id="rVS-Cl-0OM"/>
+                        <outlet property="dateEditSport" destination="04F-ei-Xtn" id="eXI-lz-Ujr"/>
+                        <outlet property="descriptionEditSport" destination="cex-xR-hng" id="oAP-O4-HBV"/>
+                        <outlet property="dureeEditSport" destination="XQ6-hY-4yp" id="3he-KQ-D1E"/>
+                        <outlet property="titleEditSport" destination="9N0-Ed-iTa" id="b8G-Nd-E6V"/>
+                        <outlet property="validSport" destination="vqo-B4-HmJ" id="BOF-pg-x0X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDp-04-R2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
