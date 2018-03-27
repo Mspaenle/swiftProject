@@ -17,6 +17,7 @@
 		24D457FC204D958300E27BC5 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D457FB204D958300E27BC5 /* EventModel.swift */; };
 		24D947BD2062C865003E99B1 /* MedecinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D947BC2062C865003E99B1 /* MedecinTableViewCell.swift */; };
 		8F02CA9D206A1CD10041E495 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F02CA9C206A1CD10041E495 /* logo2.png */; };
+		8F02CA9F206A37430041E495 /* EmergencyNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F02CA9E206A37430041E495 /* EmergencyNumberTableViewCell.swift */; };
 		8F1FCD492069459A00E01546 /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1FCD482069459A00E01546 /* AgendaTableViewCell.swift */; };
 		8F385E7020468C3300F29058 /* EditPriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E6F20468C3300F29058 /* EditPriseViewController.swift */; };
 		8F385E7320468F6A00F29058 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F385E7220468F6A00F29058 /* DiaryViewController.swift */; };
@@ -53,7 +54,6 @@
 		8F90A904203C754A00B74A0A /* AddMedecinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F90A903203C754A00B74A0A /* AddMedecinViewController.swift */; };
 		8F90A907203C814400B74A0A /* EmergencyNumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F90A906203C814400B74A0A /* EmergencyNumbersViewController.swift */; };
 		8F90A90A203C838400B74A0A /* AddEmergencyNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F90A909203C838400B74A0A /* AddEmergencyNumberViewController.swift */; };
-		8F90A90D203C840A00B74A0A /* EditEmergencyNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F90A90C203C840A00B74A0A /* EditEmergencyNumberViewController.swift */; };
 		8F9192A3206425DF00060780 /* DoseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9192A2206425DF00060780 /* DoseTableViewCell.swift */; };
 		8FC480472040111400B9FD29 /* MedInfosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480462040111400B9FD29 /* MedInfosViewController.swift */; };
 		8FC4804A2040121700B9FD29 /* EtatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC480492040121700B9FD29 /* EtatViewController.swift */; };
@@ -105,6 +105,7 @@
 		24D457FB204D958300E27BC5 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		24D947BC2062C865003E99B1 /* MedecinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedecinTableViewCell.swift; sourceTree = "<group>"; };
 		8F02CA9C206A1CD10041E495 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = SOURCE_ROOT; };
+		8F02CA9E206A37430041E495 /* EmergencyNumberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmergencyNumberTableViewCell.swift; path = Controler/EmergencyNumberTableViewCell.swift; sourceTree = "<group>"; };
 		8F1FCD482069459A00E01546 /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
 		8F385E6F20468C3300F29058 /* EditPriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditPriseViewController.swift; path = Controler/EditPriseViewController.swift; sourceTree = "<group>"; };
 		8F385E7220468F6A00F29058 /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = Controler/DiaryViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +147,6 @@
 		8F90A903203C754A00B74A0A /* AddMedecinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMedecinViewController.swift; path = Controler/AddMedecinViewController.swift; sourceTree = "<group>"; };
 		8F90A906203C814400B74A0A /* EmergencyNumbersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmergencyNumbersViewController.swift; path = Controler/EmergencyNumbersViewController.swift; sourceTree = "<group>"; };
 		8F90A909203C838400B74A0A /* AddEmergencyNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddEmergencyNumberViewController.swift; path = Controler/AddEmergencyNumberViewController.swift; sourceTree = "<group>"; };
-		8F90A90C203C840A00B74A0A /* EditEmergencyNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditEmergencyNumberViewController.swift; path = Controler/EditEmergencyNumberViewController.swift; sourceTree = "<group>"; };
 		8F9192A2206425DF00060780 /* DoseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoseTableViewCell.swift; path = Controler/DoseTableViewCell.swift; sourceTree = "<group>"; };
 		8FC480462040111400B9FD29 /* MedInfosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MedInfosViewController.swift; path = Controler/MedInfosViewController.swift; sourceTree = "<group>"; };
 		8FC480492040121700B9FD29 /* EtatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EtatViewController.swift; path = Controler/EtatViewController.swift; sourceTree = "<group>"; };
@@ -267,7 +267,6 @@
 				8FC480612040232500B9FD29 /* AddRDVMedViewController.swift */,
 				8F385E84204695E700F29058 /* AddSportViewController.swift */,
 				8F385E7220468F6A00F29058 /* DiaryViewController.swift */,
-				8F90A90C203C840A00B74A0A /* EditEmergencyNumberViewController.swift */,
 				8F90A900203C74ED00B74A0A /* EditMedecinsViewController.swift */,
 				8FC4805520401BEF00B9FD29 /* EditMedPillsViewController.swift */,
 				8FC48052204019D700B9FD29 /* EditPillsViewController.swift */,
@@ -299,6 +298,7 @@
 				24C17702206650A200DE3D73 /* RDVTableViewCell.swift */,
 				2407151020669377006FE538 /* SportTableViewCell.swift */,
 				8F54C75A2056D4DC007F17AE /* StateTableViewCell.swift */,
+				8F02CA9E206A37430041E495 /* EmergencyNumberTableViewCell.swift */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -477,7 +477,6 @@
 				8F90A904203C754A00B74A0A /* AddMedecinViewController.swift in Sources */,
 				8F1FCD492069459A00E01546 /* AgendaTableViewCell.swift in Sources */,
 				8FC4805920401FD300B9FD29 /* AddPillsViewController.swift in Sources */,
-				8F90A90D203C840A00B74A0A /* EditEmergencyNumberViewController.swift in Sources */,
 				8FCF4865206532BA0012495C /* PopUpPillsDateViewController.swift in Sources */,
 				8F385E82204695DB00F29058 /* EditSportViewController.swift in Sources */,
 				8F52A5482059117100FDF76D /* MedModel.swift in Sources */,
@@ -492,6 +491,7 @@
 				8FC4805620401BEF00B9FD29 /* EditMedPillsViewController.swift in Sources */,
 				8F385E7020468C3300F29058 /* EditPriseViewController.swift in Sources */,
 				8F90A901203C74ED00B74A0A /* EditMedecinsViewController.swift in Sources */,
+				8F02CA9F206A37430041E495 /* EmergencyNumberTableViewCell.swift in Sources */,
 				2407151120669377006FE538 /* SportTableViewCell.swift in Sources */,
 				247BD35520593C4600D94876 /* EmergencyNumberDAO.swift in Sources */,
 				8FC480502040185300B9FD29 /* PillsViewController.swift in Sources */,

@@ -68,6 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let content = UNMutableNotificationContent()
         content.title = "Prises"
         content.body = "Entrez vos données pour la journée"
+        content.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
         
         // add notification for Mondays at 11:00 a.m.
         var dateComponents = DateComponents()

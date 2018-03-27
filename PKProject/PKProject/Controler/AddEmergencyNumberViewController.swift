@@ -10,6 +10,13 @@ import UIKit
 
 class AddEmergencyNumberViewController: UIViewController {
 
+    @IBOutlet weak var validateBTN: UIButton!
+    @IBOutlet weak var cancelBTN: UIButton!
+    @IBOutlet weak var numTF: UITextField!
+    @IBOutlet weak var titleTF: UITextField!
+    
+    var emergencyNumber : EmergencyNumberModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +28,25 @@ class AddEmergencyNumberViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func buttonAdd(_ sender: Any) {
+        if sender as! UIButton == self.validateBTN {
+            let anum = numTF.text
+            let atitle = titleTF.text
+            guard anum != "" && atitle != "" else {
+                let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir tous les champs",preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "OK", style: .default)
+                alert.addAction(cancelAction)
+                present(alert, animated: true)
+                return
+            }
+            emergencyNumber = EmergencyNumberModel(phoneNumber: anum!, title: atitle!)
+            self.performSegue(withIdentifier: "addNumber", sender: self)
+        }
+        else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation
