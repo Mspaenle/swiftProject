@@ -21,13 +21,11 @@ class EmergencyNumbersViewController: UIViewController, UITableViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             //self.alertError(errorMsg: "Could not load data", userInfo: "reason unknown")
             return
         }
-        
         let context = appDelegate.persistentContainer.viewContext
         
         let request : NSFetchRequest<EmergencyNumber> = EmergencyNumber.fetchRequest()

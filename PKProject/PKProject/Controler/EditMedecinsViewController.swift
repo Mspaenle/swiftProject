@@ -45,9 +45,8 @@ class EditMedecinsViewController: UIViewController {
     
     /// Execute the modification of the doctor if the sender is modifMedecin (the edit button), else it send back to the previous view.
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: UIButton
     @IBAction func modifMedecin(_ sender: UIButton) {
-        
             if sender == self.modifMedecin {
                 Doctor.delete(object: med!)
                 let a:Int16? = Int16(self.EditTravelMedecin.text!)!

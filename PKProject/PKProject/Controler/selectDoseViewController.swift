@@ -60,7 +60,7 @@ class selectDoseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         if sender as! UIButton == self.validateBTN {
             self.performSegue(withIdentifier: "toAddPill", sender: self)
         }
-        else {
+        else if sender as! UIButton == self.cancelBTN {
             self.dismiss(animated: true, completion: nil)
         }
     }

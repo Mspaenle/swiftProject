@@ -39,7 +39,7 @@ class PopUpPillsDateViewController: UIViewController {
         if sender as! UIButton == self.ValidateBTN {
             self.performSegue(withIdentifier: "toAddPill", sender: self)
         }
-        else {
+        else if sender as! UIButton == self.CancelBTN {
             self.dismiss(animated: true, completion: nil)
         }
     }
