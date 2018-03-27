@@ -20,6 +20,9 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
     var activities : [Activity] = []
     var kase : Int = 0
     
+    /// Change the information to display on the TableView depending on the case chosen on the segmentedControl
+    ///
+    /// - Parameter sender: UISegmentedControl
     @IBAction func windowChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex
         {

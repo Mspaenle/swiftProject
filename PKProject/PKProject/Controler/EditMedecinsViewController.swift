@@ -27,6 +27,7 @@ class EditMedecinsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // get the doctor given by the previous view and init the components
         if let amedecin = self.med{
             self.EditNameMedecin.text = amedecin.name
             self.EditAdressMedecin.text = amedecin.adress
@@ -37,6 +38,11 @@ class EditMedecinsViewController: UIViewController {
         }
     }
     
+    //Check if the String is an Int
+    func isStringAnInt(string: String) -> Bool {
+        return Int(string) != nil
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -44,15 +50,37 @@ class EditMedecinsViewController: UIViewController {
     // MARK: - Action Button and Navigation
     
     /// Execute the modification of the doctor if the sender is modifMedecin (the edit button), else it send back to the previous view.
+    /// Check if the textfields are not empty and if the duration is a number, if not, send an alert
     ///
     /// - Parameter sender: UIButton
     @IBAction func modifMedecin(_ sender: UIButton) {
             if sender == self.modifMedecin {
+                
+                guard self.EditNameMedecin.text != "" && self.EditPhoneMedecin.text != "" && self.EditAdressMedecin.text != "" && self.EditTravelMedecin.text != "" else {
+                    let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir tous les champs",preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "OK", style: .default)
+                    alert.addAction(cancelAction)
+                    present(alert, animated: true)
+                    return
+                }
+                
+                let isint = isStringAnInt(string: self.EditTravelMedecin.text!)
+                
+                guard isint else{
+                    let alert2 = UIAlertController(title: "Entrée incorrecte", message: "Veuillez mettre un entier dans le champs de duree",preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "OK", style: .default)
+                    alert2.addAction(cancelAction)
+                    present(alert2, animated: true)
+                    return
+                }
+                
                 Doctor.delete(object: med!)
+                
                 let a:Int16? = Int16(self.EditTravelMedecin.text!)!
+                
                 medecin = DoctorModel(adress: self.EditAdressMedecin.text!, name: self.EditNameMedecin.text!, phoneNumber: self.EditPhoneMedecin.text!, speciality: self.speciality!, travelTime: a!)
                 self.performSegue(withIdentifier: "editMedecin", sender: self)
-            } else {
+            } else if sender == self.cancelModifMedecin{
                 self.dismiss(animated: true, completion: nil)
             }
     }

@@ -25,6 +25,7 @@ class EditRDVMedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // get the RDV given by the previous view and init the components
         if let ardv = self.rdv2{
             self.editRDVTitle.text = ardv.title
             self.editRDVDate.date = (ardv.date)! as Date
@@ -45,7 +46,7 @@ class EditRDVMedViewController: UIViewController {
             RDV.delete(object: rdv2!)
             rdv = RDVModel(date: self.editRDVDate.date as NSDate, title: self.editRDVTitle.text!, doctor: medecin!)
             self.performSegue(withIdentifier: "editRDV", sender: self)
-        } else {
+        } else if sender == self.cancelRDV{
             self.dismiss(animated: true, completion: nil)
         }
     }

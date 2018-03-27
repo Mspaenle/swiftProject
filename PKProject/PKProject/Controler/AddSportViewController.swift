@@ -22,6 +22,7 @@ class AddSportViewController: UIViewController {
     var datesport : Date?
     var sports: [Activity] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +35,11 @@ class AddSportViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //Verification d'un cast de String vers Int
+    
+    /// Check if the String is an Int
+    ///
+    /// - Parameter string:  string to check
+    /// - Returns: return a boolean, true if the string is a integer, false if not
     func isStringAnInt(string: String) -> Bool {
         return Int(string) != nil
     }
@@ -52,13 +57,13 @@ class AddSportViewController: UIViewController {
     
     @IBAction func actionOnSport(_ sender: UIButton) {
         if sender == self.validSport {
-                guard self.intituleSport.text != "" && self.descriptionSport.text != "" && self.dureeSport.text != "" else {
+            guard self.intituleSport.text != "" && self.descriptionSport.text != "" && self.dureeSport.text != "" else {
                     let alert = UIAlertController(title: "Entrée incorrecte", message: "Veillez à remplir tous les champs",preferredStyle: .alert)
                     let cancelAction = UIAlertAction(title: "OK", style: .default)
                     alert.addAction(cancelAction)
                     present(alert, animated: true)
                     return
-                }
+            }
 
             let isint = isStringAnInt(string: self.dureeSport.text!)
             
@@ -71,12 +76,12 @@ class AddSportViewController: UIViewController {
             }
             let a:Int16? = Int16(self.dureeSport.text!)!
 
-                    sport = ActivityModel(date: self.dateSport.date as NSDate, title: self.intituleSport.text!, specification: self.descriptionSport.text!, duration: a!)
+            sport = ActivityModel(date: self.dateSport.date as NSDate, title: self.intituleSport.text!, specification: self.descriptionSport.text!, duration: a!)
                     self.performSegue(withIdentifier: "addSport", sender: self)
              self.dismiss(animated: true, completion: nil)
         }
             
-        else {
+        else if sender == self.cancelSport{
             self.dismiss(animated: true, completion: nil)
         }
     }

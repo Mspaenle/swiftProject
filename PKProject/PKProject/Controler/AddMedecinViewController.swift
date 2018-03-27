@@ -25,9 +25,13 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
     let specialities = ["Diététicien(ne)", "Ergothérapeuthe", "Généraliste", "Infirmier", "Kinésithérapeuthe", "Neurologue", "Neuropsychologue", "Orthophoniste", "Orthoptiste", "Pédicure-Podologue",  "Psychologue Clinicien", "Psychomotricien", "Autres"]
     var speciality: String?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.speciality = specialities[0]
+        guard let spe : String? = specialities[0] else{
+            fatalError()
+        }
+        self.speciality = spe
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,25 +39,16 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // Dispose of any resources that can be recreated.
     }
     
-    //Verification d'un cast de String vers Int
+    /// Check if the String is an Int
+    ///
+    /// - Parameter string: string to check
+    /// - Returns: return a boolean, true if the string is a integer, false if not
     func isStringAnInt(string: String) -> Bool {
         return Int(string) != nil
     }
     
     
     
-    // MARK: - Unwind
-    
-    /// Permit to exit from another view to this one, handle the changes.
-    ///
-    /// - Parameter sender: IBAction from another view
-    @IBAction func unwindToAddMedecin(sender: UIStoryboardSegue){
-        if let controller = sender.source as? MedecinsViewController{
-            if let _ = controller.medecin{
-                Doctor.save()
-            }
-        }
-    }
     
     // MARK: - PickerView
     
@@ -80,8 +75,9 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
     // MARK: - Action Button and Navigation
     
     /// Handle Action on buttons from the view. Send a new doctor if "validate", just dismiss the view if not.
+    /// Check if the textfields are not empty and if the duration is a number, if not, send an alert
     ///
-    /// - Parameter sender: Button
+    /// - Parameter sender: UIButton
     @IBAction func buttonMedecin(_ sender: Any) {
         if sender as! UIButton == self.AddMedecin {
             guard PhoneMedecin.text != "" && AdressMedecin.text != "" && TravelMedecin.text != "" && NameMedecin.text != "" , let aspeciality = speciality else {
@@ -105,7 +101,7 @@ class AddMedecinViewController: UIViewController, UIPickerViewDelegate, UIPicker
             
             medecin = DoctorModel(adress: self.AdressMedecin.text!, name: self.NameMedecin.text!, phoneNumber: self.PhoneMedecin.text!, speciality: aspeciality, travelTime: a!)
             self.performSegue(withIdentifier: "validMed", sender: self)
-        } else {
+        } else if sender as! UIButton == self.CancelMedecin{
             self.dismiss(animated: true, completion: nil)
         }
     }

@@ -93,11 +93,7 @@ class MedecinsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     // MARK: - Button Action
-    
-    @IBAction func buttonModifMedecin(_ sender: UIButton) {
-
-    }
-    
+        
     @IBAction func deleteMedecin(_ sender: UIButton) {
          if let indexPath = self.medecinTable.indexPathForSelectedRow{
             medecinTable.beginUpdates()
